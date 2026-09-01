@@ -49,14 +49,14 @@ function SystemTile({
 
 const moreWork = [
   [
+    'Frontier Rover',
+    'Safety first robotics',
+    'https://github.com/RealWooblay/frontier-rover',
+  ],
+  [
     'Skill Tree',
     'Learning systems',
     'https://github.com/RealWooblay/skill-tree',
-  ],
-  [
-    'Frontier Rover',
-    'Physical systems',
-    'https://github.com/RealWooblay/frontier-rover',
   ],
   [
     'Stables Yield Optimiser',
@@ -99,13 +99,16 @@ export default function Home() {
 
       <section className="hero-v3 shell" id="top">
         <div className="hero-copy-v3">
-          <p className="overline">SOFTWARE / AGENTS / PHYSICAL SYSTEMS</p>
+          <p className="overline">NVIDIA JETSON / AGENTS / PHYSICAL SYSTEMS</p>
           <h1>
             Systems that
             <br />
             <em>move.</em>
           </h1>
-          <p>Markets, multiplayer, agent infrastructure and edge vision.</p>
+          <p>
+            On device vision, spatial tracking, autonomous agents and products
+            in motion.
+          </p>
           <div className="hero-links">
             <a className="button button-signal" href="#featured">
               See the work ↓
@@ -122,22 +125,22 @@ export default function Home() {
         </div>
 
         <aside className="hero-system" aria-label="How Wooblay systems work">
-          <span className="scene-kicker">SYSTEM LOOP</span>
+          <span className="scene-kicker">PERCEPTION TO ACTION</span>
           <ol className="hero-system-stack">
             <li>
               <span>01</span>
               <strong>SENSE</strong>
-              <small>state · events · intent</small>
+              <small>camera · detection · pose</small>
             </li>
             <li>
               <span>02</span>
               <strong>DECIDE</strong>
-              <small>models · policy · markets</small>
+              <small>state · policy · intent</small>
             </li>
             <li>
               <span>03</span>
               <strong>ACT</strong>
-              <small>interfaces · transactions · machines</small>
+              <small>projection · agents · machines</small>
             </li>
           </ol>
         </aside>
@@ -226,11 +229,14 @@ export default function Home() {
           <article className="feature-card wisp-feature">
             <div className="feature-copy">
               <p className="project-meta">
-                <span>WISP LAB</span>
-                <span>JETSON</span>
+                <span>NVIDIA JETSON</span>
+                <span>ORIN NANO SUPER</span>
               </p>
-              <h3>Perception in. Projected interface out.</h3>
-              <p>Real vision, pose, interaction and calibration work.</p>
+              <h3>Vision that turns a wall into an interface.</h3>
+              <p>
+                Head and wrist tracking, off axis rendering and projector ready
+                mapping.
+              </p>
               <div className="feature-links">
                 <Link href="/work/wisp-lab">Project ↗</Link>
                 <a
@@ -245,16 +251,21 @@ export default function Home() {
             <div className="wisp-scene" aria-label="WISP measured lab pipeline">
               <div className="wisp-grid-plane" />
               <div className="wisp-layer camera-layer">
-                <span>INPUT</span>
+                <span>CSI INPUT</span>
                 <strong>IMX708</strong>
               </div>
               <div className="wisp-layer vision-layer">
-                <span>TENSORRT FP16</span>
-                <strong>31.6 FPS</strong>
+                <span>NVIDIA JETSON</span>
+                <strong>14.8 MS</strong>
+                <small>ISOLATED TENSORRT FP16</small>
+              </div>
+              <div className="wisp-layer tracking-layer">
+                <span>YOLO POSE · 8.6 FPS</span>
+                <strong>HEAD + WRISTS</strong>
               </div>
               <div className="wisp-layer surface-layer">
-                <span>OUTPUT</span>
-                <strong>4 PT CALIBRATION</strong>
+                <span>SPATIAL OUTPUT</span>
+                <strong>OFF AXIS + 4 POINT</strong>
               </div>
             </div>
           </article>

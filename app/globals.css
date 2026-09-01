@@ -567,6 +567,7 @@ a {
 .pmw-resolver span,
 .pmw-settlement span,
 .wisp-layer span,
+.wisp-layer small,
 .tech-plane span,
 .tech-plane small {
   color: rgba(255, 255, 255, 0.66);
@@ -611,17 +612,27 @@ a {
 }
 
 .wisp-feature {
+  grid-column: 1 / -1;
+  min-height: 690px;
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
   background: #101312;
   color: var(--paper);
 }
 
 .wisp-feature .feature-copy {
-  padding-bottom: 4px;
+  align-self: center;
+  padding-right: 0;
+}
+
+.wisp-feature .feature-copy h3 {
+  max-width: 560px;
+  font-size: clamp(48px, 5.4vw, 78px);
 }
 
 .wisp-scene {
   position: relative;
-  min-height: 340px;
+  min-height: 590px;
   flex: 1;
   perspective: 1050px;
 }
@@ -657,39 +668,58 @@ a {
   letter-spacing: -0.045em;
 }
 
+.wisp-layer small {
+  margin-top: 9px;
+}
+
 .camera-layer {
-  left: 7%;
-  bottom: 45px;
-  width: 31%;
+  left: 2%;
+  bottom: 72px;
+  width: 25%;
   transform: rotateY(18deg) rotateZ(-3deg) translateZ(30px);
 }
 
 .vision-layer {
   z-index: 2;
-  left: 35%;
-  bottom: 95px;
-  width: 38%;
-  min-height: 145px;
+  left: 21%;
+  bottom: 190px;
+  width: 37%;
+  min-height: 180px;
   border-color: var(--signal);
   background: #263020;
   transform: translateZ(80px);
 }
 
+.tracking-layer {
+  z-index: 3;
+  right: 9%;
+  bottom: 166px;
+  width: 35%;
+  min-height: 145px;
+  border-color: rgba(122, 207, 255, 0.72);
+  background: #17262b;
+  transform: rotateY(-10deg) rotateZ(2deg) translateZ(110px);
+}
+
 .surface-layer {
-  right: 5%;
-  bottom: 28px;
-  width: 29%;
+  right: 2%;
+  bottom: 36px;
+  width: 36%;
   transform: rotateY(-18deg) rotateZ(3deg) translateZ(20px);
 }
 
 .golazo-feature {
+  grid-column: 1 / -1;
+  min-height: 630px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
   background: #d66e22;
   color: #201108;
 }
 
 .golazo-scene {
   position: relative;
-  min-height: 410px;
+  min-height: 630px;
   flex: 1;
   perspective: 1000px;
 }
@@ -719,7 +749,7 @@ a {
 }
 
 .golazo-feature .feature-copy {
-  padding-top: 25px;
+  align-self: center;
 }
 
 .systems-v3,
@@ -1705,6 +1735,20 @@ a {
     min-height: 570px;
   }
 
+  .wisp-feature,
+  .golazo-feature {
+    grid-column: auto;
+    display: flex;
+  }
+
+  .wisp-scene {
+    min-height: 420px;
+  }
+
+  .golazo-scene {
+    min-height: 430px;
+  }
+
   .feature-copy h3 {
     font-size: clamp(42px, 13vw, 62px);
   }
@@ -1900,16 +1944,29 @@ a {
   }
 
   .camera-layer {
-    width: 38%;
+    left: 3%;
+    bottom: 48px;
+    width: 34%;
   }
 
   .vision-layer {
-    left: 27%;
-    width: 48%;
+    left: 20%;
+    bottom: 150px;
+    width: 49%;
+    min-height: 150px;
+  }
+
+  .tracking-layer {
+    right: 3%;
+    bottom: 130px;
+    width: 42%;
+    min-height: 120px;
   }
 
   .surface-layer {
-    width: 38%;
+    right: 3%;
+    bottom: 28px;
+    width: 42%;
   }
 
   .golazo-scene video {

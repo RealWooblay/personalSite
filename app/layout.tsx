@@ -19,10 +19,12 @@ export const metadata: Metadata = {
     default: 'Wooblay | Systems, AI, Machines',
     template: '%s',
   },
-  description: 'Systems, agents, multiplayer and edge vision by Wooblay.',
+  description:
+    'NVIDIA Jetson vision, agent systems and interactive products by Wooblay.',
   openGraph: {
     title: 'Wooblay | Systems, AI, Machines',
-    description: 'Systems, agents, multiplayer and edge vision by Wooblay.',
+    description:
+      'NVIDIA Jetson vision, agent systems and interactive products by Wooblay.',
     type: 'website',
     ...(publicLaunch ? { url: siteOrigin?.toString() } : {}),
     ...(socialImage
@@ -41,7 +43,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Wooblay | Systems, AI, Machines',
-    description: 'Systems, agents, multiplayer and edge vision by Wooblay.',
+    description:
+      'NVIDIA Jetson vision, agent systems and interactive products by Wooblay.',
     ...(socialImage ? { images: [socialImage] } : {}),
   },
   icons: { icon: '/favicon.svg' },

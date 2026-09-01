@@ -66,21 +66,21 @@ function WispScene() {
       <div className="detail-shell detail-tech-stage wisp-detail-stage">
         <div className="detail-grid-plane" />
         <div className="tech-plane tech-plane-input">
-          <span>INPUT</span>
+          <span>CSI INPUT</span>
           <strong>IMX708 CAMERA</strong>
         </div>
         <div className="tech-plane tech-plane-runtime">
-          <span>TENSORRT FP16</span>
-          <strong>31.6 FPS</strong>
-          <small>YOLOV8N DETECTION</small>
+          <span>NVIDIA JETSON</span>
+          <strong>14.8 MS</strong>
+          <small>ISOLATED TENSORRT FP16</small>
         </div>
         <div className="tech-plane tech-plane-state">
-          <span>STATE</span>
-          <strong>HEAD + HAND</strong>
+          <span>YOLO POSE · 8.6 FPS</span>
+          <strong>HEAD + WRISTS</strong>
         </div>
         <div className="tech-plane tech-plane-output">
-          <span>OUTPUT</span>
-          <strong>4 POINT CALIBRATION</strong>
+          <span>OFF AXIS RENDERER</span>
+          <strong>4 POINT MAPPING</strong>
         </div>
       </div>
     </section>
