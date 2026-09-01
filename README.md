@@ -1,6 +1,6 @@
-# Wooblay
+# Engineering Portfolio
 
-Source for the Wooblay systems portfolio.
+Source for a personal engineering portfolio.
 
 The site presents selected work across NVIDIA Jetson perception, spatial interfaces, autonomous agents, real time products and interactive systems. Technical claims link back to public repositories and measured project evidence.
 

@@ -73,29 +73,10 @@ export default function Home() {
         Skip to selected work
       </a>
 
-      <header className="topbar">
-        <div className="shell nav-inner">
-          <a className="brand" href="#top">
-            WOOBLAY<span>●</span>
-          </a>
-          <nav aria-label="Primary navigation">
-            <a href="#featured">Work</a>
-            <a href="#systems">Archive</a>
-            <a
-              href="https://github.com/RealWooblay"
-              target="_blank"
-              rel="noreferrer"
-            >
-              GitHub ↗
-            </a>
-          </nav>
-        </div>
-      </header>
-
       <section className="portfolio-intro shell" id="top">
         <h1>
-          I’m Wooblay, a software and AI engineer building machines that can
-          see, understand and act in the real world.
+          <span>I build with one belief:</span>
+          technology should help us live more fully.
         </h1>
       </section>
 
@@ -323,22 +304,20 @@ export default function Home() {
               </div>
             </div>
           </article>
-
         </div>
       </section>
 
       <section className="systems-v3" id="systems">
-        <div className="shell compact-heading compact-heading-dark">
-          <span>MORE SYSTEMS</span>
-          <h2>Built across the stack.</h2>
+        <div className="shell simple-heading">
+          <h2>More work</h2>
         </div>
         <div className="shell system-tile-grid">
           <SystemTile
-            title="Wooblay AI"
+            title="Agent Execution Firewall"
             category="AGENT SECURITY"
             line="Intent, policy, approval, execution and receipt in one chain."
             flow={['INTENT', 'POLICY', 'APPROVAL', 'RECEIPT']}
-            href="/work/wooblay-ai"
+            href="/work/agent-execution-firewall"
             source="https://github.com/RealWooblay/WooblayAI"
           />
           <SystemTile
@@ -377,6 +356,19 @@ export default function Home() {
             href="/work/bender"
             source="https://github.com/RealWooblay/bender"
           />
+        </div>
+
+        <div className="shell archive-block" id="index">
+          <span>Archive</span>
+          <div className="project-index-v3">
+            {moreWork.map(([title, category, href]) => (
+              <a href={href} target="_blank" rel="noreferrer" key={title}>
+                <strong>{title}</strong>
+                <span>{category}</span>
+                <i>↗</i>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -425,38 +417,16 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="index-v3" id="index">
-        <div className="shell compact-heading compact-heading-dark">
-          <span>PROJECT ARCHIVE</span>
-          <h2>More builds.</h2>
-        </div>
-        <div className="shell project-index-v3">
-          {moreWork.map(([title, category, href]) => (
-            <a href={href} target="_blank" rel="noreferrer" key={title}>
-              <strong>{title}</strong>
-              <span>{category}</span>
-              <i>↗</i>
-            </a>
-          ))}
-        </div>
-      </section>
-
       <footer className="footer-v3">
         <div className="shell">
-          <span>CURRENT DIRECTION</span>
-          <h2>Edge computing. Autonomy. Machines.</h2>
+          <span>SOFTWARE / AI / ROBOTICS</span>
           <a
-            className="button button-dark"
             href="https://github.com/RealWooblay"
             target="_blank"
             rel="noreferrer"
           >
-            Open GitHub ↗
+            GitHub ↗
           </a>
-          <div className="footer-meta">
-            <span>WOOBLAY / 2026</span>
-            <span>SYSTEMS · AI · MACHINES</span>
-          </div>
         </div>
       </footer>
     </main>

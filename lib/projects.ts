@@ -1,6 +1,6 @@
 export type ProjectSlug =
   | 'golazo'
-  | 'wooblay-ai'
+  | 'agent-execution-firewall'
   | 'bubble-wars'
   | 'meridian'
   | 'wisp-lab'
@@ -92,8 +92,8 @@ export const projects: Project[] = [
     },
   },
   {
-    slug: 'wooblay-ai',
-    title: 'Wooblay AI',
+    slug: 'agent-execution-firewall',
+    title: 'Agent Execution Firewall',
     kicker: 'Agent security · Policy · Infrastructure',
     status: 'Systems prototype',
     description:
@@ -154,7 +154,7 @@ export const projects: Project[] = [
         href: 'https://github.com/BubbleWars2024/bubblewars',
       },
       {
-        label: 'Wooblay fork',
+        label: 'My fork',
         href: 'https://github.com/RealWooblay/bubblewars',
       },
       {
@@ -210,7 +210,7 @@ export const projects: Project[] = [
       'The app, control API, PharmCAT worker and deterministic clinical engine are implemented.',
     nextStep:
       'Deploy the private processing path and validate it with deidentified data.',
-    relatedSlugs: ['wooblay-ai', 'ai-action-os', 'bubble-wars'],
+    relatedSlugs: ['agent-execution-firewall', 'ai-action-os', 'bubble-wars'],
     tech: ['TypeScript', 'Python', 'Genomics', 'Retrieval', 'Guardrailed AI'],
     architecture: [
       'GENOME INPUT',
@@ -408,7 +408,7 @@ export const projects: Project[] = [
       'The local v0 has four tools and API watching. Generated code isolation is not yet hardened.',
     nextStep:
       'Publish a short demo, then isolate generated UI and outbound requests.',
-    relatedSlugs: ['wooblay-ai', 'minitown-ai', 'meridian'],
+    relatedSlugs: ['agent-execution-firewall', 'minitown-ai', 'meridian'],
     tech: [
       'TypeScript',
       'React',
@@ -458,7 +458,7 @@ export const projects: Project[] = [
     signal: 'Flare Main Track 3rd place at ETHGlobal Cannes.',
     currentState: 'Engineering prototype, not a production financial product.',
     nextStep: 'Harden contract administration before any live deployment.',
-    relatedSlugs: ['golazo', 'wooblay-ai', 'meridian'],
+    relatedSlugs: ['golazo', 'agent-execution-firewall', 'meridian'],
     tech: ['TypeScript', 'Browser extensions', 'FastAPI', 'Agents', 'Solidity'],
     architecture: [
       'WEB CLAIM',

@@ -1,13 +1,13 @@
 import type { Metadata } from 'next';
 import './globals.css';
 
-const siteUrl = process.env.WOOBLAY_SITE_URL;
+const siteUrl = process.env.PORTFOLIO_SITE_URL;
 const siteOrigin = siteUrl ? new URL(siteUrl) : null;
 const publicLaunch = Boolean(
-  siteOrigin && process.env.WOOBLAY_PUBLIC_SITE === 'true',
+  siteOrigin && process.env.PORTFOLIO_PUBLIC_SITE === 'true',
 );
 const socialImage = siteOrigin
-  ? new URL('/og.jpg', siteOrigin).toString()
+  ? new URL('/og.png', siteOrigin).toString()
   : null;
 
 export const metadata: Metadata = {
@@ -16,15 +16,15 @@ export const metadata: Metadata = {
     ? { alternates: { canonical: siteOrigin?.toString() } }
     : {}),
   title: {
-    default: 'Wooblay | Software, AI, Robotics',
+    default: 'Software, AI & Robotics Portfolio',
     template: '%s',
   },
   description:
-    'NVIDIA Jetson vision, agent systems and interactive products by Wooblay.',
+    'NVIDIA Jetson vision, robotics, agent systems and products built from prototype to production.',
   openGraph: {
-    title: 'Wooblay | Software, AI, Robotics',
+    title: 'Software, AI & Robotics Portfolio',
     description:
-      'NVIDIA Jetson vision, agent systems and interactive products by Wooblay.',
+      'Technology should help us live more fully. Selected work across software, AI and robotics.',
     type: 'website',
     ...(publicLaunch ? { url: siteOrigin?.toString() } : {}),
     ...(socialImage
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
               url: socialImage,
               width: 1200,
               height: 630,
-              alt: 'Wooblay | Systems, AI, Machines',
+              alt: 'Technology should help us live more fully. Software, AI and robotics.',
             },
           ],
         }
@@ -42,9 +42,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Wooblay | Software, AI, Robotics',
+    title: 'Software, AI & Robotics Portfolio',
     description:
-      'NVIDIA Jetson vision, agent systems and interactive products by Wooblay.',
+      'Technology should help us live more fully. Selected work across software, AI and robotics.',
     ...(socialImage ? { images: [socialImage] } : {}),
   },
   icons: { icon: '/favicon.svg' },

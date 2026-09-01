@@ -2,9 +2,9 @@ import type { MetadataRoute } from 'next';
 import { projects } from '@/lib/projects';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const siteUrl = process.env.WOOBLAY_SITE_URL;
+  const siteUrl = process.env.PORTFOLIO_SITE_URL;
   const publicLaunch = Boolean(
-    siteUrl && process.env.WOOBLAY_PUBLIC_SITE === 'true',
+    siteUrl && process.env.PORTFOLIO_PUBLIC_SITE === 'true',
   );
 
   if (!publicLaunch || !siteUrl) return [];

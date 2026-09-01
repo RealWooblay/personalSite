@@ -17,13 +17,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const project = projectBySlug[slug];
   if (!project) return {};
 
-  const title = `${project.title} | Wooblay`;
-  const siteUrl = process.env.WOOBLAY_SITE_URL;
+  const title = `${project.title} | Engineering Portfolio`;
+  const siteUrl = process.env.PORTFOLIO_SITE_URL;
   const publicLaunch = Boolean(
-    siteUrl && process.env.WOOBLAY_PUBLIC_SITE === 'true',
+    siteUrl && process.env.PORTFOLIO_PUBLIC_SITE === 'true',
   );
   const socialImage = siteUrl
-    ? new URL('/og.jpg', siteUrl).toString()
+    ? new URL('/og.png', siteUrl).toString()
     : undefined;
   const canonical = publicLaunch
     ? new URL(`/work/${project.slug}`, siteUrl).toString()
@@ -45,7 +45,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
                 url: socialImage,
                 width: 1200,
                 height: 630,
-                alt: 'Wooblay | Software, AI, Robotics',
+                alt: 'Software, AI and robotics engineering portfolio',
               },
             ],
           }
@@ -210,18 +210,11 @@ export default async function ProjectPage({ params }: Props) {
         Skip to the build
       </a>
 
-      <header className="detail-topbar">
-        <div className="detail-shell detail-nav">
-          <a className="brand" href="/">
-            WOOBLAY<span>●</span>
-          </a>
-          <a href="/#featured">← Selected work</a>
-        </div>
-      </header>
-
       <section className="detail-hero-v3 detail-shell">
+        <a className="detail-back" href="/#featured">
+          ← All work
+        </a>
         <p className="detail-overline">
-          <span>PROJECT</span>
           <span>{project.kicker}</span>
         </p>
         <div className="detail-title-grid">
@@ -244,7 +237,6 @@ export default async function ProjectPage({ params }: Props) {
           </div>
         </div>
         <div className="detail-signal">
-          <p>{project.signal}</p>
           <dl>
             <div>
               <dt>ROLE</dt>
@@ -263,8 +255,7 @@ export default async function ProjectPage({ params }: Props) {
       <section className="build-v3" id="build">
         <div className="detail-shell">
           <div className="detail-heading-v3">
-            <span>THE BUILD</span>
-            <h2>Two things matter.</h2>
+            <h2>Build</h2>
           </div>
           <div className="build-grid-v3">
             <article>
@@ -300,8 +291,7 @@ export default async function ProjectPage({ params }: Props) {
 
       <section className="system-map-v3 detail-shell">
         <div className="detail-heading-v3 detail-heading-dark">
-          <span>SYSTEM MAP</span>
-          <h2>Primary flow.</h2>
+          <h2>System flow</h2>
         </div>
         <ol className="architecture-flow-v3">
           {project.architecture.map((node, index) => (
@@ -320,7 +310,7 @@ export default async function ProjectPage({ params }: Props) {
 
       <section className="related-v3">
         <div className="detail-shell">
-          <span>KEEP LOOKING</span>
+          <span>RELATED PROJECTS</span>
           <div className="related-grid-v3">
             {related.map((item) => (
               <a href={`/work/${item.slug}`} key={item.slug}>
@@ -334,7 +324,7 @@ export default async function ProjectPage({ params }: Props) {
 
       <footer className="detail-footer-v3">
         <div className="detail-shell">
-          <a href="/">WOOBLAY</a>
+          <a href="/#featured">ALL WORK</a>
           <a
             href="https://github.com/RealWooblay"
             target="_blank"

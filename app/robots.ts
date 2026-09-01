@@ -1,9 +1,9 @@
 import type { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
-  const siteUrl = process.env.WOOBLAY_SITE_URL;
+  const siteUrl = process.env.PORTFOLIO_SITE_URL;
   const publicLaunch = Boolean(
-    siteUrl && process.env.WOOBLAY_PUBLIC_SITE === 'true',
+    siteUrl && process.env.PORTFOLIO_PUBLIC_SITE === 'true',
   );
 
   if (!publicLaunch || !siteUrl) {

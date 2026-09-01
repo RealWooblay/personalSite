@@ -2,15 +2,15 @@
 export default function NotFound() {
   return (
     <main className="missing-page">
-      <a className="brand" href="/">
-        WOOBLAY<span>●</span>
+      <a className="missing-home" href="/">
+        ← Portfolio
       </a>
       <div>
-        <span>404 / OUTSIDE THE SYSTEM</span>
-        <h1>Nothing is running here.</h1>
-        <p>The route does not exist, but the work does.</p>
+        <span>404</span>
+        <h1>Page not found.</h1>
+        <p>This address does not exist.</p>
         <a className="button button-signal" href="/#featured">
-          Return to selected work →
+          Back to the work →
         </a>
       </div>
     </main>
