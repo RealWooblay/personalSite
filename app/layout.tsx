@@ -1,29 +1,61 @@
 import type { Metadata } from 'next';
 import './globals.css';
 
+const siteUrl = process.env.WOOBLAY_SITE_URL;
+const siteOrigin = siteUrl ? new URL(siteUrl) : null;
+const publicLaunch = Boolean(
+  siteOrigin && process.env.WOOBLAY_PUBLIC_SITE === 'true',
+);
+const socialImage = siteOrigin
+  ? new URL('/og.jpg', siteOrigin).toString()
+  : null;
+
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.WOOBLAY_SITE_URL ?? 'http://localhost:3000'),
+  ...(siteOrigin ? { metadataBase: siteOrigin } : {}),
+  ...(publicLaunch
+    ? { alternates: { canonical: siteOrigin?.toString() } }
+    : {}),
   title: {
     default: 'Wooblay — Systems, AI, Machines',
     template: '%s',
   },
-  description: 'Software and AI systems engineer building infrastructure, intelligent products, agent tooling, and physical systems.',
+  description:
+    'Software and AI systems engineer building infrastructure, intelligent products, agent tooling, and physical systems.',
   openGraph: {
     title: 'Wooblay — Systems, AI, Machines',
-    description: 'Software and AI systems engineer building infrastructure, intelligent products, agent tooling, and physical systems.',
+    description:
+      'Software and AI systems engineer building infrastructure, intelligent products, agent tooling, and physical systems.',
     type: 'website',
-    images: [{ url: '/og.png', width: 1200, height: 630, alt: 'Wooblay — Systems, AI, Machines' }],
+    ...(publicLaunch ? { url: siteOrigin?.toString() } : {}),
+    ...(socialImage
+      ? {
+          images: [
+            {
+              url: socialImage,
+              width: 1200,
+              height: 630,
+              alt: 'Wooblay — Systems, AI, Machines',
+            },
+          ],
+        }
+      : {}),
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Wooblay — Systems, AI, Machines',
-    description: 'Software and AI systems engineer building infrastructure, intelligent products, agent tooling, and physical systems.',
-    images: ['/og.png'],
+    description:
+      'Software and AI systems engineer building infrastructure, intelligent products, agent tooling, and physical systems.',
+    ...(socialImage ? { images: [socialImage] } : {}),
   },
-  robots: { index: true, follow: true },
+  icons: { icon: '/favicon.svg' },
+  robots: publicLaunch
+    ? { index: true, follow: true }
+    : { index: false, follow: false },
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <body>{children}</body>
