@@ -45,24 +45,26 @@ export const projects: Project[] = [
     slug: 'golazo',
     title: 'Golazo',
     kicker: 'Real time systems · Mobile · Solana',
-    status: 'Engineering prototype',
+    status: 'Production launch with real users',
     description:
-      'A live event-market engine built for the seconds when a match changes.',
+      'A live sports market taken from prototype to production and into real users’ hands.',
     why: 'Sports markets matter most at the moment the match changes.',
     built:
       'A React Native client, live feed watcher, parimutuel market engine and Solana settlement flow.',
     hardPart:
       'Keeping feed events, market state and settlement coherent while the game keeps moving.',
-    result: 'A complete path from match event to mobile market and payout.',
+    result:
+      'A production launch with real users and a complete path from match event to mobile market and payout.',
     repoLinks: [
       { label: 'Source', href: 'https://github.com/RealWooblay/golazo' },
     ],
     role: 'Lead contributor and maintainer on a two person project',
     signal:
-      'Match events become live markets, then resolve through the same mobile flow.',
+      'A real product launch where match events became live markets and resolved through the same mobile flow.',
     currentState:
-      'The core engine and simulated feed work. Native iOS and Anchor builds still need final verification.',
-    nextStep: 'Capture one complete feed → market → payout → settlement run.',
+      'The product reached production and real users. The former public deployment is now offline while the repository remains the product record.',
+    nextStep:
+      'Restore a public deployment and instrument the complete user journey.',
     relatedSlugs: ['prove-me-wrong', 'bubble-wars', 'ai-action-os'],
     tech: [
       'TypeScript',
@@ -133,7 +135,7 @@ export const projects: Project[] = [
     slug: 'bubble-wars',
     title: 'Bubble Wars',
     kicker: 'Telegram · Multiplayer · Ethereum Referral Protocol',
-    status: 'Bangkok finalist and four time sponsor prize winner',
+    status: 'ETHGlobal Bangkok winner with four sponsor prizes',
     description:
       'A Telegram multiplayer battler where referrals grow your faction and Pyth randomness resolves raids.',
     why: 'Bubble Wars turns an existing community and its referral graph into the game itself.',
@@ -141,7 +143,7 @@ export const projects: Project[] = [
       'Telegram onboarding, ENS identity, referral rewards, Pyth powered raids, indexed state and attested commentary.',
     hardPart:
       'Keeping identity, game state, contracts and live Telegram play in sync.',
-    result: 'ETHGlobal Bangkok finalist with four sponsor prizes.',
+    result: 'Four sponsor prize wins at ETHGlobal Bangkok.',
     repoLinks: [
       {
         label: 'ETHGlobal showcase',
@@ -161,7 +163,7 @@ export const projects: Project[] = [
       },
     ],
     role: 'Three person team. Built identity, backend flows, referral UI and the attested runtime.',
-    signal: 'Bangkok finalist with four sponsor prizes.',
+    signal: 'ETHGlobal Bangkok winner with four sponsor prizes.',
     currentState:
       'Hackathon prototype. Contracts are unaudited and deployment configuration is historical.',
     nextStep: 'Add gameplay capture and a clear contribution map.',

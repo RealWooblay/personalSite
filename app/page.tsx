@@ -93,56 +93,15 @@ export default function Home() {
       </header>
 
       <section className="portfolio-intro shell" id="top">
-        <div className="intro-identity">
-          <p className="overline">SOFTWARE / AI / ROBOTICS</p>
-          <h1>WOOBLAY</h1>
-        </div>
-        <div className="intro-summary">
-          <p>
-            NVIDIA Jetson perception, autonomous systems and real time products.
-          </p>
-          <div className="hero-links">
-            <a className="button button-signal" href="#featured">
-              Selected work ↓
-            </a>
-            <a
-              className="text-link"
-              href="https://github.com/RealWooblay"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Inspect the code ↗
-            </a>
-          </div>
-        </div>
-        <nav className="proof-index" aria-label="Portfolio highlights">
-          <a href="/work/wisp-lab">
-            <span>01</span>
-            <strong>WISP LAB</strong>
-            <small>14.8 ms TensorRT on Jetson</small>
-          </a>
-          <a href="/work/frontier-rover">
-            <span>02</span>
-            <strong>FRONTIER ROVER</strong>
-            <small>Embedded Linux verified</small>
-          </a>
-          <a href="/work/prove-me-wrong">
-            <span>03</span>
-            <strong>PROVE ME WRONG</strong>
-            <small>ETHGlobal Cannes 3rd</small>
-          </a>
-          <a href="/work/bubble-wars">
-            <span>04</span>
-            <strong>BUBBLE WARS</strong>
-            <small>Finalist and four prizes</small>
-          </a>
-        </nav>
+        <h1>
+          I’m Wooblay, a software and AI engineer building machines that can
+          see, understand and act in the real world.
+        </h1>
       </section>
 
       <section className="work-v3" id="featured">
-        <div className="shell compact-heading">
-          <span>SELECTED WORK</span>
-          <h2>Selected engineering.</h2>
+        <div className="shell selected-heading">
+          <h2>Selected work</h2>
         </div>
 
         <div className="shell featured-grid">
@@ -240,6 +199,58 @@ export default function Home() {
             </div>
           </article>
 
+          <article className="feature-card golazo-feature">
+            <div
+              className="golazo-scene"
+              aria-label="Golazo live market product capture"
+            >
+              <video
+                muted
+                controls
+                playsInline
+                preload="metadata"
+                poster="/media/golazo/screen-live-match.svg"
+                aria-label="Golazo live market product video"
+                width="1080"
+                height="1920"
+              >
+                <source
+                  src="/media/golazo/golazo_hero_vertical.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <img
+                src="/media/golazo/screen-payout.svg"
+                alt="Golazo payout screen"
+                width="1242"
+                height="2208"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div className="feature-copy">
+              <p className="project-meta">
+                <span>SHIPPED TO PRODUCTION</span>
+                <span>REAL USERS</span>
+              </p>
+              <h3>Golazo</h3>
+              <p>
+                A live sports market that went from prototype to production and
+                into real users’ hands.
+              </p>
+              <div className="feature-links">
+                <a href="/work/golazo">Project ↗</a>
+                <a
+                  href="https://github.com/RealWooblay/golazo"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  GitHub ↗
+                </a>
+              </div>
+            </div>
+          </article>
+
           <article className="feature-card pmw-feature">
             <div className="feature-copy">
               <p className="project-meta">
@@ -295,7 +306,7 @@ export default function Home() {
             />
             <div className="feature-copy">
               <p className="project-meta">
-                <span>BANGKOK FINALIST</span>
+                <span>ETHGLOBAL BANGKOK WINNER</span>
                 <span>4 SPONSOR PRIZES</span>
               </p>
               <h3>Bubble Wars</h3>
@@ -313,49 +324,6 @@ export default function Home() {
             </div>
           </article>
 
-          <article className="feature-card golazo-feature">
-            <div className="golazo-scene">
-              <video
-                muted
-                controls
-                playsInline
-                preload="none"
-                poster="/media/golazo/screen-live-match.svg"
-                aria-label="Golazo live market product capture"
-              >
-                <source
-                  src="/media/golazo/golazo_hero_vertical.mp4"
-                  type="video/mp4"
-                />
-              </video>
-              <img
-                src="/media/golazo/screen-payout.svg"
-                alt="Golazo payout screen"
-                width="1242"
-                height="2208"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <div className="feature-copy">
-              <p className="project-meta">
-                <span>LIVE SPORTS</span>
-                <span>MARKETS</span>
-              </p>
-              <h3>Golazo</h3>
-              <p>A market that moves with the match.</p>
-              <div className="feature-links">
-                <a href="/work/golazo">Project ↗</a>
-                <a
-                  href="https://github.com/RealWooblay/golazo"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  GitHub ↗
-                </a>
-              </div>
-            </div>
-          </article>
         </div>
       </section>
 

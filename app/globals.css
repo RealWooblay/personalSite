@@ -196,32 +196,20 @@ a {
 /* Homepage */
 
 .portfolio-intro {
-  display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.65fr);
-  gap: clamp(36px, 7vw, 100px);
-  align-items: end;
-  padding-top: clamp(74px, 9vw, 126px);
+  padding: clamp(76px, 9vw, 126px) 0 clamp(62px, 7vw, 96px);
 }
 
-.intro-identity h1 {
-  margin: 26px 0 0;
-  color: var(--paper);
-  font-size: clamp(82px, 13.8vw, 188px);
-  font-weight: 680;
-  line-height: 0.75;
-  letter-spacing: -0.085em;
-}
-
-.intro-summary > p {
-  max-width: 540px;
+.portfolio-intro h1 {
+  max-width: 1080px;
   margin: 0;
-  color: #d1d2cc;
-  font-size: clamp(21px, 2.3vw, 31px);
-  line-height: 1.24;
-  letter-spacing: -0.035em;
+  color: var(--paper);
+  font-size: clamp(46px, 5.7vw, 78px);
+  font-weight: 680;
+  line-height: 0.96;
+  letter-spacing: -0.055em;
+  text-wrap: balance;
 }
 
-.hero-links,
 .detail-actions {
   display: flex;
   flex-wrap: wrap;
@@ -230,64 +218,24 @@ a {
   margin-top: 32px;
 }
 
-.proof-index {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  margin-top: clamp(54px, 7vw, 92px);
-  border-top: 1px solid var(--line-dark);
-  border-left: 1px solid var(--line-dark);
-}
-
-.proof-index a {
-  min-width: 0;
-  min-height: 150px;
-  display: grid;
-  grid-template-columns: 28px 1fr;
-  align-content: space-between;
-  gap: 30px 12px;
-  padding: 20px;
-  border-right: 1px solid var(--line-dark);
-  border-bottom: 1px solid var(--line-dark);
-  transition:
-    background 180ms ease,
-    color 180ms ease;
-}
-
-.proof-index a:hover {
-  background: var(--signal);
-  color: var(--ink);
-}
-
-.proof-index span {
-  color: #858780;
-  font: 800 10px/1 var(--mono);
-}
-
-.proof-index strong {
-  min-width: 0;
-  overflow-wrap: anywhere;
-  font-size: clamp(20px, 2.2vw, 30px);
-  line-height: 0.95;
-  letter-spacing: -0.045em;
-}
-
-.proof-index small {
-  grid-column: 2;
-  color: #a6a8a1;
-  font: 750 10px/1.35 var(--mono);
-  text-transform: uppercase;
-}
-
-.proof-index a:hover span,
-.proof-index a:hover small {
-  color: #3f461f;
-}
-
 .work-v3 {
-  padding: clamp(88px, 9vw, 128px) 0;
+  padding: clamp(52px, 6vw, 80px) 0 clamp(88px, 9vw, 128px);
   background: var(--paper);
   color: var(--text);
+}
+
+.selected-heading {
+  margin-bottom: 32px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.selected-heading h2 {
+  margin: 0;
+  font-size: clamp(36px, 3.7vw, 52px);
+  font-weight: 680;
+  line-height: 1;
+  letter-spacing: -0.05em;
 }
 
 .compact-heading {
@@ -782,27 +730,33 @@ a {
 
 .golazo-feature {
   grid-column: 1 / -1;
-  min-height: 630px;
+  min-height: 700px;
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  grid-template-columns: minmax(0, 1.14fr) minmax(330px, 0.86fr);
   background: #d66e22;
   color: #201108;
 }
 
 .golazo-scene {
   position: relative;
-  min-height: 630px;
-  flex: 1;
+  min-height: 700px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.72fr);
+  align-items: end;
+  gap: clamp(14px, 3vw, 34px);
+  padding: 48px clamp(28px, 4vw, 54px);
+  overflow: hidden;
   perspective: 1000px;
 }
 
 .golazo-scene video {
-  position: absolute;
+  position: relative;
   z-index: 2;
-  top: 32px;
-  left: 17%;
-  width: min(34%, 210px);
-  max-height: 355px;
+  width: min(100%, 310px);
+  height: auto;
+  aspect-ratio: 9 / 16;
+  justify-self: center;
+  object-fit: cover;
   border: 7px solid #111315;
   background: #111315;
   box-shadow: 0 28px 70px rgba(67, 30, 7, 0.38);
@@ -810,11 +764,14 @@ a {
 }
 
 .golazo-scene img {
-  position: absolute;
-  right: 12%;
-  bottom: 25px;
-  width: 34%;
+  position: relative;
+  width: min(100%, 230px);
+  height: auto;
+  aspect-ratio: 1242 / 2208;
+  justify-self: start;
+  margin-bottom: 24px;
   padding: 6px;
+  object-fit: cover;
   background: #111315;
   box-shadow: 0 24px 65px rgba(67, 30, 7, 0.34);
   transform: rotateY(-9deg) rotateZ(4deg);
@@ -1691,18 +1648,6 @@ a {
 }
 
 @media (max-width: 1000px) {
-  .portfolio-intro {
-    grid-template-columns: 1fr;
-  }
-
-  .intro-summary {
-    max-width: 680px;
-  }
-
-  .proof-index {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .featured-grid {
     grid-template-columns: 1fr;
   }
@@ -1759,6 +1704,31 @@ a {
   }
 }
 
+@media (max-width: 1000px) {
+  .golazo-feature {
+    grid-column: auto;
+    min-height: auto;
+    display: flex;
+  }
+
+  .golazo-scene {
+    min-height: auto;
+    display: block;
+    padding: 28px 20px;
+  }
+
+  .golazo-scene video {
+    position: relative;
+    width: min(100%, 276px);
+    margin-inline: auto;
+    transform: none;
+  }
+
+  .golazo-scene img {
+    display: none;
+  }
+}
+
 @media (max-width: 760px) {
   .shell,
   .detail-shell {
@@ -1775,39 +1745,12 @@ a {
   }
 
   .portfolio-intro {
-    gap: 18px;
-    padding-top: 42px;
+    padding: 50px 0 46px;
   }
 
-  .intro-identity h1 {
-    margin-top: 18px;
-    font-size: clamp(62px, 20vw, 88px);
-    line-height: 0.8;
-  }
-
-  .intro-summary > p {
-    max-width: 340px;
-    font-size: 21px;
-  }
-
-  .proof-index {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    margin-top: 22px;
-  }
-
-  .proof-index a {
-    min-height: 92px;
-    gap: 10px 6px;
-    padding: 12px;
-  }
-
-  .proof-index strong {
-    font-size: 18px;
-  }
-
-  .proof-index small {
-    font-size: 9px;
-    line-height: 1.25;
+  .portfolio-intro h1 {
+    font-size: clamp(38px, 10.5vw, 46px);
+    line-height: 0.98;
   }
 
   .compact-heading,
@@ -1822,7 +1765,16 @@ a {
   }
 
   .work-v3 {
-    padding: 44px 0 64px;
+    padding: 36px 0 64px;
+  }
+
+  .selected-heading {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+  }
+
+  .selected-heading h2 {
+    font-size: 38px;
   }
 
   .featured-grid {
@@ -1834,8 +1786,7 @@ a {
   }
 
   .wisp-feature,
-  .rover-feature,
-  .golazo-feature {
+  .rover-feature {
     grid-column: auto;
     display: flex;
   }
@@ -1955,23 +1906,6 @@ a {
     position: relative;
     inset: auto;
     grid-column: 1 / -1;
-  }
-
-  .golazo-scene {
-    min-height: auto;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
-    padding: 24px;
-  }
-
-  .golazo-scene video,
-  .golazo-scene img {
-    position: relative;
-    inset: auto;
-    width: 100%;
-    max-height: 390px;
-    transform: none;
   }
 
   .feature-copy h3 {
@@ -2152,17 +2086,6 @@ a {
 
   .button {
     width: 100%;
-  }
-
-  .hero-links {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 16px;
-    margin-top: 22px;
-  }
-
-  .hero-links .button {
-    width: auto;
   }
 
   .feature-copy {
