@@ -257,7 +257,7 @@ export default function Home() {
               <div className="wisp-layer vision-layer">
                 <span>NVIDIA JETSON</span>
                 <strong>14.8 MS</strong>
-                <small>ISOLATED TENSORRT FP16</small>
+                <small>FP16 · ISOLATED</small>
               </div>
               <div className="wisp-layer tracking-layer">
                 <span>YOLO POSE · 8.6 FPS</span>

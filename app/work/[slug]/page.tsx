@@ -72,7 +72,7 @@ function WispScene() {
         <div className="tech-plane tech-plane-runtime">
           <span>NVIDIA JETSON</span>
           <strong>14.8 MS</strong>
-          <small>ISOLATED TENSORRT FP16</small>
+          <small>FP16 · ISOLATED</small>
         </div>
         <div className="tech-plane tech-plane-state">
           <span>YOLO POSE · 8.6 FPS</span>
