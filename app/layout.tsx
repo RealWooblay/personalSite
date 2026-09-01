@@ -16,15 +16,13 @@ export const metadata: Metadata = {
     ? { alternates: { canonical: siteOrigin?.toString() } }
     : {}),
   title: {
-    default: 'Wooblay — Systems, AI, Machines',
+    default: 'Wooblay | Systems, AI, Machines',
     template: '%s',
   },
-  description:
-    'Software and AI systems engineer building infrastructure, intelligent products, agent tooling, and physical systems.',
+  description: 'Systems, agents, multiplayer and edge vision by Wooblay.',
   openGraph: {
-    title: 'Wooblay — Systems, AI, Machines',
-    description:
-      'Software and AI systems engineer building infrastructure, intelligent products, agent tooling, and physical systems.',
+    title: 'Wooblay | Systems, AI, Machines',
+    description: 'Systems, agents, multiplayer and edge vision by Wooblay.',
     type: 'website',
     ...(publicLaunch ? { url: siteOrigin?.toString() } : {}),
     ...(socialImage
@@ -34,7 +32,7 @@ export const metadata: Metadata = {
               url: socialImage,
               width: 1200,
               height: 630,
-              alt: 'Wooblay — Systems, AI, Machines',
+              alt: 'Wooblay | Systems, AI, Machines',
             },
           ],
         }
@@ -42,9 +40,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Wooblay — Systems, AI, Machines',
-    description:
-      'Software and AI systems engineer building infrastructure, intelligent products, agent tooling, and physical systems.',
+    title: 'Wooblay | Systems, AI, Machines',
+    description: 'Systems, agents, multiplayer and edge vision by Wooblay.',
     ...(socialImage ? { images: [socialImage] } : {}),
   },
   icons: { icon: '/favicon.svg' },

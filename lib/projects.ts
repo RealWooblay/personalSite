@@ -21,7 +21,7 @@ export type Project = {
   result: string;
   repoLinks: { label: string; href: string }[];
   role: string;
-  proof: string;
+  signal: string;
   currentState: string;
   nextStep: string;
   relatedSlugs: ProjectSlug[];
@@ -44,26 +44,24 @@ export const projects: Project[] = [
     slug: 'golazo',
     title: 'Golazo',
     kicker: 'Real-time systems · Mobile · Solana',
-    status: 'Working engineering prototype',
+    status: 'Engineering prototype',
     description:
       'A live event-market engine built for the seconds when a match changes.',
-    why: 'Sports markets become most interesting at the exact moment the underlying event moves. Golazo tests what a product looks like when detection, pricing, participation, and payout all happen in that window.',
+    why: 'Sports markets matter most at the moment the match changes.',
     built:
-      'A React Native client, AI-assisted feed watcher, tested parimutuel core, live market state, and Solana settlement flow.',
+      'A React Native client, live feed watcher, parimutuel market engine and Solana settlement flow.',
     hardPart:
-      'Keeping event detection, market state, pricing, and settlement coherent while the game keeps moving.',
-    result:
-      'A complete mobile, feed, market, and payout code path with 12 passing core tests and real product capture.',
+      'Keeping feed events, market state and settlement coherent while the game keeps moving.',
+    result: 'A complete path from match event to mobile market and payout.',
     repoLinks: [
       { label: 'Source', href: 'https://github.com/RealWooblay/golazo' },
     ],
-    role: 'Lead repository contributor and maintainer on a two-contributor project',
-    proof:
-      '12 passing core tests, strict typecheck, a complete mobile/feed/market code path, and real product capture.',
+    role: 'Lead contributor and maintainer on a two person project',
+    signal:
+      'Match events become live markets, then resolve through the same mobile flow.',
     currentState:
-      'The core engine and simulated feed are verified. iOS and Anchor builds still require their native toolchains; live counterparty-fill automation was disabled as the project wound down.',
-    nextStep:
-      'Verify the iOS and Anchor builds and record one complete live feed → market → payout → settlement run.',
+      'The core engine and simulated feed work. Native iOS and Anchor builds still need final verification.',
+    nextStep: 'Capture one complete feed → market → payout → settlement run.',
     relatedSlugs: ['prove-me-wrong', 'bubble-wars', 'ai-action-os'],
     tech: [
       'TypeScript',
@@ -94,10 +92,10 @@ export const projects: Project[] = [
     slug: 'wooblay-ai',
     title: 'Wooblay AI',
     kicker: 'Agent security · Policy · Infrastructure',
-    status: 'Implemented systems prototype',
+    status: 'Systems prototype',
     description:
       'An execution firewall between autonomous agents and the systems they can change.',
-    why: 'Agents become useful when they can act. That same step creates the real engineering problem: permissions, credentials, approval, and proof of what happened.',
+    why: 'Useful agents need permission to act without receiving unlimited access.',
     built:
       'Policy gates, isolated credentials, explicit human approval, controlled execution, and tamper-evident receipts.',
     hardPart:
@@ -107,13 +105,13 @@ export const projects: Project[] = [
     repoLinks: [
       { label: 'Source', href: 'https://github.com/RealWooblay/WooblayAI' },
     ],
-    role: 'Solo repository author and builder',
-    proof:
-      'Policy engine, encrypted vault, approval queue, isolated execution specs, and an ed25519/SHA-256 receipt chain.',
+    role: 'Solo builder',
+    signal:
+      'Intent, policy, approval, execution and receipt form one visible chain.',
     currentState:
-      'The dashboard, Gate API, adapters, runtime containers, and Terraform are implemented and documented; there is no public end-to-end demo or independent production verification.',
+      'Dashboard, Gate API, adapters, runtime containers and infrastructure are implemented.',
     nextStep:
-      'Publish a reproducible request → policy → approval → isolated execution → signed receipt walkthrough with test results.',
+      'Publish one request → approval → execution → receipt walkthrough.',
     relatedSlugs: ['ai-action-os', 'minitown-ai', 'wisp-lab'],
     tech: [
       'TypeScript',
@@ -133,46 +131,54 @@ export const projects: Project[] = [
   {
     slug: 'bubble-wars',
     title: 'Bubble Wars',
-    kicker: 'Hackathon winner · Telegram · On-chain game',
-    status: 'Completed hackathon-winning team prototype',
+    kicker: 'Telegram · Multiplayer · Ethereum Referral Protocol',
+    status: 'Bangkok finalist and four time sponsor prize winner',
     description:
-      'A collaborative strategy game that turns verified Telegram communities into on-chain factions.',
-    why: 'Most on-chain games begin with wallets and mechanics. Bubble Wars began with an existing social graph and made identity, collaboration, raids, and state part of one playable loop.',
+      'A Telegram multiplayer battler where referrals grow your faction and Pyth randomness resolves raids.',
+    why: 'Bubble Wars turns an existing community and its referral graph into the game itself.',
     built:
-      'Verified user identity, referral and faction mechanics, randomised raids, indexed contract state, and a trusted AI runtime inside a Telegram-native flow.',
+      'Telegram onboarding, ENS identity, referral rewards, Pyth powered raids, indexed state and attested commentary.',
     hardPart:
-      'Coordinating social identity, probabilistic game logic, cross-service state, and on-chain settlement inside a hackathon clock.',
-    result:
-      'A working project, an ETHGlobal Bangkok prize, and a live stage presentation.',
+      'Keeping identity, game state, contracts and live Telegram play in sync.',
+    result: 'ETHGlobal Bangkok finalist with four sponsor prizes.',
     repoLinks: [
-      { label: 'Source', href: 'https://github.com/RealWooblay/bubblewars' },
+      {
+        label: 'ETHGlobal showcase',
+        href: 'https://ethglobal.com/showcase/bubblewars-rgjpk',
+      },
+      {
+        label: 'Team source',
+        href: 'https://github.com/BubbleWars2024/bubblewars',
+      },
+      {
+        label: 'Wooblay fork',
+        href: 'https://github.com/RealWooblay/bubblewars',
+      },
       {
         label: 'Stage presentation',
         href: 'https://www.youtube.com/watch?v=uPW20IUHC1Y&t=4902s',
       },
     ],
-    role: 'Co-builder on a three-person team · trusted AI runtime, ENS identity, backend/user flows, referral integration, and front-end game behaviour',
-    proof:
-      'ETHGlobal Bangkok winner with signed Telegram identity, referral contracts, Pyth-randomised raids, indexed state, and an attested AI runtime.',
+    role: 'Three person team. Built identity, backend flows, referral UI and the attested runtime.',
+    signal: 'Bangkok finalist with four sponsor prizes.',
     currentState:
-      'Published as a personal fork of the team repository; contracts are unaudited and deployment configuration is historical.',
-    nextStep:
-      'Add gameplay capture and a contribution map; contract review, replay controls, observability, and reproducible dependencies are prerequisites to revival.',
+      'Hackathon prototype. Contracts are unaudited and deployment configuration is historical.',
+    nextStep: 'Add gameplay capture and a clear contribution map.',
     relatedSlugs: ['minitown-ai', 'bender', 'prove-me-wrong'],
-    tech: ['TypeScript', 'Telegram', 'Solidity', 'Chainlink', 'AI runtime'],
+    tech: ['TypeScript', 'Telegram', 'Solidity', 'Pyth', 'Phala', 'The Graph'],
     architecture: [
       'TELEGRAM',
       'VERIFIED PLAYER',
       'GAME ENGINE',
       'INDEXED STATE',
-      'CONTRACTS',
+      'PYTH RAID',
     ],
     accent: '#ff3c69',
     media: {
       type: 'image',
       src: '/media/bubblewars/banner.webp',
       alt: 'Bubble Wars project banner',
-      caption: 'Project artwork · repository source',
+      caption: 'Project artwork · team repository',
       width: 1792,
       height: 1024,
     },
@@ -181,26 +187,26 @@ export const projects: Project[] = [
     slug: 'meridian',
     title: 'MERIDIAN',
     kicker: 'Hackathon winner · Genomics · Governed AI',
-    status: 'Completed hackathon prototype with undeployed cloud components',
+    status: 'Hackathon winner and systems prototype',
     description:
       'A privacy-first pharmacogenomics system designed to keep medical AI inside explicit evidence and governance boundaries.',
-    why: 'Genomic guidance is a bad place for unconstrained generation. MERIDIAN asks how useful AI can remain when provenance, privacy, and clinical boundaries are first-class system requirements.',
+    why: 'Genomic guidance needs evidence, provenance and clear limits.',
     built:
-      'A governed genome-processing flow, evidence-bound guidance, constrained medical AI, and an interface that exposes sources instead of hiding them.',
+      'A governed genome pipeline, evidence retrieval, constrained model and source first interface.',
     hardPart:
       'Turning sensitive biological input into useful guidance without allowing the model to invent clinical certainty.',
     result:
-      'A governed hackathon prototype with deterministic source mapping, explicit failure paths, and pinned PharmCAT examples.',
+      'A source bound pharmacogenomics prototype with explicit failure paths.',
     repoLinks: [
       { label: 'Source', href: 'https://github.com/RealWooblay/medhack' },
     ],
-    role: 'Lead repository contributor on a three-person hackathon team · exact responsibility split is not documented',
-    proof:
-      'Pinned official PharmCAT examples and digests, deterministic source mapping, explicit failure paths, and governed genome processing.',
+    role: 'Lead contributor on a three person hackathon team',
+    signal:
+      'Genomic input maps to sourced guidance through a governed pipeline.',
     currentState:
-      'The app, private control API, PharmCAT worker, and deterministic clinical engine are implemented; Cloud Run, the IAM-protected model endpoint, and one planned evidence release are incomplete.',
+      'The app, control API, PharmCAT worker and deterministic clinical engine are implemented.',
     nextStep:
-      'Deploy the private processing path and protected model endpoint, then validate with de-identified test data before making any clinical-use claim.',
+      'Deploy the private processing path and validate it with deidentified data.',
     relatedSlugs: ['wooblay-ai', 'ai-action-os', 'bubble-wars'],
     tech: ['TypeScript', 'Python', 'Genomics', 'Retrieval', 'Guardrailed AI'],
     architecture: [
@@ -216,26 +222,26 @@ export const projects: Project[] = [
     slug: 'wisp-lab',
     title: 'WISP Lab',
     kicker: 'Jetson · Perception · Spatial computing',
-    status: 'Active hardware/software prototype',
+    status: 'Active lab prototype',
     description:
-      'An embedded spatial computer that uses perception, projection, and interaction to put useful software onto physical surfaces.',
-    why: 'A screen is not the only place software can live. WISP explores a local device that can understand a room, choose a surface, project an interface, and correct itself through camera feedback.',
+      'A Jetson vision system that turns physical surfaces into interfaces.',
+    why: 'Software should be able to understand a room and appear on the surface where it is useful.',
     built:
       'A Jetson perception service, head-tracked renderer, hand interaction, planner boundary, and four-corner projection calibration.',
     hardPart:
       'Keeping perception latency, head geometry, interaction state, and projector alignment honest enough to survive outside a screen demo.',
     result:
-      'YOLOv8n detection at 31.6 FPS with TensorRT FP16, a working head/hand state stream, and a renderer ready for physical projector calibration.',
+      '31.6 FPS TensorRT detection with head, hand and calibration state flowing into the renderer.',
     repoLinks: [
       { label: 'Source', href: 'https://github.com/RealWooblay/wisp-lab' },
     ],
-    role: 'Solo builder and maintainer',
-    proof:
-      '31.6 FPS YOLOv8n TensorRT FP16 detection, approximately 8.6 FPS pose, and implemented head/hand streaming and four-corner calibration.',
+    role: 'Solo builder',
+    signal:
+      '31.6 FPS TensorRT detection on Jetson, plus head, hand and calibration state.',
     currentState:
-      'The Jetson and camera runtime is operational; final projector-camera calibration, camera intrinsics, and end-to-end motion-latency measurement remain.',
+      'Jetson and camera runtime are operational. Physical projector calibration remains.',
     nextStep:
-      'Calibrate camera and projector on a physical surface, export the pose model to TensorRT, and measure end-to-end motion latency.',
+      'Calibrate the physical projector and measure end to end latency.',
     relatedSlugs: ['minitown-ai', 'ai-action-os', 'bender'],
     tech: [
       'NVIDIA Jetson',
@@ -253,23 +259,15 @@ export const projects: Project[] = [
       'PROJECTED SURFACE',
     ],
     accent: '#efb65d',
-    media: {
-      type: 'image',
-      src: '/media/wisp/wisp-hero-real-1600.webp',
-      alt: 'WISP spatial computing device concept',
-      caption: 'Concept render · runtime benchmarked on Jetson',
-      width: 1600,
-      height: 800,
-    },
   },
   {
     slug: 'bender',
     title: 'Bender',
     kicker: 'Unity 6 · Multiplayer · Dedicated sessions',
-    status: 'Completed multiplayer systems prototype',
+    status: 'Multiplayer systems prototype',
     description:
       'A Unity multiplayer prototype exploring lobby matchmaking and live handoff into dedicated game sessions.',
-    why: 'Multiplayer architecture becomes real when a lobby must allocate a session, start it, and move connected clients without hiding the lifecycle.',
+    why: 'A multiplayer lobby must create a real session and move clients into it.',
     built:
       'A FishNet lobby flow, headless dedicated session process, dynamic port allocation, session lifecycle, and TargetRpc client handoff.',
     hardPart:
@@ -279,13 +277,12 @@ export const projects: Project[] = [
     repoLinks: [
       { label: 'Source', href: 'https://github.com/RealWooblay/bender' },
     ],
-    role: 'Collaborative Unity project · public history credits TheRealKraken with the substantive multiplayer/session implementation; Wooblay initialized and documented the repository',
-    proof:
-      'Unity 6/FishNet source implements a stable lobby, headless session process, dynamic ports, and TargetRpc handoff.',
-    currentState:
-      'The networking architecture exists as a focused prototype; it is not a finished game and has no public gameplay or handoff capture.',
+    role: 'Collaborative project. Public history credits TheRealKraken with the multiplayer implementation.',
+    signal:
+      'Lobby creates a dedicated process, allocates a port and hands the client over.',
+    currentState: 'The networking architecture exists as a focused prototype.',
     nextStep:
-      'Confirm and document Wooblay’s exact engineering contribution, then add a short lobby-to-session capture and reproducible Unity build notes.',
+      'Document the exact contribution split and add a lobby to session capture.',
     relatedSlugs: ['minitown-ai', 'bubble-wars', 'golazo'],
     tech: ['Unity 6', 'C#', 'FishNet', 'Dedicated servers'],
     architecture: [
@@ -301,10 +298,10 @@ export const projects: Project[] = [
     slug: 'minitown-ai',
     title: 'MiniTown AI',
     kicker: 'Unity · Agent world model · AI NPCs',
-    status: 'Completed two-repository integration prototype',
+    status: 'Two repository integration prototype',
     description:
       'A small Unity world whose lore, events, dialogue, and NPC actions are generated by a stateful agent service.',
-    why: 'An AI NPC is more interesting when it changes the world instead of only producing a line of dialogue.',
+    why: 'An NPC becomes useful when it can change the world, not only produce dialogue.',
     built:
       'A Unity client that sends world state and applies structured events, plus a Flask/LangGraph backend for lore, decisions, dialogue, and blockchain-aware tools.',
     hardPart:
@@ -321,13 +318,12 @@ export const projects: Project[] = [
         href: 'https://github.com/RealWooblay/ai-npcs-cdp',
       },
     ],
-    role: 'Solo builder of the Unity integration and companion agent service',
-    proof:
-      'Unity serializes world state; the agent service returns lore, dialogue, and event data; the client validates known entities before NPC movement.',
+    role: 'Solo builder of the Unity client and companion agent service',
+    signal:
+      'World state goes to the agent service. Structured events return to Unity.',
     currentState:
-      'The complete local game-to-agent loop is implemented across two repositories; both describe the work as completed and not under active development.',
-    nextStep:
-      'Add gameplay capture and enforce typed model-output schemas and per-action authorization before any networked deployment.',
+      'The local game to agent loop is complete across two repositories.',
+    nextStep: 'Add gameplay capture and typed action schemas.',
     relatedSlugs: ['bender', 'ai-action-os', 'wisp-lab'],
     tech: ['Unity', 'C#', 'Python', 'Flask', 'LangGraph', 'CDP AgentKit'],
     architecture: [
@@ -343,10 +339,10 @@ export const projects: Project[] = [
     slug: 'ai-action-os',
     title: 'AI Action OS',
     kicker: 'Generative UI · Agents · Approval',
-    status: 'Working v0 systems prototype',
+    status: 'Systems prototype',
     description:
       'A generative interface where conductor, auditor, and executor agents turn intent into visible, approval-gated actions.',
-    why: 'Agent interfaces should expose plans, permissions, and consequences—not hide them behind a typing indicator.',
+    why: 'Agent interfaces should expose plans, permissions and consequences.',
     built:
       'A multi-agent control flow, generated interface layer, approval-gated tools, and an event-sourced SQLite execution ledger.',
     hardPart:
@@ -356,13 +352,12 @@ export const projects: Project[] = [
     repoLinks: [
       { label: 'Source', href: 'https://github.com/RealWooblay/ai-ui' },
     ],
-    role: 'Solo builder and maintainer',
-    proof:
-      'Live-generated TSX, conductor/auditor/executor flow, explicit tool approval, an event-sourced SQLite ledger, and a repository test suite.',
+    role: 'Solo builder',
+    signal: 'Plan, audit, approval and execution stay in one visible ledger.',
     currentState:
-      'The local v0 has four tools and API watching; generated-code containment and outbound HTTP controls are explicitly not hardened production boundaries.',
+      'The local v0 has four tools and API watching. Generated code isolation is not yet hardened.',
     nextStep:
-      'Publish a short working demo and test result, then isolate generated UI by origin or worker and enforce DNS/IP destination controls.',
+      'Publish a short demo, then isolate generated UI and outbound requests.',
     relatedSlugs: ['wooblay-ai', 'minitown-ai', 'meridian'],
     tech: [
       'TypeScript',
@@ -385,29 +380,34 @@ export const projects: Project[] = [
     slug: 'prove-me-wrong',
     title: 'Prove Me Wrong',
     kicker: 'Browser extension · Resolution agents · Solidity',
-    status: 'Completed hackathon-era cross-stack prototype',
+    status: 'Flare Main Track 3rd place at ETHGlobal Cannes',
     description:
-      'A prediction-market experiment that lets claims emerge from the browser and resolves them through evidence-seeking agents.',
-    why: 'Predictions are usually separated from the place the claim was made. This prototype closes that gap and makes evidence collection part of settlement.',
+      'Turn an X post into a YES or NO market, then settle it with evidence on Flare.',
+    why: 'The claim, market and evidence should live in one continuous flow.',
     built:
-      'A browser overlay, product interface, FastAPI resolution agents, evidence flow, and Solidity settlement contracts.',
+      'An inline browser market, FastAPI resolver agents, evidence flow and Solidity settlement contracts.',
     hardPart:
       'Representing ambiguous real-world claims precisely enough for both an evidence agent and a contract outcome.',
     result:
-      'A cross-stack prototype spanning capture, market UX, agent resolution, and settlement.',
+      'A cross stack prototype spanning claim capture, market UX, resolution and settlement.',
     repoLinks: [
+      {
+        label: 'ETHGlobal showcase',
+        href: 'https://ethglobal.com/showcase/prove-me-wrong-2j4ks',
+      },
+      {
+        label: 'Live prototype',
+        href: 'https://prove-me-wrong-theta.vercel.app/',
+      },
       {
         label: 'Source',
         href: 'https://github.com/RealWooblay/prove-me-wrong',
       },
     ],
-    role: 'Co-builder on a two-person project · browser overlay/extension and AI generator/resolver work; collaborator made substantial contract contributions',
-    proof:
-      'A working browser overlay, FastAPI generator/resolver services, explicit YES/NO/INSUFFICIENT_EVIDENCE states, and Solidity contracts.',
-    currentState:
-      'The integration exists as an engineering prototype, not a production financial product; deployed settlement status is not documented.',
-    nextStep:
-      'Record the claim → market → evidence → settlement flow and harden administrative and contract paths before any live deployment.',
+    role: 'Two person team. Built the browser overlay and resolver. Collaborator made major contract contributions.',
+    signal: 'Flare Main Track 3rd place at ETHGlobal Cannes.',
+    currentState: 'Engineering prototype, not a production financial product.',
+    nextStep: 'Harden contract administration before any live deployment.',
     relatedSlugs: ['golazo', 'wooblay-ai', 'meridian'],
     tech: ['TypeScript', 'Browser extensions', 'FastAPI', 'Agents', 'Solidity'],
     architecture: [
