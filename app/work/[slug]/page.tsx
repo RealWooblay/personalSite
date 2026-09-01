@@ -45,7 +45,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
                 url: socialImage,
                 width: 1200,
                 height: 630,
-                alt: 'Wooblay | Systems, AI, Machines',
+                alt: 'Wooblay | Software, AI, Robotics',
               },
             ],
           }

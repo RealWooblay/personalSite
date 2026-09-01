@@ -49,11 +49,6 @@ function SystemTile({
 
 const moreWork = [
   [
-    'Frontier Rover',
-    'Safety first robotics',
-    'https://github.com/RealWooblay/frontier-rover',
-  ],
-  [
     'Skill Tree',
     'Learning systems',
     'https://github.com/RealWooblay/skill-tree',
@@ -84,8 +79,8 @@ export default function Home() {
             WOOBLAY<span>●</span>
           </a>
           <nav aria-label="Primary navigation">
-            <a href="#featured">Selected work</a>
-            <a href="#systems">Systems</a>
+            <a href="#featured">Work</a>
+            <a href="#systems">Archive</a>
             <a
               href="https://github.com/RealWooblay"
               target="_blank"
@@ -97,21 +92,18 @@ export default function Home() {
         </div>
       </header>
 
-      <section className="hero-v3 shell" id="top">
-        <div className="hero-copy-v3">
-          <p className="overline">NVIDIA JETSON / AGENTS / PHYSICAL SYSTEMS</p>
-          <h1>
-            Systems that
-            <br />
-            <em>move.</em>
-          </h1>
+      <section className="portfolio-intro shell" id="top">
+        <div className="intro-identity">
+          <p className="overline">SOFTWARE / AI / ROBOTICS</p>
+          <h1>WOOBLAY</h1>
+        </div>
+        <div className="intro-summary">
           <p>
-            On device vision, spatial tracking, autonomous agents and products
-            in motion.
+            NVIDIA Jetson perception, autonomous systems and real time products.
           </p>
           <div className="hero-links">
             <a className="button button-signal" href="#featured">
-              See the work ↓
+              Selected work ↓
             </a>
             <a
               className="text-link"
@@ -123,36 +115,131 @@ export default function Home() {
             </a>
           </div>
         </div>
-
-        <aside className="hero-system" aria-label="How Wooblay systems work">
-          <span className="scene-kicker">PERCEPTION TO ACTION</span>
-          <ol className="hero-system-stack">
-            <li>
-              <span>01</span>
-              <strong>SENSE</strong>
-              <small>camera · detection · pose</small>
-            </li>
-            <li>
-              <span>02</span>
-              <strong>DECIDE</strong>
-              <small>state · policy · intent</small>
-            </li>
-            <li>
-              <span>03</span>
-              <strong>ACT</strong>
-              <small>projection · agents · machines</small>
-            </li>
-          </ol>
-        </aside>
+        <nav className="proof-index" aria-label="Portfolio highlights">
+          <a href="/work/wisp-lab">
+            <span>01</span>
+            <strong>WISP LAB</strong>
+            <small>14.8 ms TensorRT on Jetson</small>
+          </a>
+          <a href="/work/frontier-rover">
+            <span>02</span>
+            <strong>FRONTIER ROVER</strong>
+            <small>Embedded Linux verified</small>
+          </a>
+          <a href="/work/prove-me-wrong">
+            <span>03</span>
+            <strong>PROVE ME WRONG</strong>
+            <small>ETHGlobal Cannes 3rd</small>
+          </a>
+          <a href="/work/bubble-wars">
+            <span>04</span>
+            <strong>BUBBLE WARS</strong>
+            <small>Finalist and four prizes</small>
+          </a>
+        </nav>
       </section>
 
       <section className="work-v3" id="featured">
         <div className="shell compact-heading">
           <span>SELECTED WORK</span>
-          <h2>The strongest builds.</h2>
+          <h2>Selected engineering.</h2>
         </div>
 
         <div className="shell featured-grid">
+          <article className="feature-card wisp-feature">
+            <div className="feature-copy">
+              <p className="project-meta">
+                <span>NVIDIA JETSON</span>
+                <span>ORIN NANO SUPER</span>
+              </p>
+              <h3>WISP Lab</h3>
+              <p>
+                A Jetson vision stack for turning physical surfaces into
+                responsive interfaces.
+              </p>
+              <div className="feature-links">
+                <a href="/work/wisp-lab">Project ↗</a>
+                <a
+                  href="https://github.com/RealWooblay/wisp-lab"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  GitHub ↗
+                </a>
+              </div>
+            </div>
+            <div className="wisp-scene" aria-label="WISP measured lab pipeline">
+              <div className="wisp-grid-plane" />
+              <div className="wisp-layer camera-layer">
+                <span>CSI INPUT</span>
+                <strong>IMX708</strong>
+              </div>
+              <div className="wisp-layer vision-layer">
+                <span>NVIDIA JETSON</span>
+                <strong>14.8 MS</strong>
+                <small>FP16 · ISOLATED</small>
+              </div>
+              <div className="wisp-layer tracking-layer">
+                <span>YOLO POSE · 8.6 FPS</span>
+                <strong>HEAD + WRISTS</strong>
+              </div>
+              <div className="wisp-layer surface-layer">
+                <span>SPATIAL OUTPUT</span>
+                <strong>OFF AXIS + 4 POINT</strong>
+              </div>
+            </div>
+          </article>
+
+          <article className="feature-card rover-feature">
+            <div className="feature-copy">
+              <p className="project-meta">
+                <span>ROBOTICS</span>
+                <span>ACTIVE BUILD</span>
+              </p>
+              <h3>Frontier Rover</h3>
+              <p>
+                A safety first 4WD robotics platform with a verified Raspberry
+                Pi control layer and staged NVIDIA Jetson perception.
+              </p>
+              <div className="feature-links">
+                <a href="/work/frontier-rover">Project ↗</a>
+                <a
+                  href="https://github.com/RealWooblay/frontier-rover"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  GitHub ↗
+                </a>
+              </div>
+            </div>
+            <div
+              className="rover-scene"
+              aria-label="Frontier Rover verified and planned system layers"
+            >
+              <div className="rover-grid-plane" />
+              <div className="rover-layer rover-jetson">
+                <span>PLANNED PERCEPTION</span>
+                <strong>JETSON ORIN NANO SUPER</strong>
+                <small>VISION · MAPPING · PLANNING</small>
+              </div>
+              <div className="rover-layer rover-pi">
+                <span>VERIFIED CONTROL LAYER</span>
+                <strong>RASPBERRY PI 4</strong>
+                <small>ARM64 · NETWORK · CLEAN SHUTDOWN</small>
+              </div>
+              <div className="rover-layer rover-io">
+                <span>STAGED HARDWARE</span>
+                <strong>MOTORS + SENSORS</strong>
+                <small>BOUNDED COMMANDS · WATCHDOG</small>
+              </div>
+              <ol className="rover-milestones" aria-label="Rover milestones">
+                <li className="is-verified">M0 · VERIFIED</li>
+                <li>M1 · POWER</li>
+                <li>M2 · MOTION</li>
+              </ol>
+            </div>
+          </article>
+
           <article className="feature-card pmw-feature">
             <div className="feature-copy">
               <p className="project-meta">
@@ -222,50 +309,6 @@ export default function Home() {
                 >
                   ETHGlobal ↗
                 </a>
-              </div>
-            </div>
-          </article>
-
-          <article className="feature-card wisp-feature">
-            <div className="feature-copy">
-              <p className="project-meta">
-                <span>NVIDIA JETSON</span>
-                <span>ORIN NANO SUPER</span>
-              </p>
-              <h3>Vision that turns a wall into an interface.</h3>
-              <p>
-                Head and wrist tracking, off axis rendering and projector ready
-                mapping.
-              </p>
-              <div className="feature-links">
-                <a href="/work/wisp-lab">Project ↗</a>
-                <a
-                  href="https://github.com/RealWooblay/wisp-lab"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  GitHub ↗
-                </a>
-              </div>
-            </div>
-            <div className="wisp-scene" aria-label="WISP measured lab pipeline">
-              <div className="wisp-grid-plane" />
-              <div className="wisp-layer camera-layer">
-                <span>CSI INPUT</span>
-                <strong>IMX708</strong>
-              </div>
-              <div className="wisp-layer vision-layer">
-                <span>NVIDIA JETSON</span>
-                <strong>14.8 MS</strong>
-                <small>FP16 · ISOLATED</small>
-              </div>
-              <div className="wisp-layer tracking-layer">
-                <span>YOLO POSE · 8.6 FPS</span>
-                <strong>HEAD + WRISTS</strong>
-              </div>
-              <div className="wisp-layer surface-layer">
-                <span>SPATIAL OUTPUT</span>
-                <strong>OFF AXIS + 4 POINT</strong>
               </div>
             </div>
           </article>
@@ -373,10 +416,10 @@ export default function Home() {
         <div className="shell viem-grid">
           <div className="viem-statement">
             <span>OPEN SOURCE / VIEM</span>
-            <h2>I put XR One on viem.</h2>
+            <h2>XR One, shipped through viem.</h2>
             <p>
-              Three merged PRs shipped testnet and mainnet support into the
-              TypeScript interface for Ethereum.
+              Three merged PRs added testnet and mainnet support to a library
+              with 22M+ monthly npm downloads.
             </p>
           </div>
           <a

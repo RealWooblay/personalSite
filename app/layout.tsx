@@ -16,13 +16,13 @@ export const metadata: Metadata = {
     ? { alternates: { canonical: siteOrigin?.toString() } }
     : {}),
   title: {
-    default: 'Wooblay | Systems, AI, Machines',
+    default: 'Wooblay | Software, AI, Robotics',
     template: '%s',
   },
   description:
     'NVIDIA Jetson vision, agent systems and interactive products by Wooblay.',
   openGraph: {
-    title: 'Wooblay | Systems, AI, Machines',
+    title: 'Wooblay | Software, AI, Robotics',
     description:
       'NVIDIA Jetson vision, agent systems and interactive products by Wooblay.',
     type: 'website',
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Wooblay | Systems, AI, Machines',
+    title: 'Wooblay | Software, AI, Robotics',
     description:
       'NVIDIA Jetson vision, agent systems and interactive products by Wooblay.',
     ...(socialImage ? { images: [socialImage] } : {}),

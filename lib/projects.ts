@@ -4,6 +4,7 @@ export type ProjectSlug =
   | 'bubble-wars'
   | 'meridian'
   | 'wisp-lab'
+  | 'frontier-rover'
   | 'bender'
   | 'minitown-ai'
   | 'ai-action-os'
@@ -43,7 +44,7 @@ export const projects: Project[] = [
   {
     slug: 'golazo',
     title: 'Golazo',
-    kicker: 'Real-time systems · Mobile · Solana',
+    kicker: 'Real time systems · Mobile · Solana',
     status: 'Engineering prototype',
     description:
       'A live event-market engine built for the seconds when a match changes.',
@@ -262,6 +263,50 @@ export const projects: Project[] = [
       '4 POINT MAPPING',
     ],
     accent: '#efb65d',
+  },
+  {
+    slug: 'frontier-rover',
+    title: 'Frontier Rover',
+    kicker: 'NVIDIA Jetson · Raspberry Pi · Safety architecture',
+    status: 'Active robotics build',
+    description:
+      'A safety first 4WD robotics platform built one measured subsystem at a time.',
+    why: 'Autonomy starts with a control foundation that fails safely.',
+    built:
+      'A Raspberry Pi 4 running Ubuntu Server ARM64 with verified networking, system health checks and a clean shutdown path.',
+    hardPart:
+      'Separating verified hardware from planned autonomy while designing bounded commands, stale command stops and a split compute architecture.',
+    result:
+      'The embedded Linux control layer is live and verified before motor power, sensing and autonomy are introduced.',
+    repoLinks: [
+      {
+        label: 'Source and build log',
+        href: 'https://github.com/RealWooblay/frontier-rover',
+      },
+    ],
+    role: 'Solo builder',
+    signal:
+      'Verified ARM64 bring up, network health and clean shutdown on the Raspberry Pi control layer.',
+    currentState:
+      'Raspberry Pi bring up is verified. Motor control, sensing and NVIDIA Jetson software remain staged milestones.',
+    nextStep:
+      'Verify power and motor control before adding IMU, encoders and Jetson perception.',
+    relatedSlugs: ['wisp-lab', 'bender', 'golazo'],
+    tech: [
+      'NVIDIA Jetson Orin Nano Super',
+      'Raspberry Pi 4',
+      'Ubuntu Server ARM64',
+      'Embedded Linux',
+      'Safety architecture',
+    ],
+    architecture: [
+      'JETSON PERCEPTION',
+      'BOUNDED COMMAND',
+      'PI CONTROL',
+      'MOTOR + SENSOR IO',
+      'WATCHDOG STOP',
+    ],
+    accent: '#9fd35d',
   },
   {
     slug: 'bender',
