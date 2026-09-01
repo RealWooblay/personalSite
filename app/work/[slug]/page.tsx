@@ -1,6 +1,6 @@
 /* oxlint-disable next/no-img-element -- Project media is pre-sized and must render without an image service. */
+/* oxlint-disable next/no-html-link-for-pages -- Standard anchors avoid Vinext RSC prefetch runtime errors. */
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { CSSProperties } from 'react';
 import type { Project } from '@/lib/projects';
@@ -212,10 +212,10 @@ export default async function ProjectPage({ params }: Props) {
 
       <header className="detail-topbar">
         <div className="detail-shell detail-nav">
-          <Link className="brand" href="/">
+          <a className="brand" href="/">
             WOOBLAY<span>●</span>
-          </Link>
-          <Link href="/#featured">← Selected work</Link>
+          </a>
+          <a href="/#featured">← Selected work</a>
         </div>
       </header>
 
@@ -323,10 +323,10 @@ export default async function ProjectPage({ params }: Props) {
           <span>KEEP LOOKING</span>
           <div className="related-grid-v3">
             {related.map((item) => (
-              <Link href={`/work/${item.slug}`} key={item.slug}>
+              <a href={`/work/${item.slug}`} key={item.slug}>
                 <strong>{item.title}</strong>
                 <i>↗</i>
-              </Link>
+              </a>
             ))}
           </div>
         </div>
@@ -334,7 +334,7 @@ export default async function ProjectPage({ params }: Props) {
 
       <footer className="detail-footer-v3">
         <div className="detail-shell">
-          <Link href="/">WOOBLAY</Link>
+          <a href="/">WOOBLAY</a>
           <a
             href="https://github.com/RealWooblay"
             target="_blank"

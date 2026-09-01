@@ -1,18 +1,17 @@
-import Link from 'next/link';
-
+/* oxlint-disable next/no-html-link-for-pages -- Standard anchors avoid Vinext RSC prefetch runtime errors. */
 export default function NotFound() {
   return (
     <main className="missing-page">
-      <Link className="brand" href="/">
+      <a className="brand" href="/">
         WOOBLAY<span>●</span>
-      </Link>
+      </a>
       <div>
         <span>404 / OUTSIDE THE SYSTEM</span>
         <h1>Nothing is running here.</h1>
         <p>The route does not exist, but the work does.</p>
-        <Link className="button button-signal" href="/#selected">
+        <a className="button button-signal" href="/#featured">
           Return to selected work →
-        </Link>
+        </a>
       </div>
     </main>
   );

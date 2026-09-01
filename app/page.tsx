@@ -1,5 +1,5 @@
 /* oxlint-disable next/no-img-element -- Hand-authored responsive assets use explicit dimensions. */
-import Link from 'next/link';
+/* oxlint-disable next/no-html-link-for-pages -- Standard anchors avoid Vinext RSC prefetch runtime errors. */
 
 type SystemTileProps = {
   title: string;
@@ -24,7 +24,7 @@ function SystemTile({
     <article className="system-tile">
       <span className="tile-category">{category}</span>
       <h3>
-        <Link href={href}>{title}</Link>
+        <a href={href}>{title}</a>
       </h3>
       <p>{line}</p>
       <ol className="tile-flow" aria-label={`${title} system flow`}>
@@ -33,7 +33,7 @@ function SystemTile({
         ))}
       </ol>
       <div className="tile-links">
-        <Link href={href}>Open project ↗</Link>
+        <a href={href}>Open project ↗</a>
         <a href={source} target="_blank" rel="noreferrer">
           GitHub ↗
         </a>
@@ -162,7 +162,7 @@ export default function Home() {
               <h3>Prove Me Wrong</h3>
               <p>Tweet a claim. Take a side. Settle it with evidence.</p>
               <div className="feature-links">
-                <Link href="/work/prove-me-wrong">Project ↗</Link>
+                <a href="/work/prove-me-wrong">Project ↗</a>
                 <a
                   href="https://ethglobal.com/showcase/prove-me-wrong-2j4ks"
                   target="_blank"
@@ -214,7 +214,7 @@ export default function Home() {
               <h3>Bubble Wars</h3>
               <p>Invite allies. Raid rivals. Grow the biggest bubble.</p>
               <div className="feature-links">
-                <Link href="/work/bubble-wars">Project ↗</Link>
+                <a href="/work/bubble-wars">Project ↗</a>
                 <a
                   href="https://ethglobal.com/showcase/bubblewars-rgjpk"
                   target="_blank"
@@ -238,7 +238,7 @@ export default function Home() {
                 mapping.
               </p>
               <div className="feature-links">
-                <Link href="/work/wisp-lab">Project ↗</Link>
+                <a href="/work/wisp-lab">Project ↗</a>
                 <a
                   href="https://github.com/RealWooblay/wisp-lab"
                   target="_blank"
@@ -302,7 +302,7 @@ export default function Home() {
               <h3>Golazo</h3>
               <p>A market that moves with the match.</p>
               <div className="feature-links">
-                <Link href="/work/golazo">Project ↗</Link>
+                <a href="/work/golazo">Project ↗</a>
                 <a
                   href="https://github.com/RealWooblay/golazo"
                   target="_blank"
