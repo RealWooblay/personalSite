@@ -2017,6 +2017,37 @@ a {
     font-size: 20px;
   }
 
+  .tech-plane-runtime {
+    top: 45px;
+    bottom: auto;
+    left: 2%;
+    width: 65%;
+    min-height: 170px;
+  }
+
+  .tech-plane-state {
+    z-index: 4;
+    top: 170px;
+    right: 2%;
+    bottom: auto;
+    width: 50%;
+    min-height: 125px;
+  }
+
+  .tech-plane-input {
+    left: 2%;
+    bottom: 65px;
+    width: 43%;
+    min-height: 110px;
+  }
+
+  .tech-plane-output {
+    right: 2%;
+    bottom: 15px;
+    width: 55%;
+    min-height: 125px;
+  }
+
   .related-grid-v3 a {
     min-height: 105px;
   }
