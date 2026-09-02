@@ -263,6 +263,7 @@ a {
   min-height: 520px;
   display: flex;
   flex-direction: column;
+  container-type: inline-size;
   overflow: hidden;
   transform-style: preserve-3d;
   box-shadow: 0 16px 42px rgba(31, 31, 24, 0.07);
@@ -515,13 +516,23 @@ a {
 
 .wisp-scene {
   position: relative;
-  min-height: 330px;
+  min-height: 300px;
   flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-areas:
+    'vision vision camera'
+    'tracking tracking surface';
+  gap: 8px;
+  align-content: end;
+  padding: 18px;
   perspective: 1050px;
+  isolation: isolate;
 }
 
 .wisp-grid-plane {
   position: absolute;
+  z-index: 0;
   inset: 10% 7% -35% 7%;
   background:
     linear-gradient(rgba(239, 182, 93, 0.18) 1px, transparent 1px),
@@ -530,15 +541,18 @@ a {
   mask-image: linear-gradient(#000 40%, transparent 90%);
   transform: rotateX(62deg) translateZ(-90px);
   transform-origin: center bottom;
+  pointer-events: none;
 }
 
 .wisp-layer {
-  position: absolute;
-  min-height: 100px;
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+  min-height: 108px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 18px;
+  padding: 16px;
   border: 1px solid rgba(239, 182, 93, 0.42);
   background: rgba(25, 27, 27, 0.94);
   box-shadow: 0 28px 70px rgba(0, 0, 0, 0.42);
@@ -546,9 +560,10 @@ a {
 
 .wisp-layer strong {
   margin-top: 10px;
-  font-size: clamp(20px, 2.4vw, 33px);
+  font-size: clamp(18px, 3.6cqw, 28px);
   line-height: 1;
   letter-spacing: -0.045em;
+  overflow-wrap: anywhere;
 }
 
 .wisp-layer small {
@@ -556,39 +571,25 @@ a {
 }
 
 .camera-layer {
-  left: 3%;
-  bottom: 30px;
-  width: 25%;
-  transform: rotateY(18deg) rotateZ(-3deg) translateZ(30px);
+  grid-area: camera;
 }
 
 .vision-layer {
-  z-index: 2;
-  left: 19%;
-  bottom: 105px;
-  width: 37%;
-  min-height: 155px;
+  grid-area: vision;
+  min-height: 126px;
   border-color: var(--signal);
   background: #263020;
-  transform: translateZ(80px);
 }
 
 .tracking-layer {
-  z-index: 3;
-  right: 7%;
-  bottom: 94px;
-  width: 35%;
-  min-height: 130px;
+  grid-area: tracking;
+  min-height: 118px;
   border-color: rgba(122, 207, 255, 0.72);
   background: #17262b;
-  transform: rotateY(-10deg) rotateZ(2deg) translateZ(110px);
 }
 
 .surface-layer {
-  right: 3%;
-  bottom: 20px;
-  width: 36%;
-  transform: rotateY(-18deg) rotateZ(3deg) translateZ(20px);
+  grid-area: surface;
 }
 
 .rover-feature {
@@ -604,7 +605,16 @@ a {
 
 .rover-scene {
   position: relative;
-  min-height: 320px;
+  min-height: 330px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-areas:
+    'pi pi'
+    'jetson io'
+    'milestones milestones';
+  gap: 8px;
+  align-content: end;
+  padding: 18px;
   overflow: hidden;
   perspective: 1150px;
   isolation: isolate;
@@ -612,6 +622,7 @@ a {
 
 .rover-grid-plane {
   position: absolute;
+  z-index: 0;
   inset: 6% 5% -42%;
   background:
     linear-gradient(rgba(159, 211, 93, 0.18) 1px, transparent 1px),
@@ -620,15 +631,18 @@ a {
   mask-image: linear-gradient(#000 35%, transparent 86%);
   transform: rotateX(61deg) translateZ(-100px);
   transform-origin: center bottom;
+  pointer-events: none;
 }
 
 .rover-layer {
-  position: absolute;
-  min-height: 128px;
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+  min-height: 116px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 20px;
+  padding: 16px;
   border: 1px solid rgba(159, 211, 93, 0.42);
   background: rgba(18, 23, 18, 0.96);
   box-shadow: 0 30px 75px rgba(0, 0, 0, 0.42);
@@ -643,47 +657,33 @@ a {
 
 .rover-layer strong {
   margin: 10px 0 8px;
-  font-size: clamp(22px, 2.7vw, 38px);
+  font-size: clamp(18px, 3.6cqw, 27px);
   line-height: 0.95;
   letter-spacing: -0.045em;
+  overflow-wrap: anywhere;
 }
 
 .rover-jetson {
-  z-index: 3;
-  top: 22px;
-  left: 14%;
-  width: 62%;
-  min-height: 135px;
+  grid-area: jetson;
   border-style: dashed;
-  transform: rotateY(-8deg) rotateZ(2deg) translateZ(110px);
 }
 
 .rover-pi {
-  z-index: 4;
-  top: 126px;
-  left: 7%;
-  width: 66%;
-  min-height: 145px;
+  grid-area: pi;
+  min-height: 124px;
   border-color: var(--signal);
   background: #29351f;
-  transform: rotateY(8deg) rotateZ(-2deg) translateZ(80px);
 }
 
 .rover-io {
-  z-index: 2;
-  right: 5%;
-  bottom: 34px;
-  width: 50%;
+  grid-area: io;
   border-style: dashed;
-  transform: rotateY(-12deg) rotateZ(3deg) translateZ(30px);
 }
 
 .rover-milestones {
-  position: absolute;
-  z-index: 6;
-  right: 6%;
-  bottom: 18px;
-  left: 6%;
+  position: relative;
+  z-index: 1;
+  grid-area: milestones;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   margin: 0;
@@ -777,15 +777,22 @@ a {
 
 .firewall-scene {
   position: relative;
-  min-height: 300px;
+  min-height: 310px;
   flex: 1;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  gap: 10px;
+  align-content: end;
+  padding: 18px;
   overflow: hidden;
   perspective: 1000px;
+  isolation: isolate;
 }
 
 .firewall-scene::before {
   content: '';
   position: absolute;
+  z-index: 0;
   inset: 12% 4% -45%;
   background:
     linear-gradient(rgba(217, 255, 67, 0.13) 1px, transparent 1px),
@@ -797,11 +804,9 @@ a {
 }
 
 .firewall-request {
-  position: absolute;
-  z-index: 4;
-  top: 22px;
-  left: 7%;
-  width: 34%;
+  position: relative;
+  z-index: 1;
+  width: min(250px, 48%);
   min-height: 92px;
   display: flex;
   flex-direction: column;
@@ -810,7 +815,6 @@ a {
   border: 1px solid var(--signal);
   background: #263020;
   box-shadow: 0 24px 55px rgba(0, 0, 0, 0.38);
-  transform: rotateY(9deg) rotateZ(-2deg) translateZ(60px);
 }
 
 .firewall-request span,
@@ -829,21 +833,19 @@ a {
 }
 
 .firewall-scene ol {
-  position: absolute;
-  z-index: 3;
-  right: 5%;
-  bottom: 44px;
-  width: 76%;
+  position: relative;
+  z-index: 1;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 7px;
   margin: 0;
   padding: 0;
   list-style: none;
-  transform: rotateY(-8deg) rotateZ(1deg) translateZ(85px);
 }
 
 .firewall-scene li {
+  min-width: 0;
   min-height: 112px;
   display: flex;
   flex-direction: column;
@@ -860,14 +862,14 @@ a {
 }
 
 .firewall-scene li strong {
-  font: 850 10px/1.25 var(--mono);
+  font: 850 11px/1.25 var(--mono);
+  overflow-wrap: anywhere;
 }
 
 .firewall-boundary {
-  position: absolute;
-  z-index: 5;
-  right: 5%;
-  bottom: 18px;
+  position: relative;
+  z-index: 1;
+  justify-self: end;
   padding: 7px 10px;
   background: var(--signal);
   color: var(--ink);
@@ -884,18 +886,26 @@ a {
 
 .meridian-scene {
   position: relative;
-  min-height: 285px;
+  min-height: 300px;
   flex: 1;
-  padding: 26px;
+  display: grid;
+  grid-template-areas:
+    'source'
+    'steps'
+    'output';
+  gap: 9px;
+  align-content: end;
+  padding: 18px;
   overflow: hidden;
   perspective: 900px;
 }
 
 .meridian-source,
 .meridian-output {
-  position: absolute;
+  position: relative;
   z-index: 3;
-  min-height: 88px;
+  width: min(64%, 250px);
+  min-height: 78px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -905,21 +915,17 @@ a {
 }
 
 .meridian-source {
-  top: 17px;
-  left: 7%;
-  width: 42%;
+  grid-area: source;
+  justify-self: start;
   background: #1c355f;
   color: #fff;
-  transform: rotateY(8deg) rotateZ(-2deg);
 }
 
 .meridian-output {
-  right: 6%;
-  bottom: 22px;
-  width: 44%;
+  grid-area: output;
+  justify-self: end;
   background: #e7ff98;
   color: #1c2710;
-  transform: rotateY(-7deg) rotateZ(2deg);
 }
 
 .meridian-output span {
@@ -933,21 +939,20 @@ a {
 }
 
 .meridian-scene ol {
-  position: absolute;
+  position: relative;
   z-index: 2;
-  top: 76px;
-  left: 23%;
-  right: 12%;
+  grid-area: steps;
   display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 7px;
   margin: 0;
   padding: 0;
   list-style: none;
-  transform: rotateY(-7deg) rotateZ(2deg);
 }
 
 .meridian-scene li {
-  min-height: 58px;
+  min-width: 0;
+  min-height: 70px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -963,7 +968,8 @@ a {
 }
 
 .meridian-scene li strong {
-  font: 850 10px/1.2 var(--mono);
+  font: 850 11px/1.25 var(--mono);
+  overflow-wrap: anywhere;
 }
 
 .pmw-feature,
@@ -1830,7 +1836,7 @@ a {
   font-size: 18px;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1160px) {
   .featured-grid {
     grid-template-columns: 1fr;
   }
@@ -1883,7 +1889,7 @@ a {
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1160px) {
   .golazo-feature {
     grid-column: auto;
     min-height: auto;
@@ -2092,8 +2098,12 @@ a {
     min-height: auto;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      'vision vision'
+      'tracking tracking'
+      'camera surface';
     gap: 8px;
-    padding: 14px;
+    padding: 12px;
   }
 
   .wisp-grid-plane {
@@ -2108,22 +2118,34 @@ a {
     position: relative;
     inset: auto;
     width: auto;
-    min-height: 92px;
+    min-height: 84px;
+    padding: 12px;
     transform: none;
   }
 
   .vision-layer {
-    grid-column: auto;
-    min-height: 102px;
+    min-height: 96px;
+  }
+
+  .tracking-layer {
+    min-height: 92px;
+  }
+
+  .wisp-layer strong {
+    font-size: clamp(18px, 6.5cqw, 24px);
   }
 
   .rover-scene {
     min-height: auto;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      'pi pi'
+      'jetson io'
+      'milestones milestones';
     gap: 8px;
-    padding: 14px;
-    overflow: visible;
+    padding: 12px;
+    overflow: hidden;
   }
 
   .rover-grid-plane {
@@ -2137,13 +2159,12 @@ a {
     position: relative;
     inset: auto;
     width: auto;
-    min-height: 102px;
+    min-height: 100px;
+    padding: 12px;
     transform: none;
   }
 
   .rover-pi {
-    grid-column: auto;
-    grid-row: auto;
     min-height: 110px;
   }
 
@@ -2156,12 +2177,12 @@ a {
   .rover-milestones {
     position: relative;
     inset: auto;
-    grid-column: 1 / -1;
   }
 
   .firewall-scene {
-    min-height: 258px;
-    padding: 14px;
+    min-height: auto;
+    grid-template-rows: auto auto auto;
+    padding: 12px;
   }
 
   .firewall-scene::before {
@@ -2171,8 +2192,8 @@ a {
   .firewall-request {
     position: relative;
     inset: auto;
-    width: 55%;
-    min-height: 70px;
+    width: 100%;
+    min-height: 76px;
     transform: none;
   }
 
@@ -2191,40 +2212,33 @@ a {
   }
 
   .firewall-boundary {
-    right: 14px;
-    bottom: 14px;
+    position: relative;
+    inset: auto;
+    justify-self: end;
   }
 
   .meridian-scene {
-    min-height: 260px;
-    padding: 14px;
+    min-height: auto;
+    padding: 12px;
   }
 
   .meridian-source,
   .meridian-output {
+    position: relative;
+    inset: auto;
+    width: min(72%, 280px);
     min-height: 68px;
     transform: none;
   }
 
-  .meridian-source {
-    top: 14px;
-    left: 14px;
-  }
-
-  .meridian-output {
-    right: 14px;
-    bottom: 14px;
-  }
-
   .meridian-scene ol {
-    top: 64px;
-    left: 25%;
-    right: 12%;
+    position: relative;
+    inset: auto;
     transform: none;
   }
 
   .meridian-scene li {
-    min-height: 47px;
+    min-height: 66px;
     padding: 9px 12px;
   }
 
@@ -2435,6 +2449,20 @@ a {
 
   .wisp-layer {
     padding: 13px;
+  }
+
+  .rover-scene {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'pi'
+      'jetson'
+      'io'
+      'milestones';
+  }
+
+  .meridian-source,
+  .meridian-output {
+    width: 100%;
   }
 
   .project-index-v3 > a {

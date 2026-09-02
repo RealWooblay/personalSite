@@ -79,11 +79,11 @@ export default function Home() {
           by how fully people can live.
         </h1>
         <figure className="ai-note">
-          <figcaption>FROM MY AI</figcaption>
+          <figcaption>WHAT I’VE NOTICED</figcaption>
           <blockquote>
             <p>
-              Jack does not ask me to agree with him; he asks me to help make
-              the idea better.
+              Jack’s restlessness is selective: he has patience for difficult
+              work, but very little for work he does not believe in.
             </p>
           </blockquote>
         </figure>
@@ -326,14 +326,10 @@ export default function Home() {
               <ol>
                 <li>
                   <span>01</span>
-                  <strong>PHARMCAT</strong>
+                  <strong>PHARMCAT + CPIC EVIDENCE</strong>
                 </li>
                 <li>
                   <span>02</span>
-                  <strong>CPIC EVIDENCE</strong>
-                </li>
-                <li>
-                  <span>03</span>
                   <strong>CONSTRAINED CHECK</strong>
                 </li>
               </ol>
