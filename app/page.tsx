@@ -104,15 +104,13 @@ export default function Home() {
           <span>WHAT MY AI SAID ABOUT ME</span>
           <div className="ai-machine-read">
             <code>
-              01000010 01010101 01001001 01001100 01000100 00100000
-              01010101 01001110 01010100 01001001 01001100 00100000
-              01010010 01000101 01000001 01001100 00101110
+              01001000 01000101 00100000 01001001 01010011 00100000
+              01001100 01001111 01000011 01001011 01000101 01000100
+              00100000 01001001 01001110
             </code>
             <details>
               <summary>translate</summary>
-              <p>
-                He keeps building until the idea survives reality.
-              </p>
+              <p>He is locked in</p>
             </details>
           </div>
         </aside>
@@ -356,14 +354,26 @@ export default function Home() {
                 </a>
               </div>
             </div>
-            <img
-              src="/media/prove-me-wrong/market-wallet.jpg"
-              alt="Prove Me Wrong market embedded in X with Flare wallet approval"
-              width="1590"
-              height="1244"
-              loading="lazy"
-              decoding="async"
-            />
+            <div className="pmw-product-scene" aria-label="Prove Me Wrong running inside X">
+              <img
+                className="pmw-tx-shot"
+                src="/media/prove-me-wrong/market-wallet.jpg"
+                alt="Flare transaction approval behind the Prove Me Wrong market"
+                width="1590"
+                height="1244"
+                loading="lazy"
+                decoding="async"
+              />
+              <img
+                className="pmw-x-shot"
+                src="/media/prove-me-wrong/inline-market.jpg"
+                alt="Prove Me Wrong prediction market embedded directly in X"
+                width="1200"
+                height="1338"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
           </article>
 
           <article className="project-stage stage-vela">

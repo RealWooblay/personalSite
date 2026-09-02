@@ -3438,7 +3438,7 @@ a {
 
 .stage-rover {
   grid-column: 1 / span 5;
-  min-height: 600px;
+  min-height: 640px;
   background:
     linear-gradient(rgba(159, 211, 93, 0.055) 1px, transparent 1px),
     linear-gradient(90deg, rgba(159, 211, 93, 0.055) 1px, transparent 1px),
@@ -3452,12 +3452,12 @@ a {
 }
 
 .stage-rover .stage-copy h3 {
-  font-size: clamp(47px, 6vw, 70px);
+  font-size: clamp(44px, 5.2vw, 64px);
 }
 
 .rover-compact-scene {
   position: absolute;
-  inset: 215px 0 0;
+  inset: 255px 0 0;
   overflow: hidden;
   perspective: 1100px;
   transform-style: preserve-3d;
@@ -3534,7 +3534,7 @@ a {
 
 .stage-golazo {
   grid-column: 6 / -1;
-  min-height: 600px;
+  min-height: 640px;
   background: #d97228;
   color: #1c1008;
 }
@@ -3563,7 +3563,7 @@ a {
 
 .golazo-real-scene {
   position: absolute;
-  inset: 190px 0 0;
+  inset: 265px 0 0;
   overflow: hidden;
   perspective: 1300px;
   transform-style: preserve-3d;
@@ -3842,6 +3842,9 @@ a {
   position: absolute;
   z-index: 2;
   max-width: none;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
   border: 1px solid rgba(142, 127, 255, 0.44);
   box-shadow: 0 32px 78px rgba(0, 0, 0, 0.5);
   transition: transform 400ms ease;
@@ -3924,20 +3927,49 @@ a {
   font-size: clamp(48px, 6.4vw, 76px);
 }
 
-.stage-pmw > img {
+.pmw-product-scene {
   position: absolute;
   z-index: 1;
-  inset: 0 0 0 auto;
-  width: 63%;
-  height: 100%;
-  object-fit: cover;
-  object-position: left top;
-  transform: scale(1.035) rotate(0.6deg);
+  inset: 0 0 0 38%;
+  overflow: hidden;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+.pmw-x-shot,
+.pmw-tx-shot {
+  position: absolute;
+  max-width: none;
+  height: auto;
+  border: 1px solid rgba(132, 151, 194, 0.36);
+  box-shadow: 0 28px 64px rgba(0, 0, 0, 0.48);
   transition: transform 420ms ease;
 }
 
-.stage-pmw:hover > img {
-  transform: scale(1.01) rotate(0deg);
+.pmw-tx-shot {
+  z-index: 1;
+  top: 48px;
+  right: -12%;
+  width: 72%;
+  opacity: 0.72;
+  filter: saturate(0.72) brightness(0.72);
+  transform: rotateY(-7deg) rotateZ(2.2deg) translateZ(12px);
+}
+
+.pmw-x-shot {
+  z-index: 3;
+  top: 20px;
+  right: 25%;
+  width: 60%;
+  transform: rotateY(5deg) rotateZ(-2deg) translateZ(58px);
+}
+
+.stage-pmw:hover .pmw-x-shot {
+  transform: rotateY(2deg) rotateZ(-0.7deg) translate3d(5px, -5px, 68px);
+}
+
+.stage-pmw:hover .pmw-tx-shot {
+  transform: rotateY(-3deg) rotateZ(0.8deg) translate3d(-4px, -3px, 22px);
 }
 
 .project-landscape-video-v3 video {
@@ -4130,11 +4162,11 @@ a {
   }
 
   .stage-rover {
-    min-height: 680px;
+    min-height: 700px;
   }
 
   .rover-compact-scene {
-    inset: 300px 0 0;
+    inset: 320px 0 0;
   }
 
   .rover-compact-scene > span {
@@ -4150,11 +4182,11 @@ a {
   }
 
   .stage-golazo {
-    min-height: 660px;
+    min-height: 710px;
   }
 
   .golazo-real-scene {
-    inset: 224px 0 0;
+    inset: 286px 0 0;
   }
 
   .golazo-app {
@@ -4255,11 +4287,21 @@ a {
     padding-bottom: 24px;
   }
 
-  .stage-pmw > img {
+  .pmw-product-scene {
     inset: 0;
-    width: 100%;
-    height: 72%;
-    object-position: left top;
+  }
+
+  .pmw-x-shot {
+    top: 22px;
+    right: auto;
+    left: 5%;
+    width: 68%;
+  }
+
+  .pmw-tx-shot {
+    top: 54px;
+    right: -17%;
+    width: 78%;
   }
 }
 
@@ -4277,7 +4319,7 @@ a {
   }
 
   .stage-golazo {
-    min-height: 680px;
+    min-height: 730px;
   }
 
   .golazo-source {
@@ -4308,7 +4350,8 @@ a {
   .stage-bubble:hover .bubble-stage-pitch,
   .stage-firewall:hover .firewall-product-main,
   .stage-firewall:hover .firewall-product-approval,
-  .stage-pmw:hover > img {
+  .stage-pmw:hover .pmw-x-shot,
+  .stage-pmw:hover .pmw-tx-shot {
     transform: none;
   }
 }
@@ -4324,7 +4367,8 @@ a {
   .bubble-stage-pitch,
   .firewall-product-main,
   .firewall-product-approval,
-  .stage-pmw > img {
+  .pmw-x-shot,
+  .pmw-tx-shot {
     animation: none !important;
     transition: none !important;
   }
