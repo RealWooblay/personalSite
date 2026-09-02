@@ -17,14 +17,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const project = projectBySlug[slug];
   if (!project) return {};
 
-  const title = `${project.title} | Engineering Portfolio`;
+  const title = `${project.title} | Jack Coleman`;
   const siteUrl = process.env.PORTFOLIO_SITE_URL;
   const publicLaunch = Boolean(
     siteUrl && process.env.PORTFOLIO_PUBLIC_SITE === 'true',
   );
-  const socialImage = siteUrl
-    ? new URL('/og.png', siteUrl).toString()
-    : undefined;
+  const socialImage =
+    siteUrl && project.media?.type === 'image'
+      ? new URL(project.media.src, siteUrl).toString()
+      : undefined;
   const canonical = publicLaunch
     ? new URL(`/work/${project.slug}`, siteUrl).toString()
     : undefined;
@@ -38,24 +39,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: project.description,
       type: 'website',
       ...(canonical ? { url: canonical } : {}),
-      ...(socialImage
-        ? {
-            images: [
-              {
-                url: socialImage,
-                width: 1200,
-                height: 630,
-                alt: 'Software, AI and robotics engineering portfolio',
-              },
-            ],
-          }
-        : {}),
+      images: socialImage
+        ? [
+            {
+              url: socialImage,
+              width: project.media?.width,
+              height: project.media?.height,
+              alt: project.media?.alt,
+            },
+          ]
+        : [],
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description: project.description,
-      ...(socialImage ? { images: [socialImage] } : {}),
+      images: socialImage ? [socialImage] : [],
     },
   };
 }

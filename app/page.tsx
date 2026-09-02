@@ -75,9 +75,22 @@ export default function Home() {
 
       <section className="portfolio-intro shell" id="top">
         <h1>
-          <span>I build with one belief:</span>
-          technology should help us live more fully.
+          I want to help build a future where technological progress is measured
+          by how fully people can live.
         </h1>
+        <figure className="ai-note">
+          <figcaption>
+            <span>MY AI SAYS</span>
+            <span>AFTER WORKING WITH ME</span>
+          </figcaption>
+          <blockquote>
+            <p>
+              Jack treats technology as material, not spectacle. He keeps
+              pulling ideas out of the screen and into products, machines and
+              systems people can actually use.
+            </p>
+          </blockquote>
+        </figure>
       </section>
 
       <section className="work-v3" id="featured">

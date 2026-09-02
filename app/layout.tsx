@@ -16,15 +16,15 @@ export const metadata: Metadata = {
     ? { alternates: { canonical: siteOrigin?.toString() } }
     : {}),
   title: {
-    default: 'Software, AI & Robotics Portfolio',
+    default: 'Jack Coleman | Software, AI & Robotics',
     template: '%s',
   },
   description:
-    'NVIDIA Jetson vision, robotics, agent systems and products built from prototype to production.',
+    'Software, AI and robotics portfolio spanning NVIDIA Jetson vision, agent systems and products built from prototype to production.',
   openGraph: {
-    title: 'Software, AI & Robotics Portfolio',
+    title: 'Jack Coleman | Software, AI & Robotics',
     description:
-      'Technology should help us live more fully. Selected work across software, AI and robotics.',
+      'I want to help build a future where technological progress is measured by how fully people can live.',
     type: 'website',
     ...(publicLaunch ? { url: siteOrigin?.toString() } : {}),
     ...(socialImage
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
               url: socialImage,
               width: 1200,
               height: 630,
-              alt: 'Technology should help us live more fully. Software, AI and robotics.',
+              alt: 'I want to help build a future where technological progress is measured by how fully people can live. Software, AI and robotics.',
             },
           ],
         }
@@ -42,9 +42,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Software, AI & Robotics Portfolio',
+    title: 'Jack Coleman | Software, AI & Robotics',
     description:
-      'Technology should help us live more fully. Selected work across software, AI and robotics.',
+      'I want to help build a future where technological progress is measured by how fully people can live.',
     ...(socialImage ? { images: [socialImage] } : {}),
   },
   icons: { icon: '/favicon.svg' },

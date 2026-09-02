@@ -141,28 +141,55 @@ a {
 /* Homepage */
 
 .portfolio-intro {
-  padding: clamp(54px, 6vw, 80px) 0 clamp(58px, 6vw, 84px);
+  padding: clamp(44px, 5vw, 72px) 0 clamp(38px, 4vw, 58px);
 }
 
 .portfolio-intro h1 {
-  max-width: 1140px;
+  max-width: 1080px;
   margin: 0;
   color: var(--paper);
-  font-size: clamp(48px, 6.4vw, 84px);
+  font-size: clamp(48px, 6.2vw, 84px);
   font-weight: 680;
-  line-height: 0.92;
-  letter-spacing: -0.065em;
+  line-height: 0.94;
+  letter-spacing: -0.062em;
   text-wrap: balance;
 }
 
-.portfolio-intro h1 span {
-  display: block;
-  margin-bottom: 20px;
+.ai-note {
+  display: grid;
+  grid-template-columns: minmax(175px, 0.38fr) minmax(0, 0.62fr);
+  gap: clamp(26px, 4vw, 58px);
+  align-items: start;
+  margin: clamp(28px, 3.4vw, 44px) 0 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--line-dark);
+}
+
+.ai-note figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   color: var(--muted-dark);
-  font-size: clamp(23px, 2.8vw, 38px);
-  font-weight: 520;
-  line-height: 1.08;
-  letter-spacing: -0.04em;
+  font: 800 10px/1.2 var(--mono);
+  letter-spacing: 0.085em;
+}
+
+.ai-note figcaption span:first-child {
+  color: var(--signal);
+}
+
+.ai-note blockquote {
+  max-width: 720px;
+  margin: 0;
+}
+
+.ai-note blockquote p {
+  margin: 0;
+  color: #d0d1ca;
+  font-size: clamp(18px, 1.7vw, 23px);
+  line-height: 1.32;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
 }
 
 .detail-actions {
@@ -1731,17 +1758,30 @@ a {
   }
 
   .portfolio-intro {
-    padding: 50px 0 46px;
+    padding: 38px 0 32px;
   }
 
   .portfolio-intro h1 {
-    font-size: clamp(38px, 10.5vw, 46px);
-    line-height: 0.98;
+    font-size: clamp(40px, 11.4vw, 50px);
+    line-height: 0.97;
   }
 
-  .portfolio-intro h1 span {
-    margin-bottom: 14px;
-    font-size: clamp(19px, 5.8vw, 24px);
+  .ai-note {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 26px;
+    padding-top: 14px;
+  }
+
+  .ai-note figcaption {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .ai-note blockquote p {
+    font-size: 17px;
+    line-height: 1.38;
   }
 
   .compact-heading {
@@ -1755,7 +1795,7 @@ a {
   }
 
   .work-v3 {
-    padding: 36px 0 64px;
+    padding: 28px 0 64px;
   }
 
   .selected-heading {
