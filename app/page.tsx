@@ -96,13 +96,13 @@ export default function Home() {
           <article className="feature-card wisp-feature">
             <div className="feature-copy">
               <p className="project-meta">
-                <span>NVIDIA JETSON</span>
-                <span>ORIN NANO SUPER</span>
+                <span>EMBEDDED VISION</span>
+                <span>NVIDIA JETSON ORIN NANO SUPER</span>
               </p>
               <h3>WISP Lab</h3>
               <p>
-                A Jetson vision stack for turning physical surfaces into
-                responsive interfaces.
+                Real time pose perception, head tracked rendering and spatial
+                interaction on local NVIDIA hardware.
               </p>
               <div className="feature-links">
                 <a href="/work/wisp-lab">Project ↗</a>
@@ -115,24 +115,39 @@ export default function Home() {
                 </a>
               </div>
             </div>
-            <div className="wisp-scene" aria-label="WISP measured lab pipeline">
-              <div className="wisp-grid-plane" />
-              <div className="wisp-layer camera-layer">
-                <span>CSI INPUT</span>
-                <strong>IMX708</strong>
+            <div
+              className="wisp-scene"
+              aria-label="WISP pose perception and measured Jetson performance"
+            >
+              <div className="wisp-word" aria-hidden="true">
+                PERCEPTION
+                <br />
+                BECOMES
+                <br />
+                INTERFACE
               </div>
-              <div className="wisp-layer vision-layer">
-                <span>NVIDIA JETSON</span>
-                <strong>14.8 MS</strong>
-                <small>FP16 · ISOLATED</small>
+              <img
+                className="wisp-pose"
+                src="/media/wisp/pose-tracker.png"
+                alt="Conceptual 3D visualization of WISP pose tracking"
+                width="1024"
+                height="1536"
+                loading="lazy"
+                decoding="async"
+              />
+              <div className="wisp-orbit orbit-one" aria-hidden="true" />
+              <div className="wisp-orbit orbit-two" aria-hidden="true" />
+              <div className="wisp-metric metric-detect">
+                <span>YOLOV8N · TENSORRT FP16</span>
+                <strong>31.6 FPS</strong>
               </div>
-              <div className="wisp-layer tracking-layer">
-                <span>YOLO POSE · 8.6 FPS</span>
-                <strong>HEAD + WRISTS</strong>
+              <div className="wisp-metric metric-pose">
+                <span>POSE PERCEPTION</span>
+                <strong>8.6 FPS</strong>
               </div>
-              <div className="wisp-layer surface-layer">
-                <span>SPATIAL OUTPUT</span>
-                <strong>OFF AXIS + 4 POINT</strong>
+              <div className="wisp-metric metric-output">
+                <span>IMPLEMENTED OUTPUT</span>
+                <strong>HEAD · HAND · 4 POINT</strong>
               </div>
             </div>
           </article>
@@ -140,13 +155,14 @@ export default function Home() {
           <article className="feature-card rover-feature">
             <div className="feature-copy">
               <p className="project-meta">
-                <span>ROBOTICS</span>
-                <span>ACTIVE BUILD</span>
+                <span>MOTION VERIFIED</span>
+                <span>JETSON LINK LIVE</span>
               </p>
               <h3>Frontier Rover</h3>
               <p>
-                A safety first 4WD robotics platform with a verified Raspberry
-                Pi control layer and staged NVIDIA Jetson perception.
+                A working 4WD platform with bounded motor control, a 350 ms
+                watchdog, live camera transport and an NVIDIA Jetson perception
+                path.
               </p>
               <div className="feature-links">
                 <a href="/work/frontier-rover">Project ↗</a>
@@ -161,53 +177,91 @@ export default function Home() {
             </div>
             <div
               className="rover-scene"
-              aria-label="Frontier Rover verified and planned system layers"
+              aria-label="Frontier Rover motion test and hardware build"
             >
-              <div className="rover-grid-plane" />
-              <div className="rover-layer rover-jetson">
-                <span>PLANNED PERCEPTION</span>
-                <strong>JETSON ORIN NANO SUPER</strong>
-                <small>VISION · MAPPING · PLANNING</small>
+              <span className="rover-number" aria-hidden="true">
+                01
+              </span>
+              <div className="rover-video-frame">
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
+                  poster="/media/rover/trailer-poster.jpg"
+                  aria-label="Frontier Rover carrying a citrus payload during a motion test"
+                  width="720"
+                  height="1280"
+                >
+                  <source src="/media/rover/trailer.mp4" type="video/mp4" />
+                </video>
+                <span>REAL MOTION TEST · 4WD</span>
               </div>
-              <div className="rover-layer rover-pi">
-                <span>VERIFIED CONTROL LAYER</span>
-                <strong>RASPBERRY PI 4</strong>
-                <small>ARM64 · NETWORK · CLEAN SHUTDOWN</small>
+              <div className="rover-hardware-frame">
+                <img
+                  src="/media/rover/hardware.jpg"
+                  alt="Frontier Rover wiring, camera and Raspberry Pi control hardware"
+                  width="1400"
+                  height="1866"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span>THE BENCH IS THE LAB</span>
               </div>
-              <div className="rover-layer rover-io">
-                <span>STAGED HARDWARE</span>
-                <strong>MOTORS + SENSORS</strong>
-                <small>BOUNDED COMMANDS · WATCHDOG</small>
+              <div className="rover-signal signal-control">
+                <span>CONTROL</span>
+                <strong>4 MOTORS · BOUNDED COMMANDS</strong>
               </div>
-              <ol className="rover-milestones" aria-label="Rover milestones">
-                <li className="is-verified">M0 · VERIFIED</li>
-                <li>M1 · POWER</li>
-                <li>M2 · MOTION</li>
-              </ol>
+              <div className="rover-signal signal-watchdog">
+                <span>SAFETY</span>
+                <strong>350 MS WATCHDOG</strong>
+              </div>
+              <div className="rover-signal signal-vision">
+                <span>VISION PATH</span>
+                <strong>IMX708 → JETSON ORIN NANO</strong>
+              </div>
             </div>
           </article>
 
           <article className="feature-card golazo-feature">
-            <div
-              className="golazo-scene"
-              aria-label="Golazo live market product capture"
-            >
+            <div className="golazo-scene" aria-label="Golazo product screens">
+              <span className="golazo-chant" aria-hidden="true">
+                LIVE · LIVE · LIVE · LIVE
+              </span>
               <video
+                autoPlay
+                loop
                 muted
-                controls
                 playsInline
                 preload="metadata"
-                poster="/media/golazo/screen-live-match.svg"
+                poster="/media/golazo/screen-card-closeup.svg"
                 aria-label="Golazo live market product video"
                 width="1080"
-                height="1920"
+                height="1080"
               >
-                <source
-                  src="/media/golazo/golazo_hero_vertical.mp4"
-                  type="video/mp4"
-                />
+                <source src="/media/golazo/live-market.mp4" type="video/mp4" />
               </video>
               <img
+                className="golazo-screen screen-lobby"
+                src="/media/golazo/screen-lobby.svg"
+                alt="Golazo live match lobby"
+                width="1242"
+                height="2208"
+                loading="lazy"
+                decoding="async"
+              />
+              <img
+                className="golazo-screen screen-live"
+                src="/media/golazo/screen-live-match.svg"
+                alt="Golazo live in match market"
+                width="1242"
+                height="2208"
+                loading="lazy"
+                decoding="async"
+              />
+              <img
+                className="golazo-screen screen-payout"
                 src="/media/golazo/screen-payout.svg"
                 alt="Golazo payout screen"
                 width="1242"
@@ -218,8 +272,9 @@ export default function Home() {
             </div>
             <div className="feature-copy">
               <p className="project-meta">
-                <span>SHIPPED TO PRODUCTION</span>
-                <span>REAL USERS</span>
+                <span>FROM PROTOTYPE</span>
+                <span>TO PRODUCTION</span>
+                <span>TO REAL USERS</span>
               </p>
               <h3>Golazo</h3>
               <p>
@@ -247,8 +302,8 @@ export default function Home() {
               </p>
               <h3>Agent Firewall</h3>
               <p>
-                A control plane that keeps credentials away from agents and
-                risky actions behind policy and approval.
+                A zero trust execution layer for agents: policy gates, isolated
+                credentials, human approval and signed receipts.
               </p>
               <div className="feature-links">
                 <a href="/work/agent-execution-firewall">Project ↗</a>
@@ -263,17 +318,40 @@ export default function Home() {
             </div>
             <div
               className="firewall-scene"
-              aria-label="Agent Firewall command center product capture"
+              aria-label="Agent Firewall command center and approval workflow"
             >
+              <div className="firewall-statement" aria-hidden="true">
+                <span>AGENTS DECIDE.</span>
+                <strong>POLICIES EXECUTE.</strong>
+              </div>
               <img
-                src="/media/agent-firewall/dashboard.png"
-                alt="Agent Firewall command center showing gateway, credential, policy, approval and audit controls"
+                className="firewall-command"
+                src="/media/agent-firewall/command-center.png"
+                alt="Agent Firewall command center with actions, blocked requests and approvals"
                 width="1280"
                 height="720"
                 loading="lazy"
                 decoding="async"
               />
-              <span>REAL PRODUCT CAPTURE · COMMAND CENTER</span>
+              <img
+                className="firewall-approval"
+                src="/media/agent-firewall/approvals.png"
+                alt="Agent Firewall approval queue for controlled agent actions"
+                width="1280"
+                height="720"
+                loading="lazy"
+                decoding="async"
+              />
+              <div className="firewall-gates" aria-label="Execution path">
+                <span>REQUEST</span>
+                <i>→</i>
+                <span>POLICY</span>
+                <i>→</i>
+                <span>APPROVAL</span>
+                <i>→</i>
+                <span>ISOLATED EXECUTION</span>
+              </div>
+              <span>PRODUCT UI · REPRESENTATIVE APPROVAL FLOW</span>
             </div>
           </article>
 
