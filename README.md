@@ -23,4 +23,4 @@ pnpm build
 
 ## Hosting
 
-This source is configured for ChatGPT Sites through Vinext. The live site remains private until its final public review and custom domain are ready.
+This source is configured for ChatGPT Sites through Vinext and is published at [portfolio.jackaustinc66.chatgpt.site](https://portfolio.jackaustinc66.chatgpt.site).

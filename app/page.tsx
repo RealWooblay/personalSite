@@ -79,15 +79,11 @@ export default function Home() {
           by how fully people can live.
         </h1>
         <figure className="ai-note">
-          <figcaption>
-            <span>MY AI SAYS</span>
-            <span>AFTER WORKING WITH ME</span>
-          </figcaption>
+          <figcaption>FROM MY AI</figcaption>
           <blockquote>
             <p>
-              Jack treats technology as material, not spectacle. He keeps
-              pulling ideas out of the screen and into products, machines and
-              systems people can actually use.
+              Jack does not ask me to agree with him; he asks me to help make
+              the idea better.
             </p>
           </blockquote>
         </figure>
@@ -245,6 +241,109 @@ export default function Home() {
             </div>
           </article>
 
+          <article className="feature-card firewall-feature">
+            <div className="feature-copy">
+              <p className="project-meta">
+                <span>AGENT SECURITY</span>
+                <span>SOLO BUILD</span>
+              </p>
+              <h3>Agent Firewall</h3>
+              <p>
+                A control plane that keeps credentials away from agents and
+                risky actions behind policy and approval.
+              </p>
+              <div className="feature-links">
+                <a href="/work/agent-execution-firewall">Project ↗</a>
+                <a
+                  href="https://github.com/RealWooblay/WooblayAI"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  GitHub ↗
+                </a>
+              </div>
+            </div>
+            <div
+              className="firewall-scene"
+              aria-label="Agent Firewall controlled execution chain"
+            >
+              <div className="firewall-request">
+                <span>AGENT REQUEST</span>
+                <strong>git:push</strong>
+              </div>
+              <ol>
+                <li>
+                  <span>01</span>
+                  <strong>POLICY</strong>
+                </li>
+                <li>
+                  <span>02</span>
+                  <strong>APPROVAL</strong>
+                </li>
+                <li>
+                  <span>03</span>
+                  <strong>ISOLATED EXECUTION</strong>
+                </li>
+                <li>
+                  <span>04</span>
+                  <strong>SIGNED RECEIPT</strong>
+                </li>
+              </ol>
+              <div className="firewall-boundary">CREDENTIAL BOUNDARY</div>
+            </div>
+          </article>
+
+          <article className="feature-card meridian-feature">
+            <div className="feature-copy">
+              <p className="project-meta">
+                <span>HACKATHON WINNER</span>
+                <span>GOVERNED GENOMICS</span>
+              </p>
+              <h3>MERIDIAN</h3>
+              <p>
+                A privacy first pharmacogenomics pipeline that binds guidance to
+                evidence and explicit limits.
+              </p>
+              <div className="feature-links">
+                <a href="/work/meridian">Project ↗</a>
+                <a
+                  href="https://github.com/RealWooblay/medhack"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  GitHub ↗
+                </a>
+              </div>
+            </div>
+            <div
+              className="meridian-scene"
+              aria-label="MERIDIAN governed genomics pipeline"
+            >
+              <div className="meridian-source">
+                <span>PRIVATE INPUT</span>
+                <strong>GRCh38 VCF</strong>
+              </div>
+              <ol>
+                <li>
+                  <span>01</span>
+                  <strong>PHARMCAT</strong>
+                </li>
+                <li>
+                  <span>02</span>
+                  <strong>CPIC EVIDENCE</strong>
+                </li>
+                <li>
+                  <span>03</span>
+                  <strong>CONSTRAINED CHECK</strong>
+                </li>
+              </ol>
+              <div className="meridian-output">
+                <span>SOURCE BOUND</span>
+                <strong>GUIDANCE</strong>
+              </div>
+            </div>
+          </article>
+
           <article className="feature-card pmw-feature">
             <div className="feature-copy">
               <p className="project-meta">
@@ -326,14 +425,6 @@ export default function Home() {
         </div>
         <div className="shell system-tile-grid">
           <SystemTile
-            title="Agent Execution Firewall"
-            category="AGENT SECURITY"
-            line="Intent, policy, approval, execution and receipt in one chain."
-            flow={['INTENT', 'POLICY', 'APPROVAL', 'RECEIPT']}
-            href="/work/agent-execution-firewall"
-            source="https://github.com/RealWooblay/WooblayAI"
-          />
-          <SystemTile
             title="AI Action OS"
             category="OPERATOR SYSTEM"
             line="Plans and consequences stay visible before tools run."
@@ -352,14 +443,6 @@ export default function Home() {
               label: 'Agent service',
               href: 'https://github.com/RealWooblay/ai-npcs-cdp',
             }}
-          />
-          <SystemTile
-            title="MERIDIAN"
-            category="GOVERNED GENOMICS"
-            line="Genomic guidance stays tied to sources and explicit limits."
-            flow={['GENOME', 'SOURCE', 'MODEL', 'GUIDANCE']}
-            href="/work/meridian"
-            source="https://github.com/RealWooblay/medhack"
           />
           <SystemTile
             title="Bender"
@@ -385,46 +468,34 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="viem-v3">
-        <div className="shell viem-grid">
-          <div className="viem-statement">
-            <span>OPEN SOURCE / VIEM</span>
-            <h2>XR One, shipped through viem.</h2>
-            <p>
-              Three merged PRs added testnet and mainnet support to a library
-              with 22M+ monthly npm downloads.
-            </p>
-          </div>
-          <a
-            className="viem-metric"
-            href="https://www.npmjs.com/package/viem"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <strong>22M+</strong>
-            <span>monthly npm downloads</span>
-          </a>
-          <div className="viem-prs" aria-label="Merged viem pull requests">
+      <section className="oss-strip">
+        <div className="shell oss-grid">
+          <span>OPEN SOURCE</span>
+          <p>
+            <strong>3 merged viem pull requests</strong> added XR Sepolia and XR
+            One support.
+          </p>
+          <div className="oss-links" aria-label="Merged viem pull requests">
             <a
               href="https://github.com/wevm/viem/pull/2444"
               target="_blank"
               rel="noreferrer"
             >
-              XR Sepolia <span>#2444</span>
+              #2444
             </a>
             <a
               href="https://github.com/wevm/viem/pull/3116"
               target="_blank"
               rel="noreferrer"
             >
-              XR One <span>#3116</span>
+              #3116
             </a>
             <a
               href="https://github.com/wevm/viem/pull/3309"
               target="_blank"
               rel="noreferrer"
             >
-              Mainnet correction <span>#3309</span>
+              #3309 ↗
             </a>
           </div>
         </div>
