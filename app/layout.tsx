@@ -1,11 +1,9 @@
 import type { Metadata } from 'next';
+import { getSiteOrigin, isPublicLaunch } from '@/lib/site';
 import './globals.css';
 
-const siteUrl = process.env.PORTFOLIO_SITE_URL;
-const siteOrigin = siteUrl ? new URL(siteUrl) : null;
-const publicLaunch = Boolean(
-  siteOrigin && process.env.PORTFOLIO_PUBLIC_SITE === 'true',
-);
+const siteOrigin = getSiteOrigin();
+const publicLaunch = isPublicLaunch(siteOrigin);
 const socialImage = siteOrigin
   ? new URL('/og.png', siteOrigin).toString()
   : null;

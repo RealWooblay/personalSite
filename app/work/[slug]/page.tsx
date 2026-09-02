@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import type { CSSProperties } from 'react';
 import type { Project } from '@/lib/projects';
 import { projectBySlug, projects } from '@/lib/projects';
+import { getSiteOrigin, isPublicLaunch } from '@/lib/site';
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -18,16 +19,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!project) return {};
 
   const title = `${project.title} | Jack Coleman`;
-  const siteUrl = process.env.PORTFOLIO_SITE_URL;
-  const publicLaunch = Boolean(
-    siteUrl && process.env.PORTFOLIO_PUBLIC_SITE === 'true',
-  );
+  const siteOrigin = getSiteOrigin();
+  const publicLaunch = isPublicLaunch(siteOrigin);
   const socialImage =
-    siteUrl && project.media?.type === 'image'
-      ? new URL(project.media.src, siteUrl).toString()
+    siteOrigin && project.media?.type === 'image'
+      ? new URL(project.media.src, siteOrigin).toString()
       : undefined;
-  const canonical = publicLaunch
-    ? new URL(`/work/${project.slug}`, siteUrl).toString()
+  const canonical = publicLaunch && siteOrigin
+    ? new URL(`/work/${project.slug}`, siteOrigin).toString()
     : undefined;
 
   return {

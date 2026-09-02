@@ -23,4 +23,6 @@ pnpm build
 
 ## Hosting
 
-This source is configured for ChatGPT Sites through Vinext and is published at [portfolio.jackaustinc66.chatgpt.site](https://portfolio.jackaustinc66.chatgpt.site).
+This is a native Next.js application configured for deployment on Vercel. The
+project uses Vercel's production-domain environment value for canonical URLs,
+social metadata, robots and the sitemap.

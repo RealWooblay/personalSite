@@ -4373,8 +4373,9 @@ a {
 .ai-machine-read code {
   display: block;
   color: #c6c8c1;
-  font: 750 12px/1.45 var(--mono);
-  letter-spacing: 0.025em;
+  font: 750 9px/1.55 var(--mono);
+  letter-spacing: 0.06em;
+  overflow-wrap: anywhere;
 }
 
 .ai-machine-read details {

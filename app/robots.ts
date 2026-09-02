@@ -1,17 +1,16 @@
 import type { MetadataRoute } from 'next';
+import { getSiteOrigin, isPublicLaunch } from '@/lib/site';
 
 export default function robots(): MetadataRoute.Robots {
-  const siteUrl = process.env.PORTFOLIO_SITE_URL;
-  const publicLaunch = Boolean(
-    siteUrl && process.env.PORTFOLIO_PUBLIC_SITE === 'true',
-  );
+  const siteOrigin = getSiteOrigin();
+  const publicLaunch = isPublicLaunch(siteOrigin);
 
-  if (!publicLaunch || !siteUrl) {
+  if (!publicLaunch || !siteOrigin) {
     return { rules: { userAgent: '*', disallow: '/' } };
   }
 
   return {
     rules: { userAgent: '*', allow: '/' },
-    sitemap: new URL('/sitemap.xml', siteUrl).toString(),
+    sitemap: new URL('/sitemap.xml', siteOrigin).toString(),
   };
 }

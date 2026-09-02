@@ -103,13 +103,15 @@ export default function Home() {
         <aside className="ai-note" aria-label="An observation from Jack’s AI">
           <span>WHAT MY AI SAID ABOUT ME</span>
           <div className="ai-machine-read">
-            <code>PATTERN DETECTED: AMBITION = CONSTANT. DRAFT = VARIABLE.</code>
+            <code>
+              01000010 01010101 01001001 01001100 01000100 00100000
+              01010101 01001110 01010100 01001001 01001100 00100000
+              01010010 01000101 01000001 01001100 00101110
+            </code>
             <details>
               <summary>translate</summary>
               <p>
-                Jack does not lower the ambition to excuse a weak draft. He
-                keeps moving the draft until it matches what he saw in the
-                first place.
+                He keeps building until the idea survives reality.
               </p>
             </details>
           </div>
