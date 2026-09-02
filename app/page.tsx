@@ -104,9 +104,7 @@ export default function Home() {
           <span>WHAT MY AI SAID ABOUT ME</span>
           <div className="ai-machine-read">
             <code>
-              01001000 01000101 00100000 01001001 01010011 00100000
-              01001100 01001111 01000011 01001011 01000101 01000100
-              00100000 01001001 01001110
+              010011000100111101000011010010110100010101000100
             </code>
             <details>
               <summary>translate</summary>
@@ -213,7 +211,6 @@ export default function Home() {
                 loading="lazy"
                 decoding="async"
               />
-              <span className="golazo-source">REAL PRODUCT MEDIA · @REALWOOBLAY</span>
             </div>
           </article>
 

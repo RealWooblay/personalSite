@@ -18,11 +18,11 @@ export const metadata: Metadata = {
     template: '%s',
   },
   description:
-    'Software, AI and robotics portfolio spanning NVIDIA Jetson vision, agent systems and products built from prototype to production.',
+    'Building technology for a future measured by how fully people can live.',
   openGraph: {
     title: 'Jack Coleman | Software, AI & Robotics',
     description:
-      'I want to help build a future where technological progress is measured by how fully people can live.',
+      'Building technology for a future measured by how fully people can live.',
     type: 'website',
     ...(publicLaunch ? { url: siteOrigin?.toString() } : {}),
     ...(socialImage
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
               url: socialImage,
               width: 1200,
               height: 630,
-              alt: 'I want to help build a future where technological progress is measured by how fully people can live. Software, AI and robotics.',
+              alt: 'Building technology for a future measured by how fully people can live. Software, AI and robotics.',
             },
           ],
         }
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Jack Coleman | Software, AI & Robotics',
     description:
-      'I want to help build a future where technological progress is measured by how fully people can live.',
+      'Building technology for a future measured by how fully people can live.',
     ...(socialImage ? { images: [socialImage] } : {}),
   },
   icons: { icon: '/favicon.svg' },

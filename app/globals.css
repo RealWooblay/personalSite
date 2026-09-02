@@ -3627,16 +3627,6 @@ a {
   transform: rotateY(-8deg) rotateZ(5deg) translateZ(28px);
 }
 
-.golazo-source {
-  position: absolute;
-  z-index: 6;
-  right: 20px;
-  bottom: 18px;
-  color: #8ff7b9;
-  font: 800 8px/1 var(--mono);
-  letter-spacing: 0.06em;
-}
-
 .stage-golazo:hover .app-one {
   transform: rotateY(4deg) rotateZ(-2deg) translate3d(3px, -6px, 52px);
 }
@@ -3749,6 +3739,7 @@ a {
   z-index: 1;
   inset: 0;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .meridian-stage-video video {
@@ -3757,6 +3748,7 @@ a {
   object-fit: cover;
   object-position: 50% 52%;
   filter: saturate(0.88) contrast(1.06);
+  cursor: pointer;
 }
 
 .meridian-stage-video > span {
@@ -4322,10 +4314,6 @@ a {
     min-height: 730px;
   }
 
-  .golazo-source {
-    display: none;
-  }
-
   .stage-firewall {
     min-height: 720px;
   }
@@ -4419,7 +4407,7 @@ a {
   color: #c6c8c1;
   font: 750 9px/1.55 var(--mono);
   letter-spacing: 0.06em;
-  overflow-wrap: anywhere;
+  white-space: nowrap;
 }
 
 .ai-machine-read details {
