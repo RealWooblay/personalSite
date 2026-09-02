@@ -131,6 +131,14 @@ export const projects: Project[] = [
       'RECEIPT',
     ],
     accent: '#d9ff43',
+    media: {
+      type: 'image',
+      src: '/media/agent-firewall/dashboard.png',
+      alt: 'Agent Firewall command center product capture',
+      caption: 'Real product interface · command center',
+      width: 1280,
+      height: 720,
+    },
   },
   {
     slug: 'bubble-wars',
@@ -455,10 +463,6 @@ export const projects: Project[] = [
       {
         label: 'ETHGlobal showcase',
         href: 'https://ethglobal.com/showcase/prove-me-wrong-2j4ks',
-      },
-      {
-        label: 'Live prototype',
-        href: 'https://prove-me-wrong-theta.vercel.app/',
       },
       {
         label: 'Source',

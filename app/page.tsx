@@ -79,10 +79,10 @@ export default function Home() {
           live.
         </h1>
         <aside className="ai-note" aria-label="What Jack’s AI says about him">
-          <span>WHAT MY AI SAYS</span>
+          <span>FROM MY AI</span>
           <p>
-            Jack’s favourite version is the one after the version everyone else
-            would have shipped.
+            Jack is impatient with anything that looks finished before it feels
+            true.
           </p>
         </aside>
       </section>
@@ -263,27 +263,17 @@ export default function Home() {
             </div>
             <div
               className="firewall-scene"
-              aria-label="Agent Firewall protected execution boundary"
+              aria-label="Agent Firewall command center product capture"
             >
-              <div className="firewall-intent">
-                <span>UNTRUSTED INTENT</span>
-                <strong>deploy:prod</strong>
-                <small>NO KEYS ATTACHED</small>
-              </div>
-              <div className="firewall-gate">
-                <span>POLICY GATE</span>
-                <strong>HELD</strong>
-                <small>HUMAN APPROVAL</small>
-              </div>
-              <div className="firewall-vault">
-                <span>CREDENTIAL VAULT</span>
-                <strong>OUT OF CONTEXT</strong>
-                <small>EPHEMERAL ACCESS</small>
-              </div>
-              <div className="firewall-receipt">
-                <i />
-                SIGNED RECEIPT
-              </div>
+              <img
+                src="/media/agent-firewall/dashboard.png"
+                alt="Agent Firewall command center showing gateway, credential, policy, approval and audit controls"
+                width="1280"
+                height="720"
+                loading="lazy"
+                decoding="async"
+              />
+              <span>REAL PRODUCT CAPTURE · COMMAND CENTER</span>
             </div>
           </article>
 
@@ -376,40 +366,35 @@ export default function Home() {
                 </a>
               </div>
             </div>
-            <div className="pmw-scene" aria-label="Prove Me Wrong product flow">
-              <div className="pmw-browser">
-                <div className="browser-chrome">
-                  <i />
-                  <i />
-                  <i />
-                  <span>EXAMPLE / INLINE MARKET</span>
-                </div>
-                <p>Bitcoin will top $150k by 2026.</p>
-                <div className="market-choice">
-                  <strong>YES</strong>
-                  <strong>NO</strong>
-                </div>
-              </div>
-              <div className="pmw-resolver">
-                <span>EVIDENCE</span>
-                <strong>RESOLVER</strong>
-              </div>
-              <div className="pmw-settlement">
-                <span>FLARE</span>
-                <strong>SETTLEMENT</strong>
-              </div>
+            <div
+              className="pmw-scene"
+              aria-label="Real Prove Me Wrong product capture"
+            >
+              <img
+                src="/media/prove-me-wrong/market-wallet.jpg"
+                alt="Prove Me Wrong market embedded in X with a Flare wallet approval"
+                width="1590"
+                height="1244"
+                loading="lazy"
+                decoding="async"
+              />
+              <span>REAL HACKATHON BUILD · INLINE MARKET + FLARE</span>
             </div>
           </article>
 
           <article className="feature-card bubble-feature">
-            <img
-              src="/media/bubblewars/banner.webp"
-              alt="Bubble Wars project banner"
-              width="1792"
-              height="1024"
-              loading="lazy"
-              decoding="async"
-            />
+            <div className="bubble-pitch">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/uPW20IUHC1Y?start=4823&end=4890&rel=0"
+                title="Jack presenting Bubble Wars at ETHGlobal Bangkok"
+                width="1280"
+                height="720"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+              <span>JACK’S STAGE SEGMENT · ETHGLOBAL BANGKOK</span>
+            </div>
             <div className="feature-copy">
               <p className="project-meta">
                 <span>ETHGLOBAL BANGKOK WINNER</span>
@@ -419,13 +404,6 @@ export default function Home() {
               <p>Invite allies. Raid rivals. Grow the biggest bubble.</p>
               <div className="feature-links">
                 <a href="/work/bubble-wars">Project ↗</a>
-                <a
-                  href="https://www.youtube.com/watch?v=uPW20IUHC1Y&t=4823s"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Watch Jack’s pitch ↗
-                </a>
                 <a
                   href="https://ethglobal.com/showcase/bubblewars-rgjpk"
                   target="_blank"

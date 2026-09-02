@@ -90,41 +90,34 @@ function PmwScene() {
   return (
     <section
       className="detail-tech-scene pmw-detail-scene"
-      aria-label="Prove Me Wrong product flow"
+      aria-label="Real Prove Me Wrong product captures"
     >
       <div className="detail-shell pmw-detail-stage">
-        <div className="detail-pmw-browser">
-          <div className="browser-chrome">
-            <i />
-            <i />
-            <i />
-            <span>EXAMPLE / INLINE MARKET</span>
-          </div>
-          <p>Bitcoin will top $150k by 2026.</p>
-          <div className="market-choice">
-            <strong>YES</strong>
-            <strong>NO</strong>
-          </div>
-        </div>
-        <ol className="pmw-detail-flow">
-          <li>
-            <span>01</span>
-            <strong>CLAIM</strong>
-          </li>
-          <li>
-            <span>02</span>
-            <strong>MARKET</strong>
-          </li>
-          <li>
-            <span>03</span>
-            <strong>EVIDENCE</strong>
-          </li>
-          <li>
-            <span>04</span>
-            <strong>FLARE</strong>
-          </li>
-        </ol>
-        <strong className="pmw-award">FLARE MAIN TRACK · 3RD PLACE</strong>
+        <figure className="pmw-detail-primary">
+          <img
+            src="/media/prove-me-wrong/market-wallet.jpg"
+            alt="Inline Prove Me Wrong market requesting a Flare wallet approval"
+            width="1590"
+            height="1244"
+            loading="eager"
+            decoding="async"
+          />
+          <figcaption>INLINE MARKET · FLARE APPROVAL</figcaption>
+        </figure>
+        <figure className="pmw-detail-secondary">
+          <img
+            src="/media/prove-me-wrong/post-claim.jpg"
+            alt="Creating a Prove Me Wrong claim from an X post"
+            width="1324"
+            height="1682"
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption>CLAIM TO MARKET · REAL BUILD</figcaption>
+        </figure>
+        <strong className="pmw-award">
+          ETHGLOBAL CANNES · FLARE 3RD PLACE
+        </strong>
       </div>
     </section>
   );
