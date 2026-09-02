@@ -343,8 +343,10 @@ a {
   min-height: 330px;
   flex: 1;
   overflow: hidden;
+  padding: 18px 0 0 18px;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   background: #050608;
+  perspective: 900px;
 }
 
 .pmw-scene::after {
@@ -356,11 +358,20 @@ a {
 }
 
 .pmw-scene img {
-  width: 100%;
-  height: 100%;
+  width: 106%;
+  height: calc(100% + 12px);
   min-height: 330px;
   object-fit: cover;
   object-position: left top;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: -18px 24px 54px rgba(0, 0, 0, 0.44);
+  transform: rotateY(-5deg) rotateZ(-1.7deg) translate3d(-2px, 7px, 24px);
+  transform-origin: left bottom;
+  transition: transform 320ms ease;
+}
+
+.pmw-feature:hover .pmw-scene img {
+  transform: rotateY(-2deg) rotateZ(-0.5deg) translate3d(-2px, 2px, 28px);
 }
 
 .pmw-scene > span,
@@ -386,15 +397,70 @@ a {
 }
 
 .bubble-feature {
+  min-height: 620px;
+  justify-content: flex-end;
+  isolation: isolate;
   background: #07090b;
   color: #fff;
+  perspective: 1100px;
+}
+
+.bubble-feature::before,
+.bubble-feature::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.bubble-feature::before {
+  z-index: 1;
+  background:
+    radial-gradient(
+      circle at 78% 28%,
+      transparent 0 16%,
+      rgba(7, 9, 11, 0.28) 48%
+    ),
+    linear-gradient(180deg, rgba(5, 6, 8, 0.08) 16%, rgba(5, 6, 8, 0.94) 87%);
+}
+
+.bubble-feature::after {
+  z-index: 2;
+  inset: auto 0 0;
+  height: 42%;
+  background: linear-gradient(180deg, transparent, rgba(3, 4, 6, 0.98));
+}
+
+.bubble-backdrop {
+  position: absolute;
+  z-index: 0;
+  inset: -3%;
+  width: 106%;
+  height: 106%;
+  object-fit: cover;
+  filter: saturate(1.16) contrast(1.05);
+  transform: scale(1.02);
+  transition: transform 700ms ease;
 }
 
 .bubble-pitch {
-  position: relative;
-  width: 100%;
+  position: absolute;
+  z-index: 3;
+  top: 30px;
+  right: -28px;
+  width: min(79%, 450px);
   aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.48);
   background: #020304;
+  box-shadow:
+    -24px 28px 72px rgba(0, 0, 0, 0.55),
+    9px 10px 0 rgba(255, 60, 105, 0.28);
+  transform: rotateY(-6deg) rotateZ(3.2deg) translateZ(54px);
+  transform-origin: center right;
+  transition:
+    transform 320ms ease,
+    box-shadow 320ms ease;
 }
 
 .bubble-pitch iframe {
@@ -402,6 +468,23 @@ a {
   width: 100%;
   height: 100%;
   border: 0;
+}
+
+.bubble-feature .feature-copy {
+  width: 92%;
+  padding-top: 300px;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.72);
+}
+
+.bubble-feature:hover .bubble-backdrop {
+  transform: scale(1.065);
+}
+
+.bubble-feature:hover .bubble-pitch {
+  box-shadow:
+    -18px 24px 62px rgba(0, 0, 0, 0.5),
+    5px 6px 0 rgba(255, 60, 105, 0.3);
+  transform: rotateY(-3deg) rotateZ(1.3deg) translate3d(-8px, 3px, 58px);
 }
 
 .wisp-feature {
@@ -694,6 +777,8 @@ a {
   border-radius: 30px;
   background: #111315;
   box-shadow: 0 28px 70px rgba(67, 30, 7, 0.38);
+  transform: rotateY(5deg) rotateZ(-2.2deg) translateY(-18px);
+  transition: transform 320ms ease;
 }
 
 .golazo-scene img {
@@ -704,7 +789,17 @@ a {
   justify-self: center;
   object-fit: cover;
   box-shadow: 0 24px 65px rgba(67, 30, 7, 0.34);
+  transform: rotateY(-4deg) rotateZ(2.2deg) translateY(24px);
+  transition: transform 320ms ease;
   pointer-events: none;
+}
+
+.golazo-feature:hover .golazo-scene video {
+  transform: rotateY(3deg) rotateZ(-1.2deg) translateY(-22px);
+}
+
+.golazo-feature:hover .golazo-scene img {
+  transform: rotateY(-2deg) rotateZ(1.2deg) translateY(20px);
 }
 
 .golazo-feature .feature-copy {
@@ -729,11 +824,17 @@ a {
 
 .firewall-scene {
   position: relative;
-  min-height: 300px;
+  min-height: 330px;
   flex: 1;
   overflow: hidden;
+  padding: 24px 0 0 18px;
   border-top: 1px solid rgba(217, 255, 67, 0.14);
-  background: #050609;
+  background:
+    linear-gradient(rgba(217, 255, 67, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(217, 255, 67, 0.045) 1px, transparent 1px),
+    #050609;
+  background-size: 28px 28px;
+  perspective: 900px;
 }
 
 .firewall-scene::after {
@@ -745,11 +846,22 @@ a {
 }
 
 .firewall-scene img {
-  width: 100%;
-  height: 100%;
+  width: 112%;
+  height: calc(100% - 5px);
   min-height: 300px;
   object-fit: cover;
   object-position: left top;
+  border: 1px solid rgba(217, 255, 67, 0.24);
+  box-shadow: -22px 28px 64px rgba(0, 0, 0, 0.52);
+  transform: rotateY(-7deg) rotateX(2deg) rotateZ(-1deg)
+    translate3d(-2px, 8px, 30px);
+  transform-origin: left bottom;
+  transition: transform 320ms ease;
+}
+
+.firewall-feature:hover .firewall-scene img {
+  transform: rotateY(-3deg) rotateX(1deg) rotateZ(-0.4deg)
+    translate3d(-2px, 3px, 34px);
 }
 
 .meridian-feature {
@@ -1835,7 +1947,18 @@ a {
   }
 
   .bubble-feature {
-    min-height: 400px;
+    min-height: 580px;
+  }
+
+  .bubble-pitch {
+    top: 26px;
+    right: -18px;
+    width: min(62%, 500px);
+  }
+
+  .bubble-feature .feature-copy {
+    width: 62%;
+    padding-top: 220px;
   }
 
   .firewall-scene {
@@ -2008,20 +2131,30 @@ a {
 
   .pmw-scene img {
     min-height: 250px;
+    transform: rotateY(-3deg) rotateZ(-1deg) translate3d(-2px, 5px, 16px);
   }
 
   .bubble-feature {
-    min-height: auto;
+    min-height: 560px;
     display: flex;
     background: #07090b;
   }
 
   .bubble-feature::after {
-    display: none;
+    display: block;
   }
 
   .bubble-pitch {
+    top: 24px;
+    right: -14px;
+    width: 94%;
     aspect-ratio: 16 / 9;
+    transform: rotateY(-3deg) rotateZ(2.2deg) translateZ(34px);
+  }
+
+  .bubble-feature .feature-copy {
+    width: 100%;
+    padding: 300px 22px 24px;
   }
 
   .wisp-scene {
@@ -2142,10 +2275,14 @@ a {
 
   .firewall-scene {
     min-height: 245px;
+    padding: 14px 0 0 12px;
   }
 
   .firewall-scene img {
+    width: 116%;
     min-height: 245px;
+    transform: rotateY(-4deg) rotateX(1deg) rotateZ(-0.7deg)
+      translate3d(-2px, 5px, 18px);
   }
 
   .meridian-scene {

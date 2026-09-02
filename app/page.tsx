@@ -383,6 +383,16 @@ export default function Home() {
           </article>
 
           <article className="feature-card bubble-feature">
+            <img
+              className="bubble-backdrop"
+              src="/media/bubblewars/banner.webp"
+              alt=""
+              width="1792"
+              height="1024"
+              loading="lazy"
+              decoding="async"
+              aria-hidden="true"
+            />
             <div className="bubble-pitch">
               <iframe
                 src="https://www.youtube-nocookie.com/embed/uPW20IUHC1Y?start=4823&end=4890&rel=0"
