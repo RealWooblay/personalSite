@@ -516,18 +516,19 @@ a {
 
 .wisp-scene {
   position: relative;
-  min-height: 300px;
+  min-height: 340px;
   flex: 1;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-template-areas:
     'vision vision camera'
     'tracking tracking surface';
-  gap: 8px;
+  gap: 16px;
   align-content: end;
-  padding: 18px;
+  padding: 28px;
   perspective: 1050px;
   isolation: isolate;
+  transform-style: preserve-3d;
 }
 
 .wisp-grid-plane {
@@ -555,7 +556,14 @@ a {
   padding: 16px;
   border: 1px solid rgba(239, 182, 93, 0.42);
   background: rgba(25, 27, 27, 0.94);
-  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.42);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  box-shadow:
+    8px 10px 0 rgba(239, 182, 93, 0.1),
+    0 28px 70px rgba(0, 0, 0, 0.42);
+  transition:
+    transform 280ms ease,
+    box-shadow 280ms ease;
 }
 
 .wisp-layer strong {
@@ -572,6 +580,8 @@ a {
 
 .camera-layer {
   grid-area: camera;
+  transform: rotateY(-11deg) rotateX(3deg) rotateZ(1.5deg)
+    translate3d(-2px, 5px, 8px);
 }
 
 .vision-layer {
@@ -579,6 +589,11 @@ a {
   min-height: 126px;
   border-color: var(--signal);
   background: #263020;
+  transform: rotateY(6deg) rotateX(-2deg) rotateZ(-1deg)
+    translate3d(7px, -3px, 34px);
+  box-shadow:
+    10px 12px 0 rgba(217, 255, 67, 0.13),
+    0 34px 76px rgba(0, 0, 0, 0.46);
 }
 
 .tracking-layer {
@@ -586,10 +601,17 @@ a {
   min-height: 118px;
   border-color: rgba(122, 207, 255, 0.72);
   background: #17262b;
+  transform: rotateY(-6deg) rotateX(2deg) rotateZ(1deg)
+    translate3d(-6px, -2px, 24px);
+  box-shadow:
+    9px 11px 0 rgba(122, 207, 255, 0.1),
+    0 30px 72px rgba(0, 0, 0, 0.44);
 }
 
 .surface-layer {
   grid-area: surface;
+  transform: rotateY(12deg) rotateX(-3deg) rotateZ(-1.5deg)
+    translate3d(-4px, 5px, 12px);
 }
 
 .rover-feature {
@@ -605,16 +627,16 @@ a {
 
 .rover-scene {
   position: relative;
-  min-height: 330px;
+  min-height: 370px;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-template-areas:
     'pi pi'
     'jetson io'
     'milestones milestones';
-  gap: 8px;
+  gap: 16px;
   align-content: end;
-  padding: 18px;
+  padding: 28px;
   overflow: hidden;
   perspective: 1150px;
   isolation: isolate;
@@ -645,7 +667,14 @@ a {
   padding: 16px;
   border: 1px solid rgba(159, 211, 93, 0.42);
   background: rgba(18, 23, 18, 0.96);
-  box-shadow: 0 30px 75px rgba(0, 0, 0, 0.42);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  box-shadow:
+    8px 10px 0 rgba(159, 211, 93, 0.1),
+    0 30px 75px rgba(0, 0, 0, 0.42);
+  transition:
+    transform 280ms ease,
+    box-shadow 280ms ease;
 }
 
 .rover-layer span,
@@ -666,6 +695,8 @@ a {
 .rover-jetson {
   grid-area: jetson;
   border-style: dashed;
+  transform: rotateY(10deg) rotateX(2deg) rotateZ(-1.5deg)
+    translate3d(5px, 2px, 18px);
 }
 
 .rover-pi {
@@ -673,11 +704,18 @@ a {
   min-height: 124px;
   border-color: var(--signal);
   background: #29351f;
+  transform: rotateY(-6deg) rotateX(3deg) rotateZ(-1deg)
+    translate3d(7px, -3px, 42px);
+  box-shadow:
+    11px 13px 0 rgba(217, 255, 67, 0.13),
+    0 38px 82px rgba(0, 0, 0, 0.48);
 }
 
 .rover-io {
   grid-area: io;
   border-style: dashed;
+  transform: rotateY(-11deg) rotateX(-2deg) rotateZ(1.5deg)
+    translate3d(-4px, -2px, 14px);
 }
 
 .rover-milestones {
@@ -690,6 +728,10 @@ a {
   padding: 0;
   border: 1px solid rgba(240, 239, 233, 0.22);
   list-style: none;
+  background: rgba(10, 15, 11, 0.82);
+  transform: rotateX(13deg) translate3d(0, -4px, -6px);
+  transform-origin: center top;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.32);
 }
 
 .rover-milestones li {
@@ -777,16 +819,17 @@ a {
 
 .firewall-scene {
   position: relative;
-  min-height: 310px;
+  min-height: 370px;
   flex: 1;
   display: grid;
   grid-template-rows: auto auto auto;
-  gap: 10px;
+  gap: 16px;
   align-content: end;
-  padding: 18px;
+  padding: 28px;
   overflow: hidden;
   perspective: 1000px;
   isolation: isolate;
+  transform-style: preserve-3d;
 }
 
 .firewall-scene::before {
@@ -803,6 +846,20 @@ a {
   transform-origin: center bottom;
 }
 
+.firewall-scene::after {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  right: 8%;
+  bottom: 92px;
+  left: 11%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--signal), transparent);
+  box-shadow: 0 0 28px rgba(217, 255, 67, 0.52);
+  transform: rotateZ(-2deg) translateZ(-14px);
+  pointer-events: none;
+}
+
 .firewall-request {
   position: relative;
   z-index: 1;
@@ -814,7 +871,12 @@ a {
   padding: 16px;
   border: 1px solid var(--signal);
   background: #263020;
-  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.38);
+  transform: rotateY(12deg) rotateX(3deg) rotateZ(-2deg)
+    translate3d(5px, 3px, 38px);
+  transform-style: preserve-3d;
+  box-shadow:
+    9px 11px 0 rgba(217, 255, 67, 0.12),
+    0 28px 62px rgba(0, 0, 0, 0.44);
 }
 
 .firewall-request span,
@@ -838,10 +900,12 @@ a {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 7px;
+  gap: 14px;
   margin: 0;
   padding: 0;
   list-style: none;
+  perspective: 900px;
+  transform-style: preserve-3d;
 }
 
 .firewall-scene li {
@@ -853,12 +917,34 @@ a {
   padding: 14px;
   border: 1px solid rgba(217, 255, 67, 0.32);
   background: rgba(19, 23, 20, 0.96);
-  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.26);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  box-shadow:
+    7px 9px 0 rgba(217, 255, 67, 0.08),
+    0 24px 48px rgba(0, 0, 0, 0.3);
+}
+
+.firewall-scene li:nth-child(1) {
+  transform: rotateY(11deg) rotateX(2deg) rotateZ(-1deg)
+    translate3d(2px, 11px, 8px);
 }
 
 .firewall-scene li:nth-child(2),
 .firewall-scene li:nth-child(3) {
   border-color: var(--signal);
+}
+
+.firewall-scene li:nth-child(2) {
+  transform: rotateY(4deg) rotateX(-1deg) translate3d(0, 3px, 24px);
+}
+
+.firewall-scene li:nth-child(3) {
+  transform: rotateY(-4deg) rotateX(1deg) translate3d(0, -5px, 38px);
+}
+
+.firewall-scene li:nth-child(4) {
+  transform: rotateY(-11deg) rotateX(-2deg) rotateZ(1deg)
+    translate3d(-2px, -11px, 16px);
 }
 
 .firewall-scene li strong {
@@ -875,6 +961,11 @@ a {
   color: var(--ink);
   font: 900 9px/1 var(--mono);
   letter-spacing: 0.05em;
+  transform: rotateY(-7deg) rotateX(-4deg) rotateZ(1.5deg)
+    translate3d(-3px, -2px, 42px);
+  box-shadow:
+    7px 8px 0 rgba(136, 164, 31, 0.38),
+    0 18px 38px rgba(0, 0, 0, 0.32);
 }
 
 .meridian-feature {
@@ -886,18 +977,35 @@ a {
 
 .meridian-scene {
   position: relative;
-  min-height: 300px;
+  min-height: 360px;
   flex: 1;
   display: grid;
   grid-template-areas:
     'source'
     'steps'
     'output';
-  gap: 9px;
+  gap: 15px;
   align-content: end;
-  padding: 18px;
+  padding: 30px;
   overflow: hidden;
   perspective: 900px;
+  isolation: isolate;
+  transform-style: preserve-3d;
+}
+
+.meridian-scene::before {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  inset: 18% -8% -36%;
+  background:
+    linear-gradient(rgba(31, 70, 136, 0.13) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(31, 70, 136, 0.13) 1px, transparent 1px);
+  background-size: 26px 26px;
+  mask-image: linear-gradient(#000 25%, transparent 82%);
+  transform: rotateX(62deg) translateZ(-70px);
+  transform-origin: center bottom;
+  pointer-events: none;
 }
 
 .meridian-source,
@@ -911,7 +1019,11 @@ a {
   justify-content: flex-end;
   padding: 15px;
   border: 1px solid rgba(16, 39, 84, 0.3);
-  box-shadow: 0 22px 54px rgba(37, 61, 107, 0.16);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  box-shadow:
+    8px 10px 0 rgba(30, 58, 105, 0.12),
+    0 24px 58px rgba(37, 61, 107, 0.2);
 }
 
 .meridian-source {
@@ -919,6 +1031,8 @@ a {
   justify-self: start;
   background: #1c355f;
   color: #fff;
+  transform: rotateY(13deg) rotateX(2deg) rotateZ(-2deg)
+    translate3d(8px, 2px, 24px);
 }
 
 .meridian-output {
@@ -926,6 +1040,11 @@ a {
   justify-self: end;
   background: #e7ff98;
   color: #1c2710;
+  transform: rotateY(-14deg) rotateX(-2deg) rotateZ(2deg)
+    translate3d(-8px, -2px, 30px);
+  box-shadow:
+    9px 11px 0 rgba(139, 163, 61, 0.2),
+    0 26px 60px rgba(37, 61, 107, 0.2);
 }
 
 .meridian-output span {
@@ -944,10 +1063,13 @@ a {
   grid-area: steps;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 7px;
+  gap: 14px;
   margin: 0;
   padding: 0;
   list-style: none;
+  transform: rotateY(-4deg) rotateX(2deg) rotateZ(1deg)
+    translate3d(2px, -2px, 38px);
+  transform-style: preserve-3d;
 }
 
 .meridian-scene li {
@@ -960,7 +1082,18 @@ a {
   padding: 12px 14px;
   border: 1px solid rgba(30, 58, 105, 0.24);
   background: rgba(248, 251, 255, 0.96);
-  box-shadow: 0 16px 40px rgba(37, 61, 107, 0.12);
+  backface-visibility: hidden;
+  box-shadow:
+    8px 9px 0 rgba(30, 58, 105, 0.08),
+    0 18px 44px rgba(37, 61, 107, 0.16);
+}
+
+.meridian-scene li:first-child {
+  transform: translate3d(3px, 5px, 8px) rotateZ(-1deg);
+}
+
+.meridian-scene li:last-child {
+  transform: translate3d(-3px, -4px, 18px) rotateZ(1deg);
 }
 
 .meridian-scene li span {
@@ -1913,6 +2046,27 @@ a {
   }
 }
 
+@media (min-width: 761px) and (max-width: 1160px) {
+  .pmw-feature {
+    min-height: 400px;
+    display: grid;
+    grid-template-columns: minmax(250px, 0.82fr) minmax(0, 1.18fr);
+  }
+
+  .pmw-feature .feature-copy {
+    align-self: center;
+    padding: 34px 20px 34px 34px;
+  }
+
+  .pmw-scene {
+    min-height: 400px;
+  }
+
+  .bubble-feature {
+    min-height: 400px;
+  }
+}
+
 @media (max-width: 760px) {
   .shell,
   .detail-shell {
@@ -2051,7 +2205,7 @@ a {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 8px;
-    padding: 14px;
+    padding: 12px;
   }
 
   .pmw-browser,
@@ -2060,20 +2214,30 @@ a {
     position: relative;
     inset: auto;
     width: auto;
-    min-height: 100px;
-    transform: none;
+    min-height: 82px;
   }
 
   .pmw-browser {
     grid-column: 1 / -1;
-    min-height: 165px;
+    min-height: 138px;
+    padding: 46px 18px 18px;
+    transform: rotateY(5deg) rotateX(2deg) rotateZ(-1.5deg);
   }
 
   .pmw-resolver,
   .pmw-settlement {
     right: auto;
     bottom: auto;
-    min-height: 78px;
+    min-height: 64px;
+    padding: 12px;
+  }
+
+  .pmw-resolver {
+    transform: rotateY(6deg) rotateZ(-1deg);
+  }
+
+  .pmw-settlement {
+    transform: rotateY(-6deg) rotateZ(1deg);
   }
 
   .bubble-feature {
@@ -2089,7 +2253,7 @@ a {
   .bubble-feature > img {
     position: relative;
     inset: auto;
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 16 / 9;
     height: auto;
     object-fit: cover;
   }
@@ -2102,12 +2266,14 @@ a {
       'vision vision'
       'tracking tracking'
       'camera surface';
-    gap: 8px;
-    padding: 12px;
+    gap: 12px;
+    padding: 18px;
   }
 
   .wisp-grid-plane {
-    display: none;
+    display: block;
+    inset: 18% 3% -48%;
+    opacity: 0.55;
   }
 
   .wisp-layer,
@@ -2120,15 +2286,29 @@ a {
     width: auto;
     min-height: 84px;
     padding: 12px;
-    transform: none;
+    transform-style: preserve-3d;
   }
 
   .vision-layer {
     min-height: 96px;
+    transform: rotateY(4deg) rotateX(-1deg) rotateZ(-0.5deg)
+      translate3d(3px, -1px, 18px);
   }
 
   .tracking-layer {
     min-height: 92px;
+    transform: rotateY(-4deg) rotateX(1deg) rotateZ(0.5deg)
+      translate3d(-3px, -1px, 14px);
+  }
+
+  .camera-layer {
+    transform: rotateY(-7deg) rotateX(2deg) rotateZ(1deg)
+      translate3d(-1px, 2px, 6px);
+  }
+
+  .surface-layer {
+    transform: rotateY(7deg) rotateX(-2deg) rotateZ(-1deg)
+      translate3d(0, 2px, 8px);
   }
 
   .wisp-layer strong {
@@ -2143,13 +2323,15 @@ a {
       'pi pi'
       'jetson io'
       'milestones milestones';
-    gap: 8px;
-    padding: 12px;
+    gap: 12px;
+    padding: 18px;
     overflow: hidden;
   }
 
   .rover-grid-plane {
-    display: none;
+    display: block;
+    inset: 16% 3% -52%;
+    opacity: 0.55;
   }
 
   .rover-layer,
@@ -2161,11 +2343,23 @@ a {
     width: auto;
     min-height: 100px;
     padding: 12px;
-    transform: none;
+    transform-style: preserve-3d;
   }
 
   .rover-pi {
     min-height: 110px;
+    transform: rotateY(-4deg) rotateX(2deg) rotateZ(-0.5deg)
+      translate3d(4px, -2px, 22px);
+  }
+
+  .rover-jetson {
+    transform: rotateY(7deg) rotateX(1deg) rotateZ(-1deg)
+      translate3d(3px, 1px, 10px);
+  }
+
+  .rover-io {
+    transform: rotateY(-7deg) rotateX(-1deg) rotateZ(1deg)
+      translate3d(-3px, -1px, 8px);
   }
 
   .rover-layer strong {
@@ -2177,16 +2371,20 @@ a {
   .rover-milestones {
     position: relative;
     inset: auto;
+    transform: rotateX(9deg) translate3d(0, -2px, -3px);
   }
 
   .firewall-scene {
     min-height: auto;
     grid-template-rows: auto auto auto;
-    padding: 12px;
+    gap: 14px;
+    padding: 18px;
   }
 
   .firewall-scene::before {
-    display: none;
+    display: block;
+    inset: 16% 2% -48%;
+    opacity: 0.6;
   }
 
   .firewall-request {
@@ -2194,7 +2392,8 @@ a {
     inset: auto;
     width: 100%;
     min-height: 76px;
-    transform: none;
+    transform: rotateY(7deg) rotateX(2deg) rotateZ(-1deg)
+      translate3d(3px, 1px, 20px);
   }
 
   .firewall-scene ol {
@@ -2203,7 +2402,7 @@ a {
     width: auto;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     margin-top: 8px;
-    transform: none;
+    transform-style: preserve-3d;
   }
 
   .firewall-scene li {
@@ -2211,15 +2410,33 @@ a {
     padding: 11px;
   }
 
+  .firewall-scene li:nth-child(1) {
+    transform: rotateY(6deg) rotateZ(-0.5deg) translate3d(1px, 4px, 6px);
+  }
+
+  .firewall-scene li:nth-child(2) {
+    transform: rotateY(-5deg) rotateZ(0.5deg) translate3d(-1px, 0, 14px);
+  }
+
+  .firewall-scene li:nth-child(3) {
+    transform: rotateY(5deg) rotateZ(-0.5deg) translate3d(1px, 0, 18px);
+  }
+
+  .firewall-scene li:nth-child(4) {
+    transform: rotateY(-6deg) rotateZ(0.5deg) translate3d(-1px, -4px, 8px);
+  }
+
   .firewall-boundary {
     position: relative;
     inset: auto;
     justify-self: end;
+    transform: rotateY(-5deg) rotateZ(1deg) translate3d(-2px, -1px, 22px);
   }
 
   .meridian-scene {
     min-height: auto;
-    padding: 12px;
+    gap: 12px;
+    padding: 18px;
   }
 
   .meridian-source,
@@ -2228,13 +2445,24 @@ a {
     inset: auto;
     width: min(72%, 280px);
     min-height: 68px;
-    transform: none;
+    transform-style: preserve-3d;
+  }
+
+  .meridian-source {
+    transform: rotateY(8deg) rotateX(1deg) rotateZ(-1deg)
+      translate3d(4px, 1px, 14px);
+  }
+
+  .meridian-output {
+    transform: rotateY(-8deg) rotateX(-1deg) rotateZ(1deg)
+      translate3d(-4px, -1px, 16px);
   }
 
   .meridian-scene ol {
     position: relative;
     inset: auto;
-    transform: none;
+    transform: rotateY(-2deg) rotateX(1deg) rotateZ(0.5deg)
+      translate3d(1px, -1px, 20px);
   }
 
   .meridian-scene li {

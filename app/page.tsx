@@ -81,10 +81,7 @@ export default function Home() {
         <figure className="ai-note">
           <figcaption>WHAT I’VE NOTICED</figcaption>
           <blockquote>
-            <p>
-              Jack is impatient with work that feels generic because he wants it
-              to say something he actually believes.
-            </p>
+            <p>Jack treats “good enough” as a useful prototype.</p>
           </blockquote>
         </figure>
       </section>
