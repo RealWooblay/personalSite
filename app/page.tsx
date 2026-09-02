@@ -73,17 +73,46 @@ export default function Home() {
         Skip to selected work
       </a>
 
+      <nav className="profile-nav shell" aria-label="Profile links">
+        <a className="profile-nav-name" href="#top">
+          Jack Coleman
+        </a>
+        <div>
+          <a
+            href="https://www.linkedin.com/in/jack-coleman-921611270/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            LinkedIn ↗
+          </a>
+          <a
+            href="https://github.com/RealWooblay"
+            target="_blank"
+            rel="noreferrer"
+          >
+            GitHub ↗
+          </a>
+        </div>
+      </nav>
+
       <section className="portfolio-intro shell" id="top">
         <h1>
           Building technology for a future measured by how fully people can
           live.
         </h1>
         <aside className="ai-note" aria-label="An observation from Jack’s AI">
-          <span>MY READ, AFTER WORKING TOGETHER</span>
-          <p>
-            Jack keeps pulling at an idea until the impressive version is also
-            the honest one.
-          </p>
+          <span>WHAT MY AI SAID ABOUT ME</span>
+          <div className="ai-machine-read">
+            <code>PATTERN DETECTED: AMBITION = CONSTANT. DRAFT = VARIABLE.</code>
+            <details>
+              <summary>translate</summary>
+              <p>
+                Jack does not lower the ambition to excuse a weak draft. He
+                keeps moving the draft until it matches what he saw in the
+                first place.
+              </p>
+            </details>
+          </div>
         </aside>
       </section>
 
@@ -93,61 +122,6 @@ export default function Home() {
         </div>
 
         <div className="shell portfolio-grid">
-          <article className="project-stage stage-vela">
-            <div className="stage-copy">
-              <p className="project-meta">
-                <span>AUTONOMOUS MANUFACTURING</span>
-                <span>SYSTEMS VENTURE</span>
-              </p>
-              <h3>Vela</h3>
-              <p>
-                Scoped an autonomous CNC production system from first
-                principles, then built the operating model, factory simulation
-                and customer platform needed to de-risk it.
-              </p>
-              <div className="feature-links">
-                <a href="/work/vela">Project ↗</a>
-              </div>
-              <ol className="vela-sequence" aria-label="Vela development path">
-                <li>Research</li>
-                <li>System</li>
-                <li>Simulation</li>
-                <li>Platform</li>
-              </ol>
-            </div>
-            <div className="vela-scene" aria-label="Vela simulation and platform">
-              <video
-                className="vela-factory"
-                autoPlay
-                loop
-                muted
-                playsInline
-                preload="metadata"
-                poster="/media/vela/factory-poster.jpg"
-                aria-label="Simulation of an autonomous production cell"
-              >
-                <source src="/media/vela/factory-simulation.mp4" type="video/mp4" />
-              </video>
-              <div className="vela-console">
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="metadata"
-                  poster="/media/vela/platform-poster.jpg"
-                  aria-label="Vela production control platform walkthrough"
-                >
-                  <source src="/media/vela/platform-walkthrough.mp4" type="video/mp4" />
-                </video>
-                <span>WORKING PLATFORM · 9 OPERATIONAL VIEWS</span>
-              </div>
-              <span className="vela-axis axis-x">ROBOTICS</span>
-              <span className="vela-axis axis-y">INSPECTION</span>
-              <span className="vela-axis axis-z">CONTROL</span>
-            </div>
-          </article>
-
           <article className="project-stage stage-rover">
             <div className="stage-copy">
               <p className="project-meta">
@@ -214,19 +188,19 @@ export default function Home() {
               <span className="golazo-live-line" aria-hidden="true">THE NEXT MOMENT IS THE MARKET</span>
               <img
                 className="golazo-app app-one"
-                src="/media/golazo/real/spain-austria.png"
-                alt="Golazo live Spain versus Austria market"
-                width="285"
-                height="507"
+                src="/media/golazo/real/croatia-portugal-live.jpg"
+                alt="Golazo live Croatia versus Portugal market"
+                width="1080"
+                height="1920"
                 loading="lazy"
                 decoding="async"
               />
               <img
                 className="golazo-app app-two"
-                src="/media/golazo/real/croatia-portugal.png"
-                alt="Golazo live Croatia versus Portugal market"
-                width="285"
-                height="447"
+                src="/media/golazo/real/spain-austria-live.jpg"
+                alt="Golazo live Spain versus Austria market"
+                width="1080"
+                height="1920"
                 loading="lazy"
                 decoding="async"
               />
@@ -294,7 +268,10 @@ export default function Home() {
                 <source src="/media/meridian/jack-pitch.mp4" type="video/mp4" />
                 <track kind="captions" src="/media/meridian/jack-pitch.en.vtt" srcLang="en" label="English" default />
               </video>
-              <span>MY PITCH · 01:44</span>
+              <span className="meridian-video-label">MY PITCH · 01:44</span>
+              <span className="meridian-play-cue" aria-hidden="true">
+                <i>▶</i> Play pitch
+              </span>
             </div>
             <div className="stage-copy">
               <p className="project-meta">
@@ -306,6 +283,140 @@ export default function Home() {
               <div className="feature-links">
                 <a href="/work/meridian">Project ↗</a>
               </div>
+            </div>
+          </article>
+
+          <article className="project-stage stage-wisp">
+            <div className="stage-copy">
+              <p className="project-meta">
+                <span>NVIDIA JETSON</span>
+                <span>EDGE VISION</span>
+              </p>
+              <h3>WISP Lab</h3>
+              <p>
+                Live pose becomes spatial control through TensorRT inference,
+                head tracking and projection mapping on Jetson.
+              </p>
+              <div className="feature-links">
+                <a href="/work/wisp-lab">Project ↗</a>
+                <a href="https://github.com/RealWooblay/wisp-lab" target="_blank" rel="noreferrer">
+                  GitHub ↗
+                </a>
+              </div>
+            </div>
+            <div className="wisp-vision" aria-label="WISP pose tracking signal map">
+              <span className="wisp-camera-label">YOLOV8N-POSE · TENSORRT FP16</span>
+              <span className="wisp-fps">8.6 FPS</span>
+              <svg viewBox="0 0 720 480" aria-label="Tracked human pose with head and wrist points">
+                <defs>
+                  <filter id="wisp-glow" x="-80%" y="-80%" width="260%" height="260%">
+                    <feGaussianBlur stdDeviation="4" result="blur" />
+                    <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+                  </filter>
+                </defs>
+                <rect className="wisp-person-box" x="224" y="38" width="274" height="418" rx="4" />
+                <g className="wisp-pose-lines">
+                  <path d="M346 98 L374 98 M360 108 L360 137 M300 158 L360 137 L422 158 M300 158 L266 232 L236 301 M422 158 L454 231 L488 296 M360 137 L324 280 L400 280 Z M324 280 L294 365 L275 447 M400 280 L432 365 L451 447" />
+                </g>
+                <g className="wisp-keypoints" filter="url(#wisp-glow)">
+                  <circle cx="360" cy="88" r="5" />
+                  <circle cx="346" cy="98" r="4" /><circle cx="374" cy="98" r="4" />
+                  <circle cx="300" cy="158" r="5" /><circle cx="422" cy="158" r="5" />
+                  <circle cx="266" cy="232" r="5" /><circle cx="454" cy="231" r="5" />
+                  <circle className="wisp-hand" cx="236" cy="301" r="7" /><circle className="wisp-hand" cx="488" cy="296" r="7" />
+                  <circle cx="324" cy="280" r="5" /><circle cx="400" cy="280" r="5" />
+                  <circle cx="294" cy="365" r="5" /><circle cx="432" cy="365" r="5" />
+                  <circle cx="275" cy="447" r="5" /><circle cx="451" cy="447" r="5" />
+                </g>
+                <path className="wisp-head-vector" d="M360 88 L530 68 L530 44" />
+                <text x="539" y="48">HEAD +0.12 / -0.04 / Z4.8</text>
+                <path className="wisp-hand-vector" d="M488 296 L588 254" />
+                <text x="596" y="257">WRIST R</text>
+              </svg>
+              <ol aria-label="WISP processing path">
+                <li>CAMERA</li><li>POSE</li><li>HEAD + HANDS</li><li>RENDER</li>
+              </ol>
+            </div>
+          </article>
+
+          <article className="project-stage stage-pmw">
+            <div className="stage-copy">
+              <p className="project-meta">
+                <span>ETHGLOBAL CANNES</span>
+                <span>FLARE 3RD PLACE</span>
+              </p>
+              <h3>Prove Me Wrong</h3>
+              <p>Tweet a claim. Take a side. Settle it with evidence.</p>
+              <div className="feature-links">
+                <a href="/work/prove-me-wrong">Project ↗</a>
+                <a href="https://ethglobal.com/showcase/prove-me-wrong-2j4ks" target="_blank" rel="noreferrer">
+                  ETHGlobal ↗
+                </a>
+              </div>
+            </div>
+            <img
+              src="/media/prove-me-wrong/market-wallet.jpg"
+              alt="Prove Me Wrong market embedded in X with Flare wallet approval"
+              width="1590"
+              height="1244"
+              loading="lazy"
+              decoding="async"
+            />
+          </article>
+
+          <article className="project-stage stage-vela">
+            <div className="stage-copy">
+              <p className="project-meta">
+                <span>AUTONOMOUS MANUFACTURING</span>
+                <span>SYSTEMS VENTURE</span>
+              </p>
+              <h3>Vela</h3>
+              <p>
+                Scoped an autonomous CNC production system from first
+                principles, then built the operating model, factory simulation
+                and customer platform needed to de-risk it.
+              </p>
+              <div className="feature-links">
+                <a href="/work/vela">Project ↗</a>
+              </div>
+              <ol className="vela-sequence" aria-label="Vela development path">
+                <li>Research</li>
+                <li>System</li>
+                <li>Simulation</li>
+                <li>Platform</li>
+              </ol>
+            </div>
+            <div className="vela-scene" aria-label="Vela simulation and platform">
+              <video
+                className="vela-factory"
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="metadata"
+                poster="/media/vela/factory-poster.jpg"
+                aria-label="Simulation of an autonomous production cell"
+              >
+                <source src="/media/vela/factory-simulation.mp4" type="video/mp4" />
+              </video>
+              <span className="vela-simulation-label">AUTONOMOUS CELL SIMULATION</span>
+              <div className="vela-console">
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
+                  poster="/media/vela/platform-poster.jpg"
+                  aria-label="Vela production control platform walkthrough"
+                >
+                  <source src="/media/vela/platform-walkthrough.mp4" type="video/mp4" />
+                </video>
+                <span>WORKING PLATFORM · 9 OPERATIONAL VIEWS</span>
+              </div>
+              <span className="vela-axis axis-x">ROBOTICS</span>
+              <span className="vela-axis axis-y">INSPECTION</span>
+              <span className="vela-axis axis-z">CONTROL</span>
             </div>
           </article>
 
@@ -356,30 +467,6 @@ export default function Home() {
             </div>
           </article>
 
-          <article className="project-stage stage-pmw">
-            <div className="stage-copy">
-              <p className="project-meta">
-                <span>ETHGLOBAL CANNES</span>
-                <span>FLARE 3RD PLACE</span>
-              </p>
-              <h3>Prove Me Wrong</h3>
-              <p>Tweet a claim. Take a side. Settle it with evidence.</p>
-              <div className="feature-links">
-                <a href="/work/prove-me-wrong">Project ↗</a>
-                <a href="https://ethglobal.com/showcase/prove-me-wrong-2j4ks" target="_blank" rel="noreferrer">
-                  ETHGlobal ↗
-                </a>
-              </div>
-            </div>
-            <img
-              src="/media/prove-me-wrong/market-wallet.jpg"
-              alt="Prove Me Wrong market embedded in X with Flare wallet approval"
-              width="1590"
-              height="1244"
-              loading="lazy"
-              decoding="async"
-            />
-          </article>
         </div>
       </section>
 
@@ -388,14 +475,6 @@ export default function Home() {
           <h2>More work</h2>
         </div>
         <div className="shell system-tile-grid">
-          <SystemTile
-            title="WISP Lab"
-            category="NVIDIA JETSON LAB"
-            line="Pose perception and spatial rendering running locally on Jetson."
-            flow={['CAMERA', 'TENSORRT', 'POSE', 'RENDER']}
-            href="/work/wisp-lab"
-            source="https://github.com/RealWooblay/wisp-lab"
-          />
           <SystemTile
             title="AI Action OS"
             category="OPERATOR SYSTEM"
