@@ -159,7 +159,13 @@ function ProjectVisual({ project }: { project: Project }) {
 
   return (
     <figure
-      className={`project-visual-v3 ${project.media.type === 'video' ? 'project-video-v3' : ''}`}
+      className={`project-visual-v3 ${
+        project.media.type === 'video'
+          ? 'project-video-v3'
+          : project.media.type === 'youtube'
+            ? 'project-youtube-v3'
+            : ''
+      }`}
     >
       <div className="detail-shell project-visual-inner-v3">
         {project.media.type === 'video' ? (
@@ -174,7 +180,28 @@ function ProjectVisual({ project }: { project: Project }) {
             height={project.media.height}
           >
             <source src={project.media.src} type="video/mp4" />
+            {project.media.captions && (
+              <track
+                kind="captions"
+                src={project.media.captions}
+                srcLang="en"
+                label="English"
+                default
+              />
+            )}
           </video>
+        ) : project.media.type === 'youtube' ? (
+          <div className="presentation-embed-v3">
+            <iframe
+              src={project.media.src}
+              title={project.media.alt}
+              width={project.media.width}
+              height={project.media.height}
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          </div>
         ) : (
           <img
             src={project.media.src}

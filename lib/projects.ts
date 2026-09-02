@@ -30,13 +30,14 @@ export type Project = {
   architecture: string[];
   accent: string;
   media?: {
-    type: 'image' | 'video';
+    type: 'image' | 'video' | 'youtube';
     src: string;
     alt: string;
     caption: string;
     width?: number;
     height?: number;
     poster?: string;
+    captions?: string;
   };
 };
 
@@ -159,7 +160,7 @@ export const projects: Project[] = [
       },
       {
         label: 'Stage presentation',
-        href: 'https://www.youtube.com/watch?v=uPW20IUHC1Y&t=4902s',
+        href: 'https://www.youtube.com/watch?v=uPW20IUHC1Y&t=4823s',
       },
     ],
     role: 'Three person team. Built identity, backend flows, referral UI and the attested runtime.',
@@ -178,12 +179,12 @@ export const projects: Project[] = [
     ],
     accent: '#ff3c69',
     media: {
-      type: 'image',
-      src: '/media/bubblewars/banner.webp',
-      alt: 'Bubble Wars project banner',
-      caption: 'Project artwork · team repository',
-      width: 1792,
-      height: 1024,
+      type: 'youtube',
+      src: 'https://www.youtube-nocookie.com/embed/uPW20IUHC1Y?start=4823&end=4890&rel=0',
+      alt: 'Jack presenting the AI and indexed onchain game layer for Bubble Wars',
+      caption: 'Jack’s stage segment · ETHGlobal Bangkok',
+      width: 1280,
+      height: 720,
     },
   },
   {
@@ -220,6 +221,16 @@ export const projects: Project[] = [
       'GUIDANCE',
     ],
     accent: '#78a8ff',
+    media: {
+      type: 'video',
+      src: '/media/meridian/jack-pitch.mp4',
+      alt: 'Jack presenting MERIDIAN at Stone and Chalk',
+      caption: 'Jack’s pitch · Stone & Chalk',
+      width: 720,
+      height: 1280,
+      poster: '/media/meridian/jack-pitch-poster.jpg',
+      captions: '/media/meridian/jack-pitch.en.vtt',
+    },
   },
   {
     slug: 'wisp-lab',

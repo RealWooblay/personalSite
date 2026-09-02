@@ -78,12 +78,13 @@ export default function Home() {
           Building technology for a future measured by how fully people can
           live.
         </h1>
-        <figure className="ai-note">
-          <figcaption>WHAT I’VE NOTICED</figcaption>
-          <blockquote>
-            <p>Jack treats “good enough” as a useful prototype.</p>
-          </blockquote>
-        </figure>
+        <aside className="ai-note" aria-label="What Jack’s AI says about him">
+          <span>WHAT MY AI SAYS</span>
+          <p>
+            Jack’s favourite version is the one after the version everyone else
+            would have shipped.
+          </p>
+        </aside>
       </section>
 
       <section className="work-v3" id="featured">
@@ -262,31 +263,27 @@ export default function Home() {
             </div>
             <div
               className="firewall-scene"
-              aria-label="Agent Firewall controlled execution chain"
+              aria-label="Agent Firewall protected execution boundary"
             >
-              <div className="firewall-request">
-                <span>AGENT REQUEST</span>
-                <strong>git:push</strong>
+              <div className="firewall-intent">
+                <span>UNTRUSTED INTENT</span>
+                <strong>deploy:prod</strong>
+                <small>NO KEYS ATTACHED</small>
               </div>
-              <ol>
-                <li>
-                  <span>01</span>
-                  <strong>POLICY</strong>
-                </li>
-                <li>
-                  <span>02</span>
-                  <strong>APPROVAL</strong>
-                </li>
-                <li>
-                  <span>03</span>
-                  <strong>ISOLATED EXECUTION</strong>
-                </li>
-                <li>
-                  <span>04</span>
-                  <strong>SIGNED RECEIPT</strong>
-                </li>
-              </ol>
-              <div className="firewall-boundary">CREDENTIAL BOUNDARY</div>
+              <div className="firewall-gate">
+                <span>POLICY GATE</span>
+                <strong>HELD</strong>
+                <small>HUMAN APPROVAL</small>
+              </div>
+              <div className="firewall-vault">
+                <span>CREDENTIAL VAULT</span>
+                <strong>OUT OF CONTEXT</strong>
+                <small>EPHEMERAL ACCESS</small>
+              </div>
+              <div className="firewall-receipt">
+                <i />
+                SIGNED RECEIPT
+              </div>
             </div>
           </article>
 
@@ -314,25 +311,48 @@ export default function Home() {
             </div>
             <div
               className="meridian-scene"
-              aria-label="MERIDIAN governed genomics pipeline"
+              aria-label="Jack presenting MERIDIAN’s governed genomics system"
             >
-              <div className="meridian-source">
-                <span>PRIVATE INPUT</span>
-                <strong>GRCh38 VCF</strong>
+              <div className="meridian-pitch-frame">
+                <video
+                  controls
+                  playsInline
+                  preload="metadata"
+                  poster="/media/meridian/jack-pitch-poster.jpg"
+                  aria-label="Jack presenting MERIDIAN at Stone and Chalk"
+                  width="720"
+                  height="1280"
+                >
+                  <source
+                    src="/media/meridian/jack-pitch.mp4"
+                    type="video/mp4"
+                  />
+                  <track
+                    kind="captions"
+                    src="/media/meridian/jack-pitch.en.vtt"
+                    srcLang="en"
+                    label="English"
+                    default
+                  />
+                </video>
+                <span>JACK’S PITCH · 01:44</span>
               </div>
-              <ol>
-                <li>
-                  <span>01</span>
-                  <strong>PHARMCAT + CPIC EVIDENCE</strong>
-                </li>
-                <li>
-                  <span>02</span>
-                  <strong>CONSTRAINED CHECK</strong>
-                </li>
-              </ol>
-              <div className="meridian-output">
-                <span>SOURCE BOUND</span>
-                <strong>GUIDANCE</strong>
+              <div className="meridian-pitch-index">
+                <span>THE SYSTEM</span>
+                <ol>
+                  <li>
+                    <i>01</i>
+                    <strong>GENOME</strong>
+                  </li>
+                  <li>
+                    <i>02</i>
+                    <strong>EVIDENCE</strong>
+                  </li>
+                  <li>
+                    <i>03</i>
+                    <strong>GUIDANCE</strong>
+                  </li>
+                </ol>
               </div>
             </div>
           </article>
@@ -399,6 +419,13 @@ export default function Home() {
               <p>Invite allies. Raid rivals. Grow the biggest bubble.</p>
               <div className="feature-links">
                 <a href="/work/bubble-wars">Project ↗</a>
+                <a
+                  href="https://www.youtube.com/watch?v=uPW20IUHC1Y&t=4823s"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Watch Jack’s pitch ↗
+                </a>
                 <a
                   href="https://ethglobal.com/showcase/bubblewars-rgjpk"
                   target="_blank"
