@@ -5,6 +5,7 @@ export type ProjectSlug =
   | 'meridian'
   | 'wisp-lab'
   | 'frontier-rover'
+  | 'vela'
   | 'bender'
   | 'minitown-ai'
   | 'ai-action-os'
@@ -328,6 +329,57 @@ export const projects: Project[] = [
       'WATCHDOG STOP',
     ],
     accent: '#9fd35d',
+  },
+  {
+    slug: 'vela',
+    title: 'Vela',
+    kicker: 'Autonomous manufacturing · Robotics · Production systems',
+    status: 'Venture exploration and working software prototype',
+    description:
+      'An autonomous precision-manufacturing venture developed from technical scoping into factory simulation and a working production platform.',
+    why: 'High-mix precision manufacturing still depends on scarce human setup, routing and inspection work.',
+    built:
+      'The technical thesis, tolerance economics, production architecture, robotics and inspection research, factory simulation, interactive venture deck, and a nine-view customer and production-control platform.',
+    hardPart:
+      'Separating what can be automated now from what still needs physical validation, while making quoting, routing, inspection and repeat production behave as one system.',
+    result:
+      'A venture concept de-risked through research, simulation and working product software rather than a pitch deck alone.',
+    repoLinks: [],
+    role: 'Founder; technical research, system design, product and software prototype',
+    signal:
+      'The work moves from machining physics and operating constraints to a simulated cell and an implemented control surface.',
+    currentState:
+      'The research, system model, simulation, website and production-platform prototype are built. A physical production cell has not yet been commissioned.',
+    nextStep:
+      'Validate the narrow production envelope with machinists and integrators, then build the first physical tending and inspection loop.',
+    relatedSlugs: ['frontier-rover', 'wisp-lab', 'agent-execution-firewall'],
+    tech: [
+      'CNC systems',
+      'Robotics',
+      'Machine vision',
+      'Inspection',
+      'React',
+      'TypeScript',
+      'Three.js',
+      'Factory simulation',
+    ],
+    architecture: [
+      'DRAWING + TOLERANCE',
+      'PROCESS PLAN',
+      'ROBOTIC CELL',
+      'IN-CYCLE INSPECTION',
+      'PRODUCTION RECORD',
+    ],
+    accent: '#25ee78',
+    media: {
+      type: 'video',
+      src: '/media/vela/platform-walkthrough.mp4',
+      alt: 'Vela production control platform walkthrough',
+      caption: 'Working production-platform prototype',
+      width: 1280,
+      height: 720,
+      poster: '/media/vela/platform-poster.jpg',
+    },
   },
   {
     slug: 'bender',

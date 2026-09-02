@@ -78,11 +78,11 @@ export default function Home() {
           Building technology for a future measured by how fully people can
           live.
         </h1>
-        <aside className="ai-note" aria-label="What Jack’s AI says about him">
-          <span>FROM MY AI</span>
+        <aside className="ai-note" aria-label="An observation from Jack’s AI">
+          <span>MY READ, AFTER WORKING TOGETHER</span>
           <p>
-            Jack is impatient with anything that looks finished before it feels
-            true.
+            Jack keeps pulling at an idea until the impressive version is also
+            the honest one.
           </p>
         </aside>
       </section>
@@ -92,210 +92,225 @@ export default function Home() {
           <h2>Selected work</h2>
         </div>
 
-        <div className="shell featured-grid">
-          <article className="feature-card wisp-feature">
-            <div className="feature-copy">
+        <div className="shell portfolio-grid">
+          <article className="project-stage stage-vela">
+            <div className="stage-copy">
               <p className="project-meta">
-                <span>EMBEDDED VISION</span>
-                <span>NVIDIA JETSON ORIN NANO SUPER</span>
+                <span>AUTONOMOUS MANUFACTURING</span>
+                <span>SYSTEMS VENTURE</span>
               </p>
-              <h3>WISP Lab</h3>
+              <h3>Vela</h3>
               <p>
-                Real time pose perception, head tracked rendering and spatial
-                interaction on local NVIDIA hardware.
+                Scoped an autonomous CNC production system from first
+                principles, then built the operating model, factory simulation
+                and customer platform needed to de-risk it.
               </p>
               <div className="feature-links">
-                <a href="/work/wisp-lab">Project ↗</a>
-                <a
-                  href="https://github.com/RealWooblay/wisp-lab"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  GitHub ↗
-                </a>
+                <a href="/work/vela">Project ↗</a>
               </div>
+              <ol className="vela-sequence" aria-label="Vela development path">
+                <li>Research</li>
+                <li>System</li>
+                <li>Simulation</li>
+                <li>Platform</li>
+              </ol>
             </div>
-            <div
-              className="wisp-scene"
-              aria-label="WISP pose perception and measured Jetson performance"
-            >
-              <div className="wisp-word" aria-hidden="true">
-                PERCEPTION
-                <br />
-                BECOMES
-                <br />
-                INTERFACE
-              </div>
-              <img
-                className="wisp-pose"
-                src="/media/wisp/pose-tracker.png"
-                alt="Conceptual 3D visualization of WISP pose tracking"
-                width="1024"
-                height="1536"
-                loading="lazy"
-                decoding="async"
-              />
-              <div className="wisp-orbit orbit-one" aria-hidden="true" />
-              <div className="wisp-orbit orbit-two" aria-hidden="true" />
-              <div className="wisp-metric metric-detect">
-                <span>YOLOV8N · TENSORRT FP16</span>
-                <strong>31.6 FPS</strong>
-              </div>
-              <div className="wisp-metric metric-pose">
-                <span>POSE PERCEPTION</span>
-                <strong>8.6 FPS</strong>
-              </div>
-              <div className="wisp-metric metric-output">
-                <span>IMPLEMENTED OUTPUT</span>
-                <strong>HEAD · HAND · 4 POINT</strong>
-              </div>
-            </div>
-          </article>
-
-          <article className="feature-card rover-feature">
-            <div className="feature-copy">
-              <p className="project-meta">
-                <span>MOTION VERIFIED</span>
-                <span>JETSON LINK LIVE</span>
-              </p>
-              <h3>Frontier Rover</h3>
-              <p>
-                A working 4WD platform with bounded motor control, a 350 ms
-                watchdog, live camera transport and an NVIDIA Jetson perception
-                path.
-              </p>
-              <div className="feature-links">
-                <a href="/work/frontier-rover">Project ↗</a>
-                <a
-                  href="https://github.com/RealWooblay/frontier-rover"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  GitHub ↗
-                </a>
-              </div>
-            </div>
-            <div
-              className="rover-scene"
-              aria-label="Frontier Rover motion test and hardware build"
-            >
-              <span className="rover-number" aria-hidden="true">
-                01
-              </span>
-              <div className="rover-video-frame">
+            <div className="vela-scene" aria-label="Vela simulation and platform">
+              <video
+                className="vela-factory"
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="metadata"
+                poster="/media/vela/factory-poster.jpg"
+                aria-label="Simulation of an autonomous production cell"
+              >
+                <source src="/media/vela/factory-simulation.mp4" type="video/mp4" />
+              </video>
+              <div className="vela-console">
                 <video
                   autoPlay
                   loop
                   muted
                   playsInline
                   preload="metadata"
-                  poster="/media/rover/trailer-poster.jpg"
-                  aria-label="Frontier Rover carrying a citrus payload during a motion test"
-                  width="720"
-                  height="1280"
+                  poster="/media/vela/platform-poster.jpg"
+                  aria-label="Vela production control platform walkthrough"
                 >
-                  <source src="/media/rover/trailer.mp4" type="video/mp4" />
+                  <source src="/media/vela/platform-walkthrough.mp4" type="video/mp4" />
                 </video>
-                <span>REAL MOTION TEST · 4WD</span>
+                <span>WORKING PLATFORM · 9 OPERATIONAL VIEWS</span>
               </div>
-              <div className="rover-hardware-frame">
-                <img
-                  src="/media/rover/hardware.jpg"
-                  alt="Frontier Rover wiring, camera and Raspberry Pi control hardware"
-                  width="1400"
-                  height="1866"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <span>THE BENCH IS THE LAB</span>
-              </div>
-              <div className="rover-signal signal-control">
-                <span>CONTROL</span>
-                <strong>4 MOTORS · BOUNDED COMMANDS</strong>
-              </div>
-              <div className="rover-signal signal-watchdog">
-                <span>SAFETY</span>
-                <strong>350 MS WATCHDOG</strong>
-              </div>
-              <div className="rover-signal signal-vision">
-                <span>VISION PATH</span>
-                <strong>IMX708 → JETSON ORIN NANO</strong>
-              </div>
+              <span className="vela-axis axis-x">ROBOTICS</span>
+              <span className="vela-axis axis-y">INSPECTION</span>
+              <span className="vela-axis axis-z">CONTROL</span>
             </div>
           </article>
 
-          <article className="feature-card golazo-feature">
-            <div className="golazo-scene" aria-label="Golazo product screens">
-              <span className="golazo-chant" aria-hidden="true">
-                LIVE · LIVE · LIVE · LIVE
-              </span>
+          <article className="project-stage stage-rover">
+            <div className="stage-copy">
+              <p className="project-meta">
+                <span>WORKING ROBOT</span>
+                <span>NVIDIA JETSON</span>
+              </p>
+              <h3>Frontier Rover</h3>
+              <p>
+                A 4WD robotics platform with bounded motor control, live vision
+                transport and a fail-safe watchdog.
+              </p>
+              <div className="feature-links">
+                <a href="/work/frontier-rover">Project ↗</a>
+                <a href="https://github.com/RealWooblay/frontier-rover" target="_blank" rel="noreferrer">
+                  GitHub ↗
+                </a>
+              </div>
+            </div>
+            <div className="rover-compact-scene">
               <video
                 autoPlay
                 loop
                 muted
                 playsInline
                 preload="metadata"
-                poster="/media/golazo/screen-card-closeup.svg"
-                aria-label="Golazo live market product video"
-                width="1080"
-                height="1080"
+                poster="/media/rover/trailer-poster.jpg"
+                aria-label="Frontier Rover motion test"
               >
-                <source src="/media/golazo/live-market.mp4" type="video/mp4" />
+                <source src="/media/rover/trailer.mp4" type="video/mp4" />
               </video>
               <img
-                className="golazo-screen screen-lobby"
-                src="/media/golazo/screen-lobby.svg"
-                alt="Golazo live match lobby"
-                width="1242"
-                height="2208"
+                src="/media/rover/hardware.jpg"
+                alt="Frontier Rover control hardware"
+                width="1400"
+                height="1866"
                 loading="lazy"
                 decoding="async"
               />
-              <img
-                className="golazo-screen screen-live"
-                src="/media/golazo/screen-live-match.svg"
-                alt="Golazo live in match market"
-                width="1242"
-                height="2208"
-                loading="lazy"
-                decoding="async"
-              />
-              <img
-                className="golazo-screen screen-payout"
-                src="/media/golazo/screen-payout.svg"
-                alt="Golazo payout screen"
-                width="1242"
-                height="2208"
-                loading="lazy"
-                decoding="async"
-              />
+              <span>350 MS WATCHDOG</span>
+              <strong>VISION → CONTROL → MOTION</strong>
             </div>
-            <div className="feature-copy">
+          </article>
+
+          <article className="project-stage stage-golazo">
+            <div className="stage-copy">
               <p className="project-meta">
-                <span>FROM PROTOTYPE</span>
-                <span>TO PRODUCTION</span>
-                <span>TO REAL USERS</span>
+                <span>SHIPPED</span>
+                <span>REAL USERS</span>
+                <span>LIVE SPORTS</span>
               </p>
               <h3>Golazo</h3>
               <p>
-                A live sports market that went from prototype to production and
+                A live sports market taken from prototype to production and
                 into real users’ hands.
               </p>
               <div className="feature-links">
                 <a href="/work/golazo">Project ↗</a>
-                <a
-                  href="https://github.com/RealWooblay/golazo"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  GitHub ↗
+                <a href="https://x.com/RealWooblay/status/2073341008818131377" target="_blank" rel="noreferrer">
+                  Product on X ↗
+                </a>
+              </div>
+            </div>
+            <div className="golazo-real-scene" aria-label="Real Golazo product captures posted on X">
+              <span className="golazo-live-line" aria-hidden="true">THE NEXT MOMENT IS THE MARKET</span>
+              <img
+                className="golazo-app app-one"
+                src="/media/golazo/real/spain-austria.png"
+                alt="Golazo live Spain versus Austria market"
+                width="285"
+                height="507"
+                loading="lazy"
+                decoding="async"
+              />
+              <img
+                className="golazo-app app-two"
+                src="/media/golazo/real/croatia-portugal.png"
+                alt="Golazo live Croatia versus Portugal market"
+                width="285"
+                height="447"
+                loading="lazy"
+                decoding="async"
+              />
+              <img
+                className="golazo-proof"
+                src="/media/golazo/real/settled.webp"
+                alt="Golazo market settled instantly"
+                width="960"
+                height="1200"
+                loading="lazy"
+                decoding="async"
+              />
+              <span className="golazo-source">REAL PRODUCT MEDIA · @REALWOOBLAY</span>
+            </div>
+          </article>
+
+          <article className="project-stage stage-bubble">
+            <img
+              className="bubble-stage-backdrop"
+              src="/media/bubblewars/banner.webp"
+              alt=""
+              width="1792"
+              height="1024"
+              loading="lazy"
+              decoding="async"
+              aria-hidden="true"
+            />
+            <div className="bubble-stage-pitch">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/uPW20IUHC1Y?start=4823&end=4890&rel=0"
+                title="Jack presenting Bubble Wars at ETHGlobal Bangkok"
+                width="1280"
+                height="720"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+              <span>JACK’S STAGE SEGMENT</span>
+            </div>
+            <div className="stage-copy">
+              <p className="project-meta">
+                <span>ETHGLOBAL BANGKOK WINNER</span>
+                <span>4 SPONSOR PRIZES</span>
+              </p>
+              <h3>Bubble Wars</h3>
+              <p>Invite allies. Raid rivals. Grow the biggest bubble.</p>
+              <div className="feature-links">
+                <a href="/work/bubble-wars">Project ↗</a>
+                <a href="https://ethglobal.com/showcase/bubblewars-rgjpk" target="_blank" rel="noreferrer">
+                  ETHGlobal ↗
                 </a>
               </div>
             </div>
           </article>
 
-          <article className="feature-card firewall-feature">
-            <div className="feature-copy">
+          <article className="project-stage stage-meridian">
+            <div className="meridian-stage-video">
+              <video
+                controls
+                playsInline
+                preload="metadata"
+                poster="/media/meridian/jack-pitch-poster.jpg"
+                aria-label="Jack presenting MERIDIAN at Stone and Chalk"
+              >
+                <source src="/media/meridian/jack-pitch.mp4" type="video/mp4" />
+                <track kind="captions" src="/media/meridian/jack-pitch.en.vtt" srcLang="en" label="English" default />
+              </video>
+              <span>MY PITCH · 01:44</span>
+            </div>
+            <div className="stage-copy">
+              <p className="project-meta">
+                <span>HACKATHON WINNER</span>
+                <span>GENOMICS</span>
+              </p>
+              <h3>MERIDIAN</h3>
+              <p>Governed pharmacogenomics with evidence built into the path.</p>
+              <div className="feature-links">
+                <a href="/work/meridian">Project ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article className="project-stage stage-firewall">
+            <div className="stage-copy">
               <p className="project-meta">
                 <span>AGENT SECURITY</span>
                 <span>SOLO BUILD</span>
@@ -307,126 +322,42 @@ export default function Home() {
               </p>
               <div className="feature-links">
                 <a href="/work/agent-execution-firewall">Project ↗</a>
-                <a
-                  href="https://github.com/RealWooblay/WooblayAI"
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <a href="https://github.com/RealWooblay/WooblayAI" target="_blank" rel="noreferrer">
                   GitHub ↗
                 </a>
               </div>
             </div>
-            <div
-              className="firewall-scene"
-              aria-label="Agent Firewall command center and approval workflow"
-            >
-              <div className="firewall-statement" aria-hidden="true">
-                <span>AGENTS DECIDE.</span>
-                <strong>POLICIES EXECUTE.</strong>
-              </div>
+            <div className="firewall-product-scene" aria-label="Agent Firewall product interface">
+              <span className="firewall-rule">NO ACTION WITHOUT A DECISION</span>
               <img
-                className="firewall-command"
+                className="firewall-product-main"
                 src="/media/agent-firewall/command-center.png"
-                alt="Agent Firewall command center with actions, blocked requests and approvals"
+                alt="Agent Firewall command center"
                 width="1280"
                 height="720"
                 loading="lazy"
                 decoding="async"
               />
               <img
-                className="firewall-approval"
+                className="firewall-product-approval"
                 src="/media/agent-firewall/approvals.png"
-                alt="Agent Firewall approval queue for controlled agent actions"
+                alt="Agent Firewall approval queue"
                 width="1280"
                 height="720"
                 loading="lazy"
                 decoding="async"
               />
-              <div className="firewall-gates" aria-label="Execution path">
-                <span>REQUEST</span>
-                <i>→</i>
-                <span>POLICY</span>
-                <i>→</i>
-                <span>APPROVAL</span>
-                <i>→</i>
-                <span>ISOLATED EXECUTION</span>
-              </div>
-              <span>PRODUCT UI · REPRESENTATIVE APPROVAL FLOW</span>
+              <ol aria-label="Agent execution control path">
+                <li>Intent</li>
+                <li>Policy</li>
+                <li>Approval</li>
+                <li>Receipt</li>
+              </ol>
             </div>
           </article>
 
-          <article className="feature-card meridian-feature">
-            <div className="feature-copy">
-              <p className="project-meta">
-                <span>HACKATHON WINNER</span>
-                <span>GOVERNED GENOMICS</span>
-              </p>
-              <h3>MERIDIAN</h3>
-              <p>
-                A privacy first pharmacogenomics pipeline that binds guidance to
-                evidence and explicit limits.
-              </p>
-              <div className="feature-links">
-                <a href="/work/meridian">Project ↗</a>
-                <a
-                  href="https://github.com/RealWooblay/medhack"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  GitHub ↗
-                </a>
-              </div>
-            </div>
-            <div
-              className="meridian-scene"
-              aria-label="Jack presenting MERIDIAN’s governed genomics system"
-            >
-              <div className="meridian-pitch-frame">
-                <video
-                  controls
-                  playsInline
-                  preload="metadata"
-                  poster="/media/meridian/jack-pitch-poster.jpg"
-                  aria-label="Jack presenting MERIDIAN at Stone and Chalk"
-                  width="720"
-                  height="1280"
-                >
-                  <source
-                    src="/media/meridian/jack-pitch.mp4"
-                    type="video/mp4"
-                  />
-                  <track
-                    kind="captions"
-                    src="/media/meridian/jack-pitch.en.vtt"
-                    srcLang="en"
-                    label="English"
-                    default
-                  />
-                </video>
-                <span>JACK’S PITCH · 01:44</span>
-              </div>
-              <div className="meridian-pitch-index">
-                <span>THE SYSTEM</span>
-                <ol>
-                  <li>
-                    <i>01</i>
-                    <strong>GENOME</strong>
-                  </li>
-                  <li>
-                    <i>02</i>
-                    <strong>EVIDENCE</strong>
-                  </li>
-                  <li>
-                    <i>03</i>
-                    <strong>GUIDANCE</strong>
-                  </li>
-                </ol>
-              </div>
-            </div>
-          </article>
-
-          <article className="feature-card pmw-feature">
-            <div className="feature-copy">
+          <article className="project-stage stage-pmw">
+            <div className="stage-copy">
               <p className="project-meta">
                 <span>ETHGLOBAL CANNES</span>
                 <span>FLARE 3RD PLACE</span>
@@ -435,72 +366,19 @@ export default function Home() {
               <p>Tweet a claim. Take a side. Settle it with evidence.</p>
               <div className="feature-links">
                 <a href="/work/prove-me-wrong">Project ↗</a>
-                <a
-                  href="https://ethglobal.com/showcase/prove-me-wrong-2j4ks"
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <a href="https://ethglobal.com/showcase/prove-me-wrong-2j4ks" target="_blank" rel="noreferrer">
                   ETHGlobal ↗
                 </a>
               </div>
             </div>
-            <div
-              className="pmw-scene"
-              aria-label="Real Prove Me Wrong product capture"
-            >
-              <img
-                src="/media/prove-me-wrong/market-wallet.jpg"
-                alt="Prove Me Wrong market embedded in X with a Flare wallet approval"
-                width="1590"
-                height="1244"
-                loading="lazy"
-                decoding="async"
-              />
-              <span>REAL HACKATHON BUILD · INLINE MARKET + FLARE</span>
-            </div>
-          </article>
-
-          <article className="feature-card bubble-feature">
             <img
-              className="bubble-backdrop"
-              src="/media/bubblewars/banner.webp"
-              alt=""
-              width="1792"
-              height="1024"
+              src="/media/prove-me-wrong/market-wallet.jpg"
+              alt="Prove Me Wrong market embedded in X with Flare wallet approval"
+              width="1590"
+              height="1244"
               loading="lazy"
               decoding="async"
-              aria-hidden="true"
             />
-            <div className="bubble-pitch">
-              <iframe
-                src="https://www.youtube-nocookie.com/embed/uPW20IUHC1Y?start=4823&end=4890&rel=0"
-                title="Jack presenting Bubble Wars at ETHGlobal Bangkok"
-                width="1280"
-                height="720"
-                loading="lazy"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              />
-              <span>JACK’S STAGE SEGMENT · ETHGLOBAL BANGKOK</span>
-            </div>
-            <div className="feature-copy">
-              <p className="project-meta">
-                <span>ETHGLOBAL BANGKOK WINNER</span>
-                <span>4 SPONSOR PRIZES</span>
-              </p>
-              <h3>Bubble Wars</h3>
-              <p>Invite allies. Raid rivals. Grow the biggest bubble.</p>
-              <div className="feature-links">
-                <a href="/work/bubble-wars">Project ↗</a>
-                <a
-                  href="https://ethglobal.com/showcase/bubblewars-rgjpk"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  ETHGlobal ↗
-                </a>
-              </div>
-            </div>
           </article>
         </div>
       </section>
@@ -510,6 +388,14 @@ export default function Home() {
           <h2>More work</h2>
         </div>
         <div className="shell system-tile-grid">
+          <SystemTile
+            title="WISP Lab"
+            category="NVIDIA JETSON LAB"
+            line="Pose perception and spatial rendering running locally on Jetson."
+            flow={['CAMERA', 'TENSORRT', 'POSE', 'RENDER']}
+            href="/work/wisp-lab"
+            source="https://github.com/RealWooblay/wisp-lab"
+          />
           <SystemTile
             title="AI Action OS"
             category="OPERATOR SYSTEM"

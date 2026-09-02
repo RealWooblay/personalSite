@@ -158,7 +158,7 @@ function ProjectVisual({ project }: { project: Project }) {
           : project.media.type === 'youtube'
             ? 'project-youtube-v3'
             : ''
-      }`}
+      } ${project.slug === 'vela' ? 'project-landscape-video-v3' : ''}`}
     >
       <div className="detail-shell project-visual-inner-v3">
         {project.media.type === 'video' && project.media.captions ? (
