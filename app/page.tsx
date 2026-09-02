@@ -82,8 +82,8 @@ export default function Home() {
           <figcaption>WHAT I’VE NOTICED</figcaption>
           <blockquote>
             <p>
-              Jack’s restlessness is selective: he has patience for difficult
-              work, but very little for work he does not believe in.
+              Jack is impatient with work that feels generic because he wants it
+              to say something he actually believes.
             </p>
           </blockquote>
         </figure>
