@@ -75,8 +75,8 @@ export default function Home() {
 
       <section className="portfolio-intro shell" id="top">
         <h1>
-          I want to help build a future where technological progress is measured
-          by how fully people can live.
+          Building technology for a future measured by how fully people can
+          live.
         </h1>
         <figure className="ai-note">
           <figcaption>WHAT I’VE NOTICED</figcaption>
