@@ -168,7 +168,26 @@ function ProjectVisual({ project }: { project: Project }) {
       }`}
     >
       <div className="detail-shell project-visual-inner-v3">
-        {project.media.type === 'video' ? (
+        {project.media.type === 'video' && project.media.captions ? (
+          <video
+            controls
+            playsInline
+            preload="none"
+            poster={project.media.poster}
+            aria-label={project.media.alt}
+            width={project.media.width}
+            height={project.media.height}
+          >
+            <source src={project.media.src} type="video/mp4" />
+            <track
+              kind="captions"
+              src={project.media.captions}
+              srcLang="en"
+              label="English"
+              default
+            />
+          </video>
+        ) : project.media.type === 'video' ? (
           <video
             controls
             muted
@@ -180,15 +199,6 @@ function ProjectVisual({ project }: { project: Project }) {
             height={project.media.height}
           >
             <source src={project.media.src} type="video/mp4" />
-            {project.media.captions && (
-              <track
-                kind="captions"
-                src={project.media.captions}
-                srcLang="en"
-                label="English"
-                default
-              />
-            )}
           </video>
         ) : project.media.type === 'youtube' ? (
           <div className="presentation-embed-v3">
